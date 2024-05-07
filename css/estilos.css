@@ -1,6 +1,66 @@
-:root{
-    --secondary-color: #44d62c;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
-.text-justify{
-    text-align: justify;
+:root {
+  --secondary-color: #44d62c;
+}
+.text-justify {
+  text-align: justify;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+footer {
+  padding-top: 30px;
+  margin: 0px;
+  width: 100%;
+  margin-top: auto;
+  background-color: rgb(29, 28, 28);
+  color: var(--secondary-color);
+}
+#logo-footer {
+  height: 150px;
+}
+#imgQr {
+  height: 130px;
+}
+@media screen and (max-width: 480px) {
+  .objetosFooter {
+    text-align: center;
+  }
+  #categoriasFooter {
+    padding-top: 30px;
+  }
+  #redesFooter {
+    flex-wrap: nowrap;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  #imgQr {
+    padding-right: 90px;
+  }
+  .cajasFooter {
+    padding-top: 15px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .objetosFooter {
+    text-align: center;
+  }
+  #contactosFooter {
+    display: flex;
+    justify-content: space-around;
+  }
 }
