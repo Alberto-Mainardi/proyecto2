@@ -1,0 +1,59 @@
+{
+    "articulos":[
+        {
+            "id":"1",
+            "nombre":"Placa de video Nvidia MSI Ventus GeForce RTX 20 Series RTX 2060 SUPER GEFORCE RTX 2060 SUPER VENTUS GP OC OC Edition 8GB",
+            "descripcion": "placeholder",
+            "precio":"56400",
+            "imagen": "https://http2.mlstatic.com/D_NQ_NP_632376-MLA74782526949_022024-O.webp",
+            "alt":"Nvidia MSI RTX 2060",
+            "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
+            "favorito":false,
+            "estaEnCarrito":false
+        },
+        {
+            "id":"2",
+            "nombre":"Placa de video Nvidia MSI Ventus GeForce RTX 20 Series RTX 2060 SUPER GEFORCE RTX 2060 SUPER VENTUS GP OC OC Edition 8GB",
+            "descripcion": "placeholder",
+            "precio":"56400",
+            "imagen": "https://http2.mlstatic.com/D_NQ_NP_632376-MLA74782526949_022024-O.webp",
+            "alt":"Nvidia MSI RTX 2060",
+            "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
+            "favorito":false,
+            "estaEnCarrito":false
+        },
+        {
+            "id":"3",
+            "nombre":"Placa de video Nvidia MSI Ventus GeForce RTX 20 Series RTX 2060 SUPER GEFORCE RTX 2060 SUPER VENTUS GP OC OC Edition 8GB",
+            "descripcion": "placeholder",
+            "precio":"56400",
+            "imagen": "https://http2.mlstatic.com/D_NQ_NP_632376-MLA74782526949_022024-O.webp",
+            "alt":"Nvidia MSI RTX 2060",
+            "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
+            "favorito":false,
+            "estaEnCarrito":false
+        },
+        {
+            "id":"4",
+            "nombre":"Placa de video Nvidia MSI Ventus GeForce RTX 20 Series RTX 2060 SUPER GEFORCE RTX 2060 SUPER VENTUS GP OC OC Edition 8GB",
+            "descripcion": "placeholder",
+            "precio":"56400",
+            "imagen": "https://http2.mlstatic.com/D_NQ_NP_632376-MLA74782526949_022024-O.webp",
+            "alt":"Nvidia MSI RTX 2060",
+            "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
+            "favorito":false,
+            "estaEnCarrito":false
+        },
+        {
+            "id":"5",
+            "nombre":"Placa de video Nvidia MSI Ventus GeForce RTX 20 Series RTX 2060 SUPER GEFORCE RTX 2060 SUPER VENTUS GP OC OC Edition 8GB",
+            "descripcion": "placeholder",
+            "precio":"56400",
+            "imagen": "https://http2.mlstatic.com/D_NQ_NP_632376-MLA74782526949_022024-O.webp",
+            "alt":"Nvidia MSI RTX 2060",
+            "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
+            "favorito":false,
+            "estaEnCarrito":false
+        }
+    ]
+}
