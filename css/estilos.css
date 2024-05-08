@@ -13,3 +13,6 @@ body{
     background-attachment: fixed;
     background-position: center;
 }
+.productosSection{
+    background-color: hsl(0, 0%, 80%);
+}
