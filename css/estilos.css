@@ -10,9 +10,13 @@
 }
 :root {
   --secondary-color: #44d62c;
+  --footer-text-color: hsl(0,0%, 65%);
 }
 .text-justify {
   text-align: justify;
+}
+.secondary-color {
+    color: var(--secondary-color);
 }
 body {
   display: flex;
@@ -25,10 +29,21 @@ footer {
   width: 100%;
   margin-top: auto;
   background-color: rgb(29, 28, 28);
-  color: var(--secondary-color);
+  color: white
+}
+.footer-text{
+    color: var(--footer-text-color);
 }
 #logo-footer {
   height: 150px;
+}
+.footerLink{
+    color: var(--footer-text-color);
+    text-decoration: none;
+}
+.footerLink:hover{
+    text-decoration: underline;
+    color: var(--secondary-color);
 }
 #imgQr {
   height: 130px;
