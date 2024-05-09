@@ -11,48 +11,68 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <link rel="stylesheet" href="./css/estilos.css" />
 </head>
+
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg bg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img id="logoHeader" src="./img/logo.png" alt="logo header" /></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg fixed-top bg-body-secondary">
+      <div id="contenedorOrganizarNabvar"
+        class="container-fluid d-md-flex d-sm-flex d-lg-block justify-content-md-evenly">
+        <button class="navbar-toggler order-0" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Inicio</a>
+        <div class="d-flex justify-content-center align-items-center  pt-2 pb-2">
+          <a id="espacioLogo" class="navbar-brand" href="./index.html"><img id="logoHeader" src="./img/logo.png"
+              alt="logo header" /></a>
+          <h4 id="nombreLogoMenu" class="pe-3">Tecnobyte</h4>
+          <div class="cajaBusqueda">
+            <input type="text" class="form-control entradaBusqueda" placeholder="Buscar">
+            <span class="logobusqueda">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+              </svg>
+            </span>
+          </div>
+          <div class="ps-4">
+            <a href="#"><img id="iconoCarrito" src="./img/cart-plus-fill.svg" alt="Carrito de compras"><span
+                id="cuenta-carrito">0</span></a>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul id="textoCentradoSubMenu" class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item me-2">
+              <a class="nav-link  fs-4 text-white" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="nav-link  fs-4 text-white" aria-current="page" href="#">Destacado</a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="nav-link  fs-4 text-white" aria-current="page" href="#">Contacto</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Destacado</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Favoritos</a>
+              <a class="nav-link  fs-4 text-white" aria-current="page" href="#">Favoritos<span
+                  id="contador-favoritos">0</span></a>
             </li>
           </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Buscar productos" aria-label="Buscar" />
-            <button class="btn btn-outline-success" type="submit">
-              Buscar
-            </button>
-          </form>
         </div>
       </div>
     </nav>
+
   </header>
-  <footer class="container-fluid">
+  <main>
+
+  </main>
+  <footer class="container-fluid ps-lg-5">
     <div class="row d-flex align-items-center m-lg-3">
       <div class="col-lg-3 col-md-12 text-center d-flex flex-column align-items-center mt-4">
         <img id="logo-footer" src="./img/logo.png" alt="logo" />
         <h2 class="pb-2 mt-3 secondary-color">TecnoByte</h2>
       </div>
       <div class="col-lg-2 col-md-6 d-flex flex-column objetosFooter">
-        <h3 id="categoriasFooter" class="pb-2">Categorías</h3>
+        <h4 id="categoriasFooter" class="pb-2">Categorías</h4>
         <ul class="list-unstyled">
           <li class="pb-2">
             <a class="footerLink" href="#procesadores">Procesadores</a>
@@ -75,7 +95,7 @@
         </ul>
       </div>
       <div class="col-lg-2 col-md-6 d-flex flex-column objetosFooter">
-        <h3 class="pb-2">Proveedores</h3>
+        <h4 class="pb-2">Proveedores</h4>
         <ul class="list-unstyled">
           <li class="pb-2">
             <a class="footerLink" href="https://www.amd.com/en.html">AMD</a>
@@ -100,7 +120,7 @@
       <div id="contactosFooter" class="col-lg-5 col-md-12 p-md-0 m-md-0">
         <div id="redesFooter" class="d-lg-flex d-md-block flex-wrap">
           <div>
-            <h3 class="pt-md-2">Redes Sociales</h3>
+            <h4 id="textoRedes" class="pt-md-2">Redes Sociales</h4>
             <ul class="list-unstyled">
               <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

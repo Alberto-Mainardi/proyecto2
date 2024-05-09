@@ -23,8 +23,74 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+.nav-link:hover {
+  color: #44d62c !important;
+  transition: color 0.3s ease;
+}
+.cajaBusqueda {
+  position: relative;
+  max-width: 300px;
+}
+nav {
+  background-color: rgb(29, 28, 28);
+}
+.entradaBusqueda {
+  width: 100%;
+  padding-right: 35px;
+}
+
+.logobusqueda {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
 #logoHeader {
   height: 70px;
+}
+#espacioLogo {
+  margin-right: 2px !important;
+}
+#cuenta-carrito {
+  background-color: #44d62c;
+  border-radius: 100%;
+  display: inline-block;
+  width: 20px;
+  line-height: 20px;
+  aspect-ratio: 1;
+  text-align: center;
+  color: white;
+}
+#contador-favoritos {
+  background-color: #2ca6d6;
+  border-radius: 100%;
+  display: inline-block;
+  width: 20px;
+  line-height: 20px;
+  aspect-ratio: 1;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+}
+#iconoCarrito {
+  height: 21px;
+}
+#nombreLogoMenu {
+  color: #44d62c;
+}
+#navbarSupportedContent {
+  background-color: rgb(29, 28, 28);
+  padding: 10px 0px;
+  border-radius: 20px;
+}
+.entradaBusqueda:focus {
+  border-color: #44d62c;
+  box-shadow: 0 0 0 0.25rem rgba(43, 255, 0, 0.25);
+}
+main {
+  height: 1000px;
+  background-color: bisque;
 }
 footer {
   padding-top: 30px;
@@ -47,6 +113,7 @@ footer {
 .footerLink:hover {
   text-decoration: underline;
   color: var(--secondary-color);
+  transition: color 0.3s ease;
 }
 #imgQr {
   height: 130px;
@@ -66,14 +133,32 @@ footer {
     text-align: center;
     justify-content: center;
   }
+  #navbarSupportedContent {
+    text-align: center;
+  }
+  #navbarSupportedContent ul li {
+    border-radius: 40px;
+  }
+  .cajaBusqueda {
+    display: none;
+  }
+  #contenedorOrganizarNabvar {
+    justify-content: space-evenly;
+  }
 }
 @media screen and (min-width: 481px) and (max-width: 1024px) {
   .objetosFooter {
     text-align: center;
   }
+  #textoRedes {
+    padding-bottom: 4px;
+  }
   #redesFooter {
     justify-content: center;
     align-items: center;
+    text-align: center;
+  }
+  #textoCentradoSubMenu {
     text-align: center;
   }
 }
