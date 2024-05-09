@@ -19,3 +19,17 @@ body{
     background-attachment: fixed;
     background-position: center;
 }
+
+.productosSection{
+    background-color: hsl(0, 0%, 80%);
+}
+
+#form-envio .forma-envio{
+    height: 100px;
+    
+} 
+
+#form-tarjeta .forma-pago{
+    height: 100px;
+    
+} 
