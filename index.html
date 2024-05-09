@@ -13,7 +13,7 @@
 </head>
 <body>
   <header>
-    <nav id="encabezado" class="navbar navbar-expand-lg bg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"><img id="logoHeader" src="./img/logo.png" alt="logo header" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -23,35 +23,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              <a class="nav-link" aria-current="page" href="#">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
+              <a class="nav-link" aria-current="page" href="#">Destacado</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              <a class="nav-link" aria-current="page" href="#">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Favoritos</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <input class="form-control me-2" type="search" placeholder="Buscar productos" aria-label="Buscar" />
             <button class="btn btn-outline-success" type="submit">
-              Search
+              Buscar
             </button>
           </form>
         </div>
@@ -59,12 +46,12 @@
     </nav>
   </header>
   <footer class="container-fluid">
-    <div class="row d-flex align-items-center">
-      <div class="col-lg-3 col-md-3 text-center d-flex flex-column align-items-center mt-4">
+    <div class="row d-flex align-items-center m-lg-3">
+      <div class="col-lg-3 col-md-12 text-center d-flex flex-column align-items-center mt-4">
         <img id="logo-footer" src="./img/logo.png" alt="logo" />
         <h2 class="pb-2 mt-3 secondary-color">TecnoByte</h2>
       </div>
-      <div class="col-lg-2 col-md-4 d-flex flex-column objetosFooter">
+      <div class="col-lg-2 col-md-6 d-flex flex-column objetosFooter">
         <h3 id="categoriasFooter" class="pb-2">Categorías</h3>
         <ul class="list-unstyled">
           <li class="pb-2">
@@ -87,7 +74,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-lg-2 col-md-5 d-flex flex-column objetosFooter">
+      <div class="col-lg-2 col-md-6 d-flex flex-column objetosFooter">
         <h3 class="pb-2">Proveedores</h3>
         <ul class="list-unstyled">
           <li class="pb-2">
@@ -110,10 +97,10 @@
           </li>
         </ul>
       </div>
-      <div id="contactosFooter" class="col-lg-5 col-md-12 cajasFooter">
-        <div id="redesFooter" class="d-flex flex-wrap cajasFooter">
+      <div id="contactosFooter" class="col-lg-5 col-md-12 p-md-0 m-md-0">
+        <div id="redesFooter" class="d-lg-flex d-md-block flex-wrap">
           <div>
-            <h3 class="pb-md-3 pt-md-3">Redes Sociales</h3>
+            <h3 class="pt-md-2">Redes Sociales</h3>
             <ul class="list-unstyled">
               <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -143,7 +130,7 @@
               Email: <span class="secondary-color">tecnoByte@gmail.com</span>
             </p>
           </div>
-          <div class="d-flex align-items-center ms-5 ps-5 cajasFooter">
+          <div class="ps-lg-5 m-0 mt-lg-5 pt-lg-2 align-items-center">
             <img id="imgQr" class="img-fluid" src="./img/frame.png" alt="qr" />
           </div>
         </div>
