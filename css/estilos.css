@@ -25,21 +25,21 @@ body {
 }
 .nav-link:hover {
   color: #44d62c !important;
-  transition: color 0.3s ease;
+  text-decoration: underline;
 }
-.cajaBusqueda {
+#cajaBusqueda {
   position: relative;
   max-width: 300px;
 }
 nav {
   background-color: rgb(29, 28, 28);
 }
-.entradaBusqueda {
+#entradaBusqueda {
   width: 100%;
   padding-right: 35px;
 }
 
-.logobusqueda {
+#logobusqueda {
   position: absolute;
   top: 50%;
   right: 10px;
@@ -84,7 +84,7 @@ nav {
   padding: 10px 0px;
   border-radius: 20px;
 }
-.entradaBusqueda:focus {
+#entradaBusqueda:focus {
   border-color: #44d62c;
   box-shadow: 0 0 0 0.25rem rgba(43, 255, 0, 0.25);
 }
@@ -139,11 +139,22 @@ footer {
   #navbarSupportedContent ul li {
     border-radius: 40px;
   }
-  .cajaBusqueda {
+  #cajaBusqueda {
     display: none;
   }
   #contenedorOrganizarNabvar {
     justify-content: space-evenly;
+  }
+}
+@media screen and (max-width: 540px) and (orientation: portrait) {
+  #contenedorOrganizarNabvar {
+    display: block;
+  }
+  #entradaBusqueda {
+    display: none;
+  }
+  #logobusqueda {
+    display: none;
   }
 }
 @media screen and (min-width: 481px) and (max-width: 1024px) {

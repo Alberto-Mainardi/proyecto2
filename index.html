@@ -17,18 +17,18 @@
     <nav class="navbar navbar-expand-lg fixed-top bg-body-secondary">
       <div id="contenedorOrganizarNabvar"
         class="container-fluid d-md-flex d-sm-flex d-lg-block justify-content-md-evenly">
-        <button class="navbar-toggler order-0" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="d-flex justify-content-center align-items-center  pt-2 pb-2">
+        <div class="d-flex justify-content-center align-items-center pt-2 pb-2">
+          <button class="navbar-toggler order-0 me-4" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
           <a id="espacioLogo" class="navbar-brand" href="./index.html"><img id="logoHeader" src="./img/logo.png"
               alt="logo header" /></a>
           <h4 id="nombreLogoMenu" class="pe-3">Tecnobyte</h4>
-          <div class="cajaBusqueda">
-            <input type="text" class="form-control entradaBusqueda" placeholder="Buscar">
-            <span class="logobusqueda">
+          <div id="cajaBusqueda">
+            <input id="entradaBusqueda" type="text" class="form-control" placeholder="Buscar" />
+            <span id="logobusqueda">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
                 viewBox="0 0 16 16">
                 <path
@@ -36,35 +36,32 @@
               </svg>
             </span>
           </div>
-          <div class="ps-4">
-            <a href="#"><img id="iconoCarrito" src="./img/cart-plus-fill.svg" alt="Carrito de compras"><span
+          <div class="ps-lg-4 ps-md-4">
+            <a href="#"><img id="iconoCarrito" src="./img/cart-plus-fill.svg" alt="Carrito de compras" /><span
                 id="cuenta-carrito">0</span></a>
           </div>
         </div>
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul id="textoCentradoSubMenu" class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item me-2">
-              <a class="nav-link  fs-4 text-white" aria-current="page" href="#">Inicio</a>
+              <a class="nav-link fs-4 text-white" aria-current="page" href="#">Inicio</a>
             </li>
             <li class="nav-item me-2">
-              <a class="nav-link  fs-4 text-white" aria-current="page" href="#">Destacado</a>
+              <a class="nav-link fs-4 text-white" aria-current="page" href="#">Destacado</a>
             </li>
             <li class="nav-item me-2">
-              <a class="nav-link  fs-4 text-white" aria-current="page" href="#">Contacto</a>
+              <a class="nav-link fs-4 text-white" aria-current="page" href="#">Contacto</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link  fs-4 text-white" aria-current="page" href="#">Favoritos<span
+              <a class="nav-link fs-4 text-white" aria-current="page" href="#">Favoritos<span
                   id="contador-favoritos">0</span></a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
   </header>
-  <main>
-
-  </main>
+  <main></main>
   <footer class="container-fluid ps-lg-5">
     <div class="row d-flex align-items-center m-lg-3">
       <div class="col-lg-3 col-md-12 text-center d-flex flex-column align-items-center mt-4">
