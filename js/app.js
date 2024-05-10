@@ -1,7 +1,5 @@
-// let contenido = document.querySelector(".root");
-let productoCarrito=document.querySelector("#producto");
+let carrito = [];
 let recientes = document.querySelector("#recientes");
-let carrito=[];
 
 fetch('./json/articulos.json').then((response) => response.json())
 .then((data) => {
@@ -18,7 +16,7 @@ fetch('./json/articulos.json').then((response) => response.json())
             <button class="btn btn-primary" onclick="agregarAlCarrito(${articulo.id})">Comprar</button>
         </div>
         <p class="text-justify"><strong>Descripción</strong> <br>
-        ${articulo.descripcion}
+        
         </p>
     </article> 
         `;
@@ -26,16 +24,18 @@ fetch('./json/articulos.json').then((response) => response.json())
 })
 .catch((error) => console.error("No se pudo conseguir la data:", error))
 
-
+console.log(carrito);
 function agregarAlCarrito(id){
     fetch('./json/articulos.json').then((response) => response.json())
             .then((data) => {
                 let articulos = data.articulos;
+                console.log(id);
                 articulos.find(articulo=>{
                     
                     if (articulo.id==id) {
                         console.log(articulo.id);
                         carrito = [...carrito,{id:articulo.id,nombre:articulo.nombre,precio:articulo.precio,imagen:articulo.imagen}]
+                        console.log(carrito);
                         productosEnCarrito(carrito)
                     } 
             })

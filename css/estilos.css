@@ -33,3 +33,12 @@ body{
     height: 100px;
     
 } 
+
+#imgPaginaProducto{
+    width: 615px;
+    height: 600px;
+}
+
+.columnaPagina{
+    width: 370px; 
+}
