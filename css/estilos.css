@@ -1,7 +1,5 @@
 :root{
     --secondary-color: #44d62c;
-
-
 }
 .text-justify{
     text-align: justify;
@@ -14,5 +12,98 @@ body{
     background-position: center;
 }
 .productosSection{
-    background-color: hsl(0, 0%, 80%);
+    background: black;
+    position: relative;
+    border-radius: 1rem;
 }
+.productosSection::before{
+    content: '';
+    background-image: linear-gradient(45deg, var(--secondary-color), black, var(--secondary-color));
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index:-1;
+    margin: -2px;
+    border-radius: 1rem;
+}
+.productosSection * {
+    color: white;
+}
+
+.carousel-item img{
+    max-height: 100vh;
+    width: 75%;
+    object-position: center;
+    object-fit: cover;
+    margin-inline: auto;
+}
+
+
+/* .slider{
+    width: 100%;
+    height: 350px;
+    position: relative;
+}
+.slider .switchLeft,
+.slider .switchRight{
+    color: white;
+    font-weight: bold;
+    height: 100%;
+    width: 45px;
+    line-height: 350px;
+    font-size: 25px;
+    text-align: center;
+    background: hsla(220, 0%, 30%, 0.4);
+    font-family: sans-serif;
+    top: 0;
+    z-index: 4;
+    border-radius: 1rem;
+}
+.slider .switchLeft:hover,
+.slider .switchRight:hover{
+    background: hsla(220, 0%, 15%, 0.4);
+}
+
+.slider .switchLeft{
+position: absolute;
+}
+.slider .switchRight{
+position: absolute;
+right: 0;
+}
+
+.sliderBox{
+    width: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-align: center;
+    padding-bottom: 10px !important;
+    display: flex;
+    align-items: center;
+
+}
+
+.sliderBox article {
+    background-size: cover;
+    margin: 5px 10px;
+    cursor: pointer;
+    transition: 200ms ease;
+    z-index: 2;
+}
+
+.sliderBox article:hover{
+    scale: 1.05;
+    z-index: 3;
+}
+
+.btn-compra{
+    border: 1px solid var(--secondary-color);
+}
+.btn-compra:hover{
+    border: 1px solid var(--secondary-color);
+    background: hsla(0, 0%, 100%, 0.2);
+} */
+

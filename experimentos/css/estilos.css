@@ -1,0 +1,16 @@
+@media screen and (width >= 768px) {
+    .carousel-productos-inner{
+        display: flex;
+    }
+    .carousel-productos-item{
+        display: block;
+        margin-right: 0;
+        flex: 0 0 calc(100%/4);
+    }
+}
+.carousel-productos-inner{
+    padding: 1rem;
+}
+.card{
+    margin: 0.5rem;
+}
