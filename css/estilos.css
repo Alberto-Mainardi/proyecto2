@@ -21,6 +21,7 @@
 body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 .nav-link:hover {
   color: #44d62c !important;
@@ -127,6 +128,28 @@ footer {
 }
 #imgQr {
   height: 130px;
+}
+.botonesRedes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.botonesRedes a {
+  text-decoration: none;
+  font-size: 28px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background: rgb(29, 28, 28);
+  color: #f1f1f1;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+  transition: all .4s ease-in-out;
+}
+
+.botonesRedes a:hover {
+  transform: scale(1.2);
 }
 @media screen and (max-width: 480px) {
   .objetosFooter {
