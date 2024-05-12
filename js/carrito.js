@@ -18,7 +18,7 @@ function mostrarProductos() {
     let productoCarrito=document.getElementById("producto")
     let productos = leerProductos();
     productoCarrito.innerHTML=``;
-    if (productos.length===0) {
+    if (productos===null || productos.length===0) {
         productoCarrito.innerHTML+=`
         <div class="d-flex justify-content-center flex-column align-items-center">
             <svg xmlns="http://www.w3.org/2000/svg" height="250px" viewBox="0 -960 960 960" width="250px" fill="#75FB4C">
@@ -33,6 +33,7 @@ function mostrarProductos() {
         ` 
         mostrarResumen()
     }else{
+        
         productos.forEach(producto => {
         
             productoCarrito.innerHTML+=`
@@ -79,7 +80,7 @@ function calculos(id) {
     precioTotalProducto.innerHTML=`<p  class="text-center">$${sumaProducto}</p>`
 
     
-    mostrarResumen(id,sumaProducto,total)
+    mostrarResumen()
 }
 
 
@@ -122,20 +123,18 @@ function calculoRestaEliminar(id) {
 
 }
 
-
-
 function eliminarProducto(id) {
     let productos = leerProductos();
     cantidad = tomarCantidad(id);
     calculoRestaEliminar(id);
-    let nuevosProductos = productos.filter((producto) => {
+    
+    let nuevosProductos= productos.filter((producto) => {
             if (producto.id != id) {
             
                 return producto;
     
             }
         
-
     })
     
     productosEnCarrito(nuevosProductos);
@@ -162,6 +161,7 @@ function mostrarNuevosProductos() {
         </div>   
         
         ` 
+        mostrarResumen();
     }else{
         productos.forEach(producto => {
         
@@ -184,6 +184,7 @@ function mostrarNuevosProductos() {
                 <hr class="text-success">
         `
     })
+     
     }
     
 }
@@ -238,7 +239,7 @@ function mostrarResumen() {
     let productos = leerProductos();
     let resumen=document.getElementById("resumenCompra");
 
-    if (productos.length===0) {
+    if (productos===null || productos.length===0) {
         resumen.innerHTML=`
         <div class="">
             <p class="m-3 p-2 fs-5" style="color:grey">Aqui veras el importe de tu compra</p>
@@ -271,7 +272,7 @@ function mostrarResumen() {
                 <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Forma de entrega</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body p-0">
@@ -316,7 +317,7 @@ function seleccionarMetPago()  {
             <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Metodo de pago</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0">
@@ -346,7 +347,7 @@ function seleccionarMetPago()  {
         </div>
                  
         `
-        
+       
     }else  if (enviar=="retirar") {
         envio=0
         console.log(enviar);    
@@ -355,7 +356,7 @@ function seleccionarMetPago()  {
             <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Metodo de pago</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0">
@@ -400,7 +401,7 @@ function agregarDatosTarjeta() {
         <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos de la tarjeta</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-0">
@@ -417,7 +418,7 @@ function agregarDatosTarjeta() {
                     </div>
                     
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Continuar</button>
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Continuar</button>
                     </div>
                 </form>
     
@@ -442,13 +443,10 @@ function finalizarCompra() {
     let finalizar=document.querySelector("#form-datos");
 
     finalizar.addEventListener("submit",function(e) {
-        console.log(envio);
+        // console.log(envio);
         e.preventDefault();
-        const fondoModal = document.querySelector(".modal-backdrop");
-        console.log(fondoModal);
-        fondoModal.remove();
         mostrarResumen();
-        
+        agregarTextoPagina();
     })
     
 }

@@ -39,6 +39,14 @@ body{
     height: 600px;
 }
 
-.columnaPagina{
-    width: 370px; 
+#verMetodosPago{
+    cursor: pointer;
 }
+
+@media (min-width:1440px) {
+    .columnaPagina{
+        width: 28.02%;
+        height: 1500px;
+    }
+}
+
