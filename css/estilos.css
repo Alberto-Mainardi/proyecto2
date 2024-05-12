@@ -21,7 +21,6 @@
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 .nav-link:hover {
   color: #44d62c !important;
@@ -89,8 +88,19 @@ nav {
   box-shadow: 0 0 0 0.25rem rgba(43, 255, 0, 0.25);
 }
 main {
-  height: 1000px;
-  background-color: bisque;
+  margin-top: 150px;
+}
+iframe {
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.entradaContacto {
+  border-radius: 5px;
+  border-color: #44d62c;
+}
+.entradaContacto:focus {
+  box-shadow: 0 0 0 0.25rem rgba(43, 255, 0, 0.25);
+  outline: none;
 }
 footer {
   padding-top: 30px;
@@ -145,6 +155,12 @@ footer {
   #contenedorOrganizarNabvar {
     justify-content: space-evenly;
   }
+  #contenedorMapa {
+    height: 400px;
+  }
+  #contenidoContacto {
+    margin-top: 80px;
+  }
 }
 @media screen and (max-width: 540px) and (orientation: portrait) {
   #contenedorOrganizarNabvar {
@@ -155,6 +171,9 @@ footer {
   }
   #logobusqueda {
     display: none;
+  }
+  #contenedorMapa {
+    height: 500px;
   }
 }
 @media screen and (min-width: 481px) and (max-width: 1024px) {
@@ -171,5 +190,17 @@ footer {
   }
   #textoCentradoSubMenu {
     text-align: center;
+  }
+
+  #contenedorMapa {
+    height: 520px;
+  }
+  #contenidoContacto {
+    margin-top: 80px;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+  #contenidoContacto {
+    margin-top: 200px;
   }
 }

@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./css/estilos.css" />
 </head>
 
-<body>
+<body class="bg-body-secondary">
   <header>
     <nav class="navbar navbar-expand-lg fixed-top bg-body-secondary">
       <div id="contenedorOrganizarNabvar"
@@ -61,7 +61,41 @@
       </div>
     </nav>
   </header>
-  <main></main>
+  <main id="contenidoContacto" class="container">
+    <section class="row mt-5 mb-5">
+      <div class="col-lg-6 p-4">
+        <form action="">
+          <h2 class="text-center">Contacto</h2>
+          <div class="d-flex flex-column mb-3">
+            <label for="nombre">Nombre</label>
+            <input class="ps-2 entradaContacto" type="text" name="nombre" id="nombre" placeholder="Nombre y Apellido" />
+          </div>
+          <div class="d-flex flex-column mb-3"><label for="correo">Correo</label>
+            <input class="ps-2 entradaContacto" type="email" name="correo" id="correo"
+              placeholder="Correo Electronico" />
+          </div>
+          <div class="d-flex flex-column mb-3"><label for="telefono">Teléfono</label>
+            <input class="ps-2 entradaContacto" type="tel" name="telefono" id="telefono"
+              placeholder="Número de Teléfono" />
+          </div>
+
+          <div class="d-flex flex-column"><label for="mensaje">Mensaje</label>
+            <textarea class="ps-2 pt-2 entradaContacto" name="mensaje" id="mensaje" cols="30" rows="6"
+              placeholder="Escribe tu mensaje aquí"></textarea>
+            <input class="btn btn-success mt-2" type="submit" value="Enviar">
+          </div>
+        </form>
+      </div>
+      <div id="contenedorMapa"
+        class="col-lg-6 overflow-hidden d-flex flex-column justify-content-center align-items-center p-4">
+        <h2 class="pb-4">Visítanos</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.81075447499!2d-58.727996123415494!3d-34.6594819604469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbfe898d1559f%3A0xc887c4d018be0287!2sTECNOBYTE!5e0!3m2!1sen!2sar!4v1715520276078!5m2!1sen!2sar"
+          width="100%" height="100%" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+  </main>
   <footer class="container-fluid ps-lg-5">
     <div class="row d-flex align-items-center m-lg-3">
       <div class="col-lg-3 col-md-12 text-center d-flex flex-column align-items-center mt-4">
