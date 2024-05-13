@@ -44,7 +44,7 @@ nav {
 }
 #botonMenu {
   border-color: #44d62c;
-  background-color: transparent;
+  background-color: aliceblue;
 }
 #entradaBusqueda {
   width: 100%;
@@ -114,6 +114,24 @@ iframe {
 .entradaContacto:focus {
   box-shadow: 0 0 0 0.25rem rgba(43, 255, 0, 0.25);
   outline: none;
+}
+#contenedorError {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#tituloError {
+  font-size: 8rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+#enlaceError {
+  background-color: #44d62c;
+}
+#botonFormularioContacto {
+  background-color: #44d62c;
+  color: white;
 }
 footer {
   padding-top: 30px;
@@ -185,6 +203,10 @@ footer {
   #contenidoContacto {
     margin-top: 80px;
   }
+  #contenedorError {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
 }
 @media screen and (max-width: 991px) {
   .barraLateral {
@@ -233,6 +255,9 @@ footer {
   }
   #contenidoContacto {
     margin-top: 80px;
+  }
+  #contenedorError {
+    margin-top: 100px;
   }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1366px) {
