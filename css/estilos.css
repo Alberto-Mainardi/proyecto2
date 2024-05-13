@@ -18,39 +18,53 @@
 .secondary-color {
   color: var(--secondary-color);
 }
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+#logoMenu {
+  height: 70px;
+}
+#textoLogo {
+  color: #44d62c;
 }
 .nav-link:hover {
-  color: #44d62c !important;
-  text-decoration: underline;
+  color: #44d62c;
+  transform: scale(1.2);
+  transition: all 0.4s ease-in-out;
 }
-#cajaBusqueda {
-  position: relative;
-  max-width: 300px;
+#botonIngresar {
+  color: white;
 }
-nav {
-  background-color: rgb(29, 28, 28);
+#botonIngresar:hover {
+  transform: scale(1.1);
+  transition: all 0.4s ease-in-out;
+}
+#botonMenu {
+  border-color: #44d62c;
+  background-color: transparent;
 }
 #entradaBusqueda {
   width: 100%;
   padding-right: 35px;
 }
-
 #logobusqueda {
   position: absolute;
   top: 50%;
   right: 10px;
-  transform: translateY(-50%);
+  transform: translateY(-65%);
   cursor: pointer;
 }
-#logoHeader {
-  height: 70px;
+#logoAyuda {
+  color: #44d62c;
 }
-#espacioLogo {
-  margin-right: 2px !important;
+#logoAyuda:hover {
+  transform: scale(1.2);
+  transition: all 0.4s ease-in-out;
+}
+#cajaBusqueda {
+  position: relative;
+  max-width: 300px;
+}
+#entradaBusqueda:focus {
+  border-color: #44d62c;
+  box-shadow: 0 0 0 0.25rem rgba(43, 255, 0, 0.25);
 }
 #cuenta-carrito {
   background-color: #44d62c;
@@ -62,31 +76,23 @@ nav {
   text-align: center;
   color: white;
 }
+#botonIngresar {
+  background-color: #44d62c;
+}
 #contador-favoritos {
-  background-color: #2ca6d6;
+  background-color: #44d62c;
   border-radius: 100%;
-  display: inline-block;
-  width: 20px;
+  padding: 0px 3px;
   line-height: 20px;
   aspect-ratio: 1;
   text-align: center;
   color: white;
   font-size: 15px;
 }
-#iconoCarrito {
-  height: 21px;
-}
-#nombreLogoMenu {
-  color: #44d62c;
-}
-#navbarSupportedContent {
-  background-color: rgb(29, 28, 28);
-  padding: 10px 0px;
-  border-radius: 20px;
-}
-#entradaBusqueda:focus {
-  border-color: #44d62c;
-  box-shadow: 0 0 0 0.25rem rgba(43, 255, 0, 0.25);
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 main {
   margin-top: 150px;
@@ -165,18 +171,7 @@ footer {
     display: block;
     text-align: center;
     justify-content: center;
-  }
-  #navbarSupportedContent {
-    text-align: center;
-  }
-  #navbarSupportedContent ul li {
-    border-radius: 40px;
-  }
-  #cajaBusqueda {
-    display: none;
-  }
-  #contenedorOrganizarNabvar {
-    justify-content: space-evenly;
+    margin-right: 20px;
   }
   #contenedorMapa {
     height: 400px;
@@ -185,21 +180,26 @@ footer {
     margin-top: 80px;
   }
 }
-@media screen and (max-width: 540px) and (orientation: portrait) {
-  #contenedorOrganizarNabvar {
-    display: block;
+@media screen and (max-width: 991px) {
+  .barraLateral {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
   }
-  #entradaBusqueda {
-    display: none;
+  #fueraDeArea {
+    display: flex;
+    flex-direction: column;
   }
-  #logobusqueda {
-    display: none;
+  .nav-link {
+    color: white;
+  }
+  #offcanvasNavbarLabel {
+    color: #44d62c;
   }
   #contenedorMapa {
     height: 500px;
   }
 }
-@media screen and (min-width: 481px) and (max-width: 1024px) {
+@media screen and (min-width: 481px) and (max-width: 1023px) {
   .objetosFooter {
     text-align: center;
   }
@@ -210,9 +210,19 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-right: 20px;
   }
-  #textoCentradoSubMenu {
-    text-align: center;
+}
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  #contenedorFlexibleNavbar {
+    display: flex;
+    flex-direction: column;
+  }
+  #cajaBusqueda {
+    display: none;
+  }
+  #conenedorQr {
+    margin-left: 20px;
   }
 
   #contenedorMapa {
