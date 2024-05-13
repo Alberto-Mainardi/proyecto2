@@ -24,6 +24,12 @@
 #textoLogo {
   color: #44d62c;
 }
+nav {
+  background-color: rgb(29, 28, 28);
+}
+.nav-link {
+  color: aliceblue;
+}
 .nav-link:hover {
   color: #44d62c;
   transform: scale(1.2);
@@ -150,8 +156,8 @@ footer {
   background: rgb(29, 28, 28);
   color: #f1f1f1;
   border-radius: 50%;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
-  transition: all .4s ease-in-out;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease-in-out;
 }
 
 .botonesRedes a:hover {
@@ -188,9 +194,6 @@ footer {
   #fueraDeArea {
     display: flex;
     flex-direction: column;
-  }
-  .nav-link {
-    color: white;
   }
   #offcanvasNavbarLabel {
     color: #44d62c;
