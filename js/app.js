@@ -1,20 +1,12 @@
 let recientes = document.querySelector("#recientes");
 let homeSlider = document.querySelector("#homeSlider");
-fetch('./json/articulos.json').then((response) => response.json())
+fetch('../json/articulos.json').then((response) => response.json())
 .then((data) => {
     let articulos = data.articulos;
     articulos.filter(articulo => {
         console.log(articulo.categorias);
         if (articulo.categorias.includes("recientes")) {
-            homeSlider.innerHTML += `
-            <div class="carousel-item">
-            <img src="${articulo.imagen}" class="d-block" alt="${articulo.alt}">
-            <div class="carousel-caption d-none d-md-block">
-            <h5>${articulo.nombre}</h5>
-            <p>${articulo.descripcion}</p>
-            </div>
-            </div>
-            `;
+            
 
 
             recientes.innerHTML += `
@@ -79,3 +71,11 @@ fetch('./json/articulos.json').then((response) => response.json())
 //     });
     })
 .catch((error) => console.error("No se pudo conseguir la data:", error))
+
+
+const formBusqueda = document.querySelector("#cajaBusqueda");
+formBusqueda.addEventListener("submit", function (e) {
+    e.preventDefault();
+    let busqueda = formBusqueda.elements['entradaBusqueda'].value.toLowerCase();
+    localStorage.setItem("busqueda",busqueda);
+})
