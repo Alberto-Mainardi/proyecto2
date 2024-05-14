@@ -5,6 +5,8 @@ window.onload=function () {
                 
 }
 
+mostrarHeader()
+
 function agregarTextoPagina(articulo) {
     let pagina = document.querySelector(`#pagina`);
 
@@ -47,9 +49,9 @@ function agregarTextoPagina(articulo) {
                         <!-- Modal1 -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Forma de entrega</h1>
+                            <div class="modal-content productosSectionModal secondary-color">
+                                <div class="modal-header border-dark">
+                                <h1 class="modal-title fs-5 secondary-color" id="exampleModalLabel">Forma de entrega</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body p-0">
@@ -65,40 +67,41 @@ function agregarTextoPagina(articulo) {
                                             <label for="buscar" class="fs-3 ms-2">Retirar de la sucursal</label>
                                         </div>
                                         
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary" onclick="seleccionarMetPago();agregarTextoPagina()" >Continuar</button>
+                                        <div class="modal-footer border-dark">
+                                            <button type="button" class="btn botonModal" onclick="seleccionarMetPago();agregarTextoPagina()" >Continuar</button>
                                         </div>
                                     </form>
                 
                                 </div>
                             </div>
                         </div>
-                        <!-- Modal2 -->
-                                    <div class="modal fade" id="exampleModalMetodos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Metodos de pago</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body p-0">
-                                                <form id="form-envio" class="form">
-                                                    <div>
-                                                        <h3 class="ps-4 mt-3 ms-2">Tarjetas de credito</h3>
-                                                        <img class="w-75 ps-4" src="./media/metodosPago1.jpg" alt="MDN" />
-                                                    </div>
-                                                    <hr class="m-0">
-                                                    <div>
-                                                        <h3 class="ps-4 mt-3 ms-2">Tarjetas de debito</h3>
-                                                        <img class="w-75 ps-4" src="./media/metodosPago2.jpg" alt="MDN" />
-                                                    </div>
-                                                    
-                                              
-                                                </form>
-                            
-                                            </div>
-                                        </div>
+                    </div>
+                    <!-- Modal2 -->
+                    <div class="modal fade" id="exampleModalMetodos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel secondary-color">Metodos de pago</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body p-0">
+                                <form id="form-envio" class="form">
+                                    <div>
+                                        <h3 class="ps-4 mt-3 ms-2">Tarjetas de credito</h3>
+                                        <img class="w-75 ps-4" src="./media/metodosPago1.jpg" alt="MDN" />
                                     </div>
+                                    <hr class="m-0">
+                                    <div>
+                                        <h3 class="ps-4 mt-3 ms-2">Tarjetas de debito</h3>
+                                        <img class="w-75 ps-4" src="./media/metodosPago2.jpg" alt="MDN" />
+                                    </div>
+                                    
+                              
+                                </form>
+            
+                            </div>
+                        </div>
+                    </div>
                                     
                         `
 

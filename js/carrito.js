@@ -267,10 +267,10 @@ function mostrarResumen() {
             
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Forma de entrega</h1>
+                <div class="modal-dialog modal-lg ">
+                <div class="modal-content productosSectionModal secondary-color ">
+                    <div class="modal-header border-dark">
+                    <h1 class="modal-title fs-5 " id="exampleModalLabel">Forma de entrega</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body p-0">
@@ -280,14 +280,14 @@ function mostrarResumen() {
                                 <label for="envio" class="fs-3 ms-2">Envio a domicilio</label>
                                 <span class="fs-3 position-relative start-50 ms-5">$8000</span>
                             </div>
-                            <hr class="m-0">
+                            <hr class="m-0 border-1">
                             <div class="forma-envio align-content-center ps-3">
                                 <input type="radio" id="retirar" name="tipo" value="retirar"/>
                                 <label for="retirar" class="fs-3 ms-2">Retirar de la sucursal</label>
                             </div>
                             
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" onclick="seleccionarMetPago() " >Continuar</button>
+                            <div class="modal-footer rounded-bottom-5 border-dark">
+                                <button type="button" class="btn botonModal" onclick="seleccionarMetPago() " >Continuar</button>
                             </div>
                         </form>
     
@@ -313,9 +313,9 @@ function seleccionarMetPago()  {
         let agregarTarjeta = document.querySelector("#exampleModal");
         agregarTarjeta.innerHTML=`
             <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Metodo de pago</h1>
+            <div class="modal-content productosSectionModal secondary-color ">
+                <div class="modal-header border-dark">
+                <h1 class="modal-title fs-5" id="exampleModalLabel secondary-color ">Metodo de pago</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0">
@@ -335,8 +335,8 @@ function seleccionarMetPago()  {
                             <label for="merPago" class="fs-3 ms-2">Mercado Pago</label>
                         </div>
                         
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" onclick="agregarDatosTarjeta()" >Continuar</button>
+                        <div class="modal-footer border-dark">
+                            <button type="button" class="btn botonModal" onclick="agregarDatosTarjeta()" >Continuar</button>
                         </div>
                     </form>
 
@@ -351,10 +351,10 @@ function seleccionarMetPago()  {
         console.log(enviar);    
         let agregarTarjeta = document.querySelector("#exampleModal");
         agregarTarjeta.innerHTML=`
-            <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Metodo de pago</h1>
+            <div class="modal-dialog modal-lg ">
+            <div class="modal-content productosSectionModal secondary-color ">
+                <div class="modal-header border-dark">
+                <h1 class="secondary-color modal-title fs-5" id="exampleModalLabel">Metodo de pago</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0">
@@ -374,8 +374,8 @@ function seleccionarMetPago()  {
                             <label for="merPago" class="fs-3 ms-2">Mercado Pago</label>
                         </div>
                         
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary"  onclick="agregarDatosTarjeta()" >Continuar</button>
+                        <div class="modal-footer border-dark">
+                            <button type="button" class="btn botonModal"  onclick="agregarDatosTarjeta()" >Continuar</button>
                         </div>
                     </form>
 
@@ -396,27 +396,33 @@ function agregarDatosTarjeta() {
         let agregarDatosTarjeta = document.querySelector("#exampleModal")
         agregarDatosTarjeta.innerHTML=`
         
-        <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos de la tarjeta</h1>
+        <div class="modal-dialog modal-lg ">
+        <div class="modal-content productosSectionModal secondary-color ">
+            <div class="modal-header border-dark">
+            <h1 class="modal-title fs-5 secondary-color " id="exampleModalLabel">Datos de la tarjeta</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-0">
                 <form id="form-datos" class="form">
-                    <div class="forma-pago align-content-center ps-3">
-                    <input type="number" placeholder="Numero de la tarjeta" class="w-50 p-2 my-3 " required/> 
-                    </div>
-                    <div class="forma-pago align-content-center ps-3">
-                        <input type="text" id="debito" placeholder="Titular de la Tarjeta" class="w-50 p-2 my-3" required/>
-                    </div>
-                    <div class="forma-pago align-content-center ps-3">
-                        <input type="date" id="date" value="Fecha de vencimiento" class="d-inline w-25 p-2 my-3" required/>
-                        <input type="number" id="codigoSeguridad" value="Codigo de seguridad" class="d-inline w-25 p-2 my-3" required/>
-                    </div>
-                    
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Continuar</button>
+                    <section class="row align-items-center">
+                        <div class="col-6">
+                            <div class="forma-pago align-content-center ps-3">
+                                <input type="number" placeholder="Numero de la tarjeta" class="w-100 p-2 my-3 " required/> 
+                            </div>
+                            <div class="forma-pago align-content-center ps-3">
+                                <input type="text" id="debito" placeholder="Titular de la Tarjeta" class="w-100 p-2 my-3" required/>
+                            </div>
+                            <div class="forma-pago align-content-center ps-3 d-flex justify-content-between">
+                                <input type="date" id="date" value="Fecha de vencimiento" class="d-inline p-2 my-3 input-fechaVenc" required/>
+                                <input type="number" id="codigoSeguridad" placeholder="Codigo de seguridad" class="d-inline p-2 my-3 input-codigoSeg" required/>
+                            </div>  
+                        </div>
+                        <div class="col-6 p-4 text-center">
+                            <img class="w-75 h-50 rounded-4" src="./media/tarjeta.jpg" alt="MDN" />                    
+                        </div>
+                    </section>
+                    <div class="modal-footer border-dark">
+                        <button type="submit" class="btn botonModal" data-bs-dismiss="modal">Continuar</button>
                     </div>
                 </form>
     
