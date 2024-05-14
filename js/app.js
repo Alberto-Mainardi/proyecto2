@@ -83,7 +83,7 @@ header.innerHTML=`
             </svg>Ingresar</a>
         </div>
         <div class="d-flex justify-content-center align-items-center pe-3">
-          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+          <a href="../carrito.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
             class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
             <path
               d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0" />
@@ -215,7 +215,8 @@ fetch('./json/articulos.json').then((response) => response.json())
         <h4 class="text-justify" style="text-overflow: ellipsis; white-space:nowrap; overflow: hidden;">${articulo.nombre}</h4>
         <div class="d-flex justify-content-between my-4">
             <h3>$${articulo.precio}</h3>
-            <button class="btn btn-primary">Comprar</button>
+            <button class="btn btn-primary" onclick="agregarAlCarrito(${articulo.id})">Comprar</button>
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="agregarFavoritos(${articulo.id});mostrarHeader()" class="favBoton" height="28px" viewBox="0 -960 960 960" width="28px" fill="black"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
         </div>
         <p class="text-justify"><strong>Descripción</strong> <br>
         ${articulo.descripcion}
