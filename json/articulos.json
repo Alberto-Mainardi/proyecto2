@@ -7,7 +7,7 @@
             "precio":"56400",
             "imagen": "https://asset.msi.com/resize/image/global/product/product_1_20190104112154_5c2ed15220159.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
             "alt":"Nvidia MSI RTX 2060",
-            "categorias":["recientes","placasDeVideo"],
+            "categorias":["recientes","placasDeVideo", "destacado"],
             "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
             "favorito":false,
             "estaEnCarrito":false
@@ -19,7 +19,7 @@
             "precio":"56400",
             "imagen": "https://http2.mlstatic.com/D_NQ_NP_632376-MLA74782526949_022024-O.webp",
             "alt":"Nvidia MSI RTX 2060",
-            "categorias":["recientes","placasDeVideo"],
+            "categorias":["recientes","placasDeVideo", "destacado"],
             "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
             "favorito":false,
             "estaEnCarrito":false
@@ -60,5 +60,8 @@
             "favorito":false,
             "estaEnCarrito":false
         }
+    ],
+    "categorias":[
+        "destacado", "recientes", "placasDeVideo"
     ]
 }
