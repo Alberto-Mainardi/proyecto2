@@ -9,7 +9,7 @@ header.innerHTML=`
 <nav class="navbar navbar-expand-lg fixed-top">
 <div id="contenedorFlexibleNavbar" class="container d-flex">
   <a id="textoLogo" class="navbar-brand fs-3" href="#">
-    <img id="logoMenu" src="./media/logo.png" alt="logo" />
+    <img id="logoMenu" src="../img/logo.png" alt="logo" />
     Tecnobyte
   </a>
   <button id="botonMenu" class="navbar-toggler shadow-none border-2" type="button" data-bs-toggle="offcanvas"
@@ -28,16 +28,16 @@ header.innerHTML=`
     <div id="fueraDeArea" class="offcanvas-body p-4">
       <ul class="navbar-nav fs-5 align-items-center justify-content-around flex-grow-1">
         <li class="nav-item mx-2">
-          <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+          <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
         </li>
         <li class="nav-item mx-2">
           <a class="nav-link" href="#">Destacados</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link" href="#">Favoritos <span id="contador-favoritos">0</span></a>
+          <a class="nav-link" href="../favoritos.html">Favoritos <span id="contador-favoritos">0</span></a>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link" href="./contactos.html">Contacto</a>
+          <a class="nav-link" href="../pages/contactos.html">Contacto</a>
         </li>
         <li class="nav-item mx-2 d-lg-none w-100 d-flex justify-content-around">
           <a href="https://www.facebook.com/"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
@@ -62,16 +62,16 @@ header.innerHTML=`
             </svg></a>
         </li>
         <li class="nav-item mx-2 text-decoration-none list-unstyled order-first">
-          <div id="cajaBusqueda">
+          <form id="cajaBusqueda">
             <input id="entradaBusqueda" type="text" class="form-control" placeholder="Buscar" />
-            <span id="logobusqueda">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              <button type="submit" id="logobusqueda" class="border-0 bg-opacity-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-search" viewBox="0 0 16 16">
                 <path
                   d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
               </svg>
-            </span>
-          </div>
+            </button>
+          </form>
         </li>
       </ul>
       <div class="d-flex justify-content-around p-4">
@@ -90,7 +90,7 @@ header.innerHTML=`
           </svg><span id="cuenta-carrito">0</span></a>
         </div>
         <div class="d-flex flex-column justify-content-center">
-          <a id="logoAyuda" href="./error404.html">
+          <a id="logoAyuda" href="../pages/error404.html">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
               class="bi bi-info-square" viewBox="0 0 16 16">
               <path
@@ -105,11 +105,11 @@ header.innerHTML=`
   </div>
 </div>
 </nav>
-`
+`;
 footer.innerHTML=`
             <div class="row d-flex align-items-center m-lg-3">
                 <div class="col-lg-3 col-md-12 text-center d-flex flex-column align-items-center mt-4">
-                    <img id="logo-footer" src="./media/logo.png" alt="logo" />
+                    <img id="logo-footer" src="../media/logo.png" alt="logo" />
                     <h2 class="pb-2 mt-3 secondary-color">TecnoByte</h2>
                 </div>
                 <div class="col-lg-2 col-md-6 d-flex flex-column objetosFooter">
@@ -192,7 +192,7 @@ footer.innerHTML=`
                         </p>
                         </div>
                         <div id="conenedorQr" class=" mt-lg-5 pt-lg-2 align-items-center ms-lg-5">
-                        <img id="imgQr" class="img-fluid" src="./media/frame.png" alt="qr" />
+                        <img id="imgQr" class="img-fluid" src="../media/frame.png" alt="qr" />
                         </div>
                     </div>
                     </div>
