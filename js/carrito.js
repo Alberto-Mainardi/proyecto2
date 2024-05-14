@@ -137,6 +137,7 @@ function eliminarProducto(id) {
     productosEnCarrito(nuevosProductos);
     mostrarResumen(id)
     mostrarNuevosProductos();
+    mostrarHeader()
 
 }
 
