@@ -173,7 +173,7 @@ function mostrarNuevosProductos() {
                     <div class="col-3 d-flex justify-content-center mb-3">
                     <button id="botonDisminuir${producto.id}" class="m-0 border-0 p-2" onclick="disminuirProducto(${producto.id})" disabled>-</button>
                     <p id="${producto.id}" class="m-0 p-2 bg-white text-dark" >1</p>
-                    <button class="m-0 border-0 p-2" onclick="aumentarProducto(${producto.id})">+</button>
+                    <button class="m-0 border-0 p-2 text-dark" onclick="aumentarProducto(${producto.id})">+</button>
                     </div>
                     <div id="precioProducto${producto.id}" class="col-2">
                     <p  class="text-center">$${producto.precio}</p>
@@ -418,7 +418,7 @@ function agregarDatosTarjeta() {
                             </div>  
                         </div>
                         <div class="col-6 p-4 text-center">
-                            <img class="w-75 h-50 rounded-4" src="./media/tarjeta.jpg" alt="MDN" />                    
+                            <img class="w-75 h-50 rounded-4" src="../media/tarjeta.jpg" alt="MDN" />                    
                         </div>
                     </section>
                     <div class="modal-footer border-dark">

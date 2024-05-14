@@ -70,6 +70,7 @@ function eliminarProductoFavorito(id) {
     
     productosEnFavoritos(nuevosProductos);
     mostrarProductosFavoritos();
+    mostrarHeader();
 
 }
 
