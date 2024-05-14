@@ -12,12 +12,23 @@
     color: var(--secondary-color);
 }
 
+main{
+    position: relative;
+    top: 1.5rem;
+    min-height: 100vh;
+}
+
 body{
     background-image: url(../media/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    
+}
+
+.favBoton{
+    cursor: pointer;
 }
 
 .productosSection{
@@ -43,10 +54,86 @@ body{
     cursor: pointer;
 }
 
+.productosSection{
+    background: rgb(0, 0, 0);
+    position: relative;
+    border-radius: 1rem;
+}
+.productosSection::before{
+    content: '';
+    background-image: linear-gradient(45deg, var(--secondary-color), black, var(--secondary-color));
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index:-1;
+    margin: -2px;
+    border-radius: 1rem;
+} 
+
+.hr-color{
+    color: var(--secondary-color);
+    height: 1px;
+}
+
+.botonCompra:hover{
+    background-color: rgb(4, 92, 7);
+    color: rgb(255, 255, 255);
+}
+
+.botonCompra{
+    background: var(--secondary-color);
+    color: black;
+    position: relative;
+    border-radius: 1rem;
+}
+
+.botonCompra::before{
+    content: '';
+    background-image: linear-gradient(45deg, var(--secondary-color), black, var(--secondary-color));
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index:-1;
+    margin: -2px;
+    border-radius: 1rem;
+} 
+
+.botonAgregar:hover{
+    background: rgb(63, 63, 63);
+}
+
+.botonAgregar{
+    background: rgb(109, 109, 109);
+    color: white;
+    position: relative;
+    border-radius: 1rem;
+}
+
+
 @media (min-width:1440px) {
     .columnaPagina{
         width: 28.02%;
-        height: 1500px;
+        /* height: 1500px; */
     }
+
+    .columnaPaginaSticky{
+        position: sticky;
+        top: 8.7rem;
+    }
+}
+
+
+@media (min-width:994px) {
+   #productosDiv{
+    border-radius: 1rem 1rem;
+   }
+
+   #resumenDiv{
+    border-radius: 0rem 1rem 1rem 0rem;
+   }
 }
 

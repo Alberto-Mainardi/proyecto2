@@ -14,13 +14,12 @@ function leerProductos() {
 }
 
 function mostrarProductos() {
-    
     let productoCarrito=document.getElementById("producto")
     let productos = leerProductos();
     productoCarrito.innerHTML=``;
     if (productos===null || productos.length===0) {
         productoCarrito.innerHTML+=`
-        <div class="d-flex justify-content-center flex-column align-items-center">
+        <div class="d-flex justify-content-center flex-column align-items-center ">
             <svg xmlns="http://www.w3.org/2000/svg" height="250px" viewBox="0 -960 960 960" width="250px" fill="#75FB4C">
             <path d="M640-452h-35l-59-60h85l126-228H316l-60-60h529q26 0 38 21.5t-2 46.5L680-476q-5.87 11.43-14.93 17.71Q656-452 640-452ZM286.79-81Q257
             -81 236-102.21t-21-51Q215-183 236.21-204t51-21Q317-225 338-203.79t21 51Q359-123 337.79-102t-51 21ZM851-35 595-289H277q-38 0-56-27.5t1-59.5l
@@ -33,12 +32,10 @@ function mostrarProductos() {
         ` 
         mostrarResumen()
     }else{
-        
         productos.forEach(producto => {
-        
             productoCarrito.innerHTML+=`
                 <div class="text-white row align-items-center px-3">
-                    <img width="200px" src="${producto.imagen}" alt="" class="img-fluid p-3 col-2">
+                    <img width="200px" src="${producto.imagen}" alt="" class="img-fluid p-3 col-2 d-none d-sm-inline-block">
                     <div class="col-5 ">
                     <p>${producto.nombre}</p>
                     <button class="btn p-0 border-0" id="botonEliminar" onclick="eliminarProducto(${producto.id},${producto.precio})">Eliminar</button>
@@ -263,7 +260,7 @@ function mostrarResumen() {
         <div class="d-flex justify-content-center">
            
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-success px-5 my-3 w-75" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-success px-5 my-3 w-75 botonCompra botonBorde" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Continuar compra
             </button>
             
