@@ -12,7 +12,6 @@ function leerFavoritos() {
 function mostrarProductosFavoritos() {
     
     let productoFavorito=document.getElementById("favorito")
-    console.log(document.querySelector(".mainfav"));
     productoFavorito.innerHTML=``;
     let productos = leerFavoritos();
     console.log(productos);
