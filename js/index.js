@@ -33,7 +33,7 @@ fetch('../json/articulos.json').then((response) => response.json())
         articulos.filter(articulo => {
             if (articulo.categorias.includes(categoria)) {
                 document.querySelector(`#productos-${categoria}`).innerHTML += `
-            <article id="${articulo.id}" onclick="paginaProducto(${articulo.id})" style="width: 85%; max-width: 300px; height:350px;" class="p-3 m-2 col-lg-2 ">
+            <article id="${articulo.id}" onclick="paginaProducto(${articulo.id})" style="width: 85%; max-width: 300px; height:350px;" class="p-3 m-2 col-lg-2">
             <a class="text-decoration-none text-white" href="./paginaProducto.html">
                 <div class="d-flex align-items-center justify-content-center" style="min-height: 200px;">
                 <img class="w-75 h-100" src="${articulo.imagen}" alt="${articulo.alt} style="object-fit: cover;">
