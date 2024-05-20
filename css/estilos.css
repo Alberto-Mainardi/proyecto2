@@ -165,6 +165,10 @@ nav {
   color: white;
   font-size: 15px;
 }
+#botonRecuperarCuenta{
+  background-color: #44d62c;
+  color: white;
+}
 body {
   display: flex;
   flex-direction: column;

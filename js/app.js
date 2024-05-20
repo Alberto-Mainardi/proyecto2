@@ -1,16 +1,14 @@
-let carrito=[]
-let favoritos=[]
+let carrito = [];
+let favoritos = [];
 let recientes = document.querySelector("#recientes");
 let header = document.querySelector("header");
-let footer = document.querySelector("footer")
-
+let footer = document.querySelector("footer");
 
 function mostrarHeader() {
-
-let cantidadEnCarrito=leerProductos();
-let cantidadEnFavoritos=leerFavoritos();
-if (cantidadEnCarrito===null && cantidadEnFavoritos===null) {
-  header.innerHTML=`
+  let cantidadEnCarrito = leerProductos();
+  let cantidadEnFavoritos = leerFavoritos();
+  if (cantidadEnCarrito === null && cantidadEnFavoritos === null) {
+    header.innerHTML = `
   <nav class="navbar navbar-expand-lg fixed-top">
   <div id="contenedorFlexibleNavbar" class="container d-flex">
     <a id="textoLogo" class="navbar-brand fs-3" href="#">
@@ -69,7 +67,7 @@ if (cantidadEnCarrito===null && cantidadEnFavoritos===null) {
           <li class="nav-item mx-2 text-decoration-none list-unstyled order-first">
             <form id="cajaBusqueda">
               <input id="entradaBusqueda" type="text" class="form-control" placeholder="Buscar" />
-                <button type="submit" id="logobusqueda" class="border-0 bg-opacity-0">
+                <button type="submit" id="logobusqueda" class="border-0 bg-opacity-0 bg-white">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-search" viewBox="0 0 16 16">
                   <path
@@ -80,14 +78,15 @@ if (cantidadEnCarrito===null && cantidadEnFavoritos===null) {
           </li>
         </ul>
         <div class="d-flex justify-content-around p-4">
-          <div class="d-flex justify-content-center align-items-center gap-3 pe-3">
-            <a id="botonIngresar" href="#ingresar" class="px-3 py-1 rounded-1 text-decoration-none d-flex"><svg
-                xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                class="bi bi-person-fill" viewBox="0 0 16 16">
-                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-              </svg>Ingresar</a>
-          </div>
-          <div class="d-flex justify-content-center align-items-center pe-3">
+        <div class="d-flex justify-content-center align-items-center gap-3 pe-3">
+        <a id="botonIngresar" href="#exampleModal" class="px-3 py-1 rounded-1 text-decoration-none d-flex" data-bs-toggle="modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+          </svg>
+          Ingresar
+        </a>
+        </div>
+        <div class="d-flex justify-content-center align-items-center pe-3">
             <a href="../carrito.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
               class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
               <path
@@ -105,14 +104,15 @@ if (cantidadEnCarrito===null && cantidadEnFavoritos===null) {
               </svg>
             </a>
           </div>
+       </div>
         </div>
       </div>
     </div>
   </div>
   </nav>
   `;
-}else if(cantidadEnCarrito!=null && cantidadEnFavoritos!=null){
-  header.innerHTML=`
+  } else if (cantidadEnCarrito != null && cantidadEnFavoritos != null) {
+    header.innerHTML = `
   <nav class="navbar navbar-expand-lg fixed-top">
   <div id="contenedorFlexibleNavbar" class="container d-flex">
     <a id="textoLogo" class="navbar-brand fs-3" href="#">
@@ -213,8 +213,8 @@ if (cantidadEnCarrito===null && cantidadEnFavoritos===null) {
   </div>
   </nav>
   `;
-}else if(cantidadEnFavoritos!=null){
-  header.innerHTML=`
+  } else if (cantidadEnFavoritos != null) {
+    header.innerHTML = `
   <nav class="navbar navbar-expand-lg fixed-top">
   <div id="contenedorFlexibleNavbar" class="container d-flex">
     <a id="textoLogo" class="navbar-brand fs-3" href="#">
@@ -315,8 +315,8 @@ if (cantidadEnCarrito===null && cantidadEnFavoritos===null) {
   </div>
   </nav>
   `;
-}else if(cantidadEnCarrito!=null){
-  header.innerHTML=`
+  } else if (cantidadEnCarrito != null) {
+    header.innerHTML = `
   <nav class="navbar navbar-expand-lg fixed-top">
   <div id="contenedorFlexibleNavbar" class="container d-flex">
     <a id="textoLogo" class="navbar-brand fs-3" href="#">
@@ -417,13 +417,12 @@ if (cantidadEnCarrito===null && cantidadEnFavoritos===null) {
   </div>
   </nav>
   `;
-}
-
+  }
 }
 
 mostrarHeader();
 
-footer.innerHTML=`
+footer.innerHTML = `
             <div class="row d-flex align-items-center m-lg-3">
                 <div class="col-lg-3 col-md-12 text-center d-flex flex-column align-items-center mt-4">
                     <img id="logo-footer" src="../media/logo.png" alt="logo" />
@@ -517,14 +516,14 @@ footer.innerHTML=`
             <p class="text-center pt-4 mb-0 secondary-color">
             &copy; 2024 Todos los derechos reservados
             </p>
-`
+`;
 
-
-fetch('./json/articulos.json').then((response) => response.json())
-.then((data) => {
+fetch("./json/articulos.json")
+  .then((response) => response.json())
+  .then((data) => {
     let articulos = data.articulos;
-    articulos.forEach(articulo => {
-        recientes.innerHTML += `
+    articulos.forEach((articulo) => {
+      recientes.innerHTML += `
         <article id="${articulo.id}" style="max-width: 400px; background-color: white; border-radius: 1rem" class="p-3 m-2 border border-2 col-lg-2">
         <div class="d-flex align-items-center justify-content-center" style="min-height: 200px;">
         <img class="w-75 h-100" src="${articulo.imagen}" alt="${articulo.alt} style="object-fit: cover;">
@@ -541,115 +540,150 @@ fetch('./json/articulos.json').then((response) => response.json())
     </article> 
         `;
     });
-})
-.catch((error) => console.error("No se pudo conseguir la data:", error))
+  })
+  .catch((error) => console.error("No se pudo conseguir la data:", error));
 
 function paginaProducto(id) {
-  fetch('./json/articulos.json').then((response) => response.json())
-  .then((data) => {
-  let articulos = data.articulos;
-  articulos.forEach(articulo => {
-      if (articulo.id==id) {
-          window.localStorage.setItem("pagina",JSON.stringify({id:articulo.id,imagen:articulo.imagen,nombre:articulo.nombre,precio:articulo.precio,descripcion:articulo.descripcion}))
-          return; 
-      }
-      
-  });
-})
-.catch((error) => console.error("No se pudo conseguir la data:", error))
+  fetch("./json/articulos.json")
+    .then((response) => response.json())
+    .then((data) => {
+      let articulos = data.articulos;
+      articulos.forEach((articulo) => {
+        if (articulo.id == id) {
+          window.localStorage.setItem(
+            "pagina",
+            JSON.stringify({
+              id: articulo.id,
+              imagen: articulo.imagen,
+              nombre: articulo.nombre,
+              precio: articulo.precio,
+              descripcion: articulo.descripcion,
+            })
+          );
+          return;
+        }
+      });
+    })
+    .catch((error) => console.error("No se pudo conseguir la data:", error));
 }
 
 function leerPagina() {
-  let pagina=localStorage.getItem("pagina");
-  return JSON.parse(pagina)
+  let pagina = localStorage.getItem("pagina");
+  return JSON.parse(pagina);
 }
 
-
-function agregarAlCarrito(id){
-  fetch('./json/articulos.json').then((response) => response.json())
-          .then((data) => {
-              let articulos = data.articulos;
-              let productos = leerProductos();
-              if (productos==null) {
-              articulos.find((articulo)=>{
-                  
-                  if (articulo.id==id) {
-                      if (carrito.length===0) {   
-                          carrito = [...carrito,{id:articulo.id,nombre:articulo.nombre,precio:articulo.precio,imagen:articulo.imagen}];
-                          console.log(carrito);
-                          productosEnCarrito(carrito)
-                          mostrarHeader();
-                          mostrarProductos();
-                          } 
-                      }
-                  })
-              }else{
-                  carrito=productos;
-                  articulos.find((articulo)=>{
-                  
-                      if (articulo.id==id) {
-                          if (carrito.some(producto=>producto.id==id)) {   
-                              
-                              } else{
-                                  carrito = [...carrito,{id:articulo.id,nombre:articulo.nombre,precio:articulo.precio,imagen:articulo.imagen}];
-                                  console.log(carrito);
-                                  productosEnCarrito(carrito)
-                                  mostrarHeader()
-                                  mostrarProductos()
-                              }
-                     
-                          }
-  
-                      })
-              }
-              
-}).catch((error) => console.error("No se pudo conseguir la data:", error))
+function agregarAlCarrito(id) {
+  fetch("./json/articulos.json")
+    .then((response) => response.json())
+    .then((data) => {
+      let articulos = data.articulos;
+      let productos = leerProductos();
+      if (productos == null) {
+        articulos.find((articulo) => {
+          if (articulo.id == id) {
+            if (carrito.length === 0) {
+              carrito = [
+                ...carrito,
+                {
+                  id: articulo.id,
+                  nombre: articulo.nombre,
+                  precio: articulo.precio,
+                  imagen: articulo.imagen,
+                },
+              ];
+              console.log(carrito);
+              productosEnCarrito(carrito);
+              mostrarHeader();
+              mostrarProductos();
+            }
+          }
+        });
+      } else {
+        carrito = productos;
+        articulos.find((articulo) => {
+          if (articulo.id == id) {
+            if (carrito.some((producto) => producto.id == id)) {
+            } else {
+              carrito = [
+                ...carrito,
+                {
+                  id: articulo.id,
+                  nombre: articulo.nombre,
+                  precio: articulo.precio,
+                  imagen: articulo.imagen,
+                },
+              ];
+              console.log(carrito);
+              productosEnCarrito(carrito);
+              mostrarHeader();
+              mostrarProductos();
+            }
+          }
+        });
+      }
+    })
+    .catch((error) => console.error("No se pudo conseguir la data:", error));
 }
 
-function agregarFavoritos(id){
-  fetch('./json/articulos.json').then((response) => response.json())
-          .then((data) => {
-              let articulos = data.articulos;
-              let productos = leerFavoritos();
-              if (productos==null) {
-              articulos.find((articulo)=>{
-                  
-                  if (articulo.id==id) {
-                      if (favoritos.length===0 || favoritos[favoritos.length-1].id!=id) {   
-                          favoritos = [...favoritos,{id:articulo.id,nombre:articulo.nombre,precio:articulo.precio,imagen:articulo.imagen}];
-                          productosEnFavoritos(favoritos)
-                          mostrarHeader()
-                          mostrarProductosFavoritos()
-                          } 
-                      }
-                  })
-              }else{
-                  favoritos=productos;
-                  articulos.find((articulo)=>{
-                  
-                      if (articulo.id==id) {
-                          if (favoritos.some(producto=>producto.id==id)) {   
-                              
-                              } else{
-                                  favoritos = [...favoritos,{id:articulo.id,nombre:articulo.nombre,precio:articulo.precio,imagen:articulo.imagen}];
-                                  console.log(favoritos);
-                                  productosEnFavoritos(favoritos)
-                                  mostrarHeader()
-                                  mostrarProductosFavoritos()
-                              }
-                     
-                          }
-  
-                      })
-              }
-              
-}).catch((error) => console.error("No se pudo conseguir la data:", error))
+function agregarFavoritos(id) {
+  fetch("./json/articulos.json")
+    .then((response) => response.json())
+    .then((data) => {
+      let articulos = data.articulos;
+      let productos = leerFavoritos();
+      if (productos == null) {
+        articulos.find((articulo) => {
+          if (articulo.id == id) {
+            if (
+              favoritos.length === 0 ||
+              favoritos[favoritos.length - 1].id != id
+            ) {
+              favoritos = [
+                ...favoritos,
+                {
+                  id: articulo.id,
+                  nombre: articulo.nombre,
+                  precio: articulo.precio,
+                  imagen: articulo.imagen,
+                },
+              ];
+              productosEnFavoritos(favoritos);
+              mostrarHeader();
+              mostrarProductosFavoritos();
+            }
+          }
+        });
+      } else {
+        favoritos = productos;
+        articulos.find((articulo) => {
+          if (articulo.id == id) {
+            if (favoritos.some((producto) => producto.id == id)) {
+            } else {
+              favoritos = [
+                ...favoritos,
+                {
+                  id: articulo.id,
+                  nombre: articulo.nombre,
+                  precio: articulo.precio,
+                  imagen: articulo.imagen,
+                },
+              ];
+              console.log(favoritos);
+              productosEnFavoritos(favoritos);
+              mostrarHeader();
+              mostrarProductosFavoritos();
+            }
+          }
+        });
+      }
+    })
+    .catch((error) => console.error("No se pudo conseguir la data:", error));
 }
 
 const formBusqueda = document.querySelector("#cajaBusqueda");
 formBusqueda.addEventListener("submit", function (e) {
-    e.preventDefault();
-    let busqueda = formBusqueda.elements['entradaBusqueda'].value.toLowerCase();
-    localStorage.setItem("busqueda",busqueda);
-    window.location.href="../pages/busqueda.html"
-})
+  e.preventDefault();
+  let busqueda = formBusqueda.elements["entradaBusqueda"].value.toLowerCase();
+  localStorage.setItem("busqueda", busqueda);
+  window.location.href = "../pages/busqueda.html";
+});
