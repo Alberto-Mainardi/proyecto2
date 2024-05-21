@@ -46,7 +46,7 @@ function mostrarProductos() {
                     <p id="${producto.id}" class="m-0 p-2 bg-white text-dark" >1</p>
                     <button class="m-0 border-0 p-2" onclick="aumentarProducto(${producto.id})">+</button>
                     </div>
-                    <div id="precioProducto${producto.id}" class="col-2">
+                    <div id="precioProducto${producto.id}" class="col-2 ms-4 ms-sm-0">
                     <p  class="text-center">$${producto.precio}</p>
                     </div>
                 </div>
@@ -166,7 +166,7 @@ function mostrarNuevosProductos() {
         
             productoCarrito.innerHTML+=`
                 <div class="text-white row align-items-center px-3">
-                    <img width="200px" src="${producto.imagen}" alt="" class="img-fluid p-3 col-2">
+                    <img width="200px" src="${producto.imagen}" alt="" class="img-fluid p-3 col-2 d-none d-sm-inline-block">
                     <div class="col-5 ">
                     <p>${producto.nombre}</p>
                     <button class="btn p-0 border-0" id="botonEliminar" onclick="eliminarProducto(${producto.id},${producto.precio})">Eliminar</button>
@@ -176,7 +176,7 @@ function mostrarNuevosProductos() {
                     <p id="${producto.id}" class="m-0 p-2 bg-white text-dark" >1</p>
                     <button class="m-0 border-0 p-2 text-dark" onclick="aumentarProducto(${producto.id})">+</button>
                     </div>
-                    <div id="precioProducto${producto.id}" class="col-2">
+                    <div id="precioProducto${producto.id}" class="col-2 ms-4 ms-sm-0">
                     <p  class="text-center">$${producto.precio}</p>
                     </div>
                 </div>
@@ -279,7 +279,7 @@ function mostrarResumen() {
                             <div class="forma-envio align-content-center ps-3">
                                 <input type="radio" id="envio" name="tipo" value="envio"/>
                                 <label for="envio" class="fs-3 ms-2">Envio a domicilio</label>
-                                <span class="fs-3 position-relative start-50 ms-5">$8000</span>
+                                <span class="fs-3 d-none d-lg-inline position-relative start-50 ms-5">$8000</span>
                             </div>
                             <hr class="m-0 border-1">
                             <div class="forma-envio align-content-center ps-3">

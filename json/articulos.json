@@ -3,19 +3,19 @@
         {
             "id":"1",
             "nombre":"Placa de video Nvidia MSI Ventus GeForce RTX 20 Series RTX 2060 SUPER GEFORCE RTX 2060 SUPER VENTUS GP OC OC Edition 8GB",
-            "descripcion": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta impedit iusto, eveniet facere officiis exercitationem minima temporibus accusamus provident omnis, est eligendi, adipisci id voluptate dolor! Rem dignissimos dolore reprehenderit.Dolorem eos nemo veritatis molestiae vitae neque facere tempora dicta error accusamus eveniet sapiente qui voluptates, odit blanditiis totam esse perspiciatis ut consequuntur dignissimos tempore. Pariatur corporis explicabo nostrum libero!Omnis earum quisquam perspiciatis ipsam optio ut ipsum facilis maiores fugiat quia accusantium itaque, impedit unde expedita asperiores hic fugit sed exercitationem cupiditate modi id veniam iusto. Veniam, quae esse.Assumenda earum, aliquam optio quibusdam aspernatur dolor impedit vel placeat illum eum, eveniet hic voluptatum nobis quis facere sint itaque odit. Nesciunt totam repellat veniam! Amet optio fugit vitae rerum.Mollitia, natus sequi possimus ipsa nobis dolores voluptatibus.",
+            "descripcion": " Este componente electrónico procesa la información que llega al dispositivo y los transforma en imágenes o videos para mostrarla visualmente. Es ideal para trabajar con aplicaciones gráficas ya que permite obtener imágenes más nítidas. Nvidia es el fabricante líder de placas de video; su calidad asegura una experiencia positiva en el desarrollo del motor gráfico de tu computadora. Además, sus procesadores usan tecnología de punta para que puedas disfrutar de un producto veloz y duradero. En el menor tiempo posible Con una velocidad de memoria de 14000 MHz los datos del procesador central se van a traducir en información comprensible en tan solo un abrir y cerrar de ojos; decodificará tantos ciclos por segundo que hará más efectiva la transmisión de datos a otros componentes. Con esta cualidad, el equipo ganará agilidad y eficiencia.",
             "precio":"56400",
             "imagen": "https://asset.msi.com/resize/image/global/product/product_1_20190104112154_5c2ed15220159.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
             "alt":"Nvidia MSI RTX 2060",
-            "categorias":["recientes","placasDeVideo", "destacado"],
+            "categorias":["placasDeVideo", "destacado"],
             "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
             "favorito":false,
             "estaEnCarrito":false
         },
         {
             "id":"2",
-            "nombre":"Placa de video Nvidia MSI Ventus GeForce RTX 20 Series RTX 2060 SUPER GEFORCE RTX 2060 SUPER VENTUS GP OC OC Edition 8GB",
-            "descripcion": "placeholder",
+            "nombre":"GeForce RTX™ 3090 GAMING X TRIO 24G NVIDIA® GeForce RTX™ 3090 PCI Express® Gen 4",
+            "descripcion": "Nvidia es el fabricante líder de placas de video; su calidad asegura una experiencia positiva en el desarrollo del motor gráfico de tu computadora. Además, sus procesadores usan tecnología de punta para que puedas disfrutar de un producto veloz y duradero.",
             "precio":"120000",
             "imagen": "https://gamerspit.com.ar/wp-content/uploads/2021/11/placa-de-video-msi-geforce-rtx-3090-ventus-3x-24g-450x450.png",
             "alt":"Nvidia MSI RTX 2060",
@@ -26,12 +26,12 @@
         },
         {
             "id":"3",
-            "nombre":"Placa",
-            "descripcion": "placeholder",
+            "nombre":"Placa de video Nvidia MSI GeForce GTX 950 GAMING 2G Series MSI GTX 900 series GAMING",
+            "descripcion": "Este componente electrónico procesa la información que llega al dispositivo y los transforma en imágenes o videos para mostrarla visualmente. Es ideal para trabajar con aplicaciones gráficas ya que permite obtener imágenes más nítidas. Nvidia es el fabricante líder de placas de video; su calidad asegura una experiencia positiva en el desarrollo del motor gráfico de tu computadora. Además, sus procesadores usan tecnología de punta para que puedas disfrutar de un producto veloz y duradero. En el menor tiempo posible Con una velocidad de memoria de 14000 MHz los datos del procesador central se van a traducir en información comprensible en tan solo un abrir y cerrar de ojos; decodificará tantos ciclos por segundo que hará más efectiva la transmisión de datos a otros componentes. Con esta cualidad, el equipo ganará agilidad y eficiencia.",
             "precio":"56400",
-            "imagen": "https://asset.msi.com/resize/image/global/product/product_0_20160309172456_56dfebe853e8e.png62405b38c58fe0f07fcef2367d8a9ba1/400.png",
+            "imagen": "https://static.gigabyte.com/StaticFile/Image/Global/e543cc96b1f52a2fed37e5af60e4646a/Product/26044/webp/300",
             "alt":"Nvidia MSI RTX 2060",
-            "categorias":["recientes","placasDeVideo"],
+            "categorias":["placasDeVideo"],
             "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
             "favorito":false,
             "estaEnCarrito":false
@@ -39,11 +39,11 @@
         {
             "id":"4",
             "nombre":"Placa de video Nvidia MSI Ventus GeForce RTX 20 Series RTX 2060 SUPER GEFORCE RTX 2060 SUPER VENTUS GP OC OC Edition 8GB",
-            "descripcion": "placeholder",
+            "descripcion": "Este componente electrónico procesa la información que llega al dispositivo y los transforma en imágenes o videos para mostrarla visualmente. Es ideal para trabajar con aplicaciones gráficas ya que permite obtener imágenes más nítidas. Nvidia es el fabricante líder de placas de video; su calidad asegura una experiencia positiva en el desarrollo del motor gráfico de tu computadora. Además, sus procesadores usan tecnología de punta para que puedas disfrutar de un producto veloz y duradero. En el menor tiempo posible Con una velocidad de memoria de 14000 MHz los datos del procesador central se van a traducir en información comprensible en tan solo un abrir y cerrar de ojos; decodificará tantos ciclos por segundo que hará más efectiva la transmisión de datos a otros componentes. Con esta cualidad, el equipo ganará agilidad y eficiencia.",
             "precio":"56400",
-            "imagen": "https://http2.mlstatic.com/D_NQ_NP_632376-MLA74782526949_022024-O.webp",
+            "imagen": "https://static.gigabyte.com/StaticFile/Image/Global/eb3caf544215f0272a422656ae1ddd5e/Product/32494/webp/300",
             "alt":"Nvidia MSI RTX 2060",
-            "categorias":["recientes","placasDeVideo"],
+            "categorias":["recientes","placasDeVideo", "destacado"],
             "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
             "favorito":false,
             "estaEnCarrito":false
@@ -51,17 +51,102 @@
         {
             "id":"5",
             "nombre":"Placa de video Nvidia MSI Ventus GeForce RTX 20 Series RTX 2060 SUPER GEFORCE RTX 2060 SUPER VENTUS GP OC OC Edition 8GB",
-            "descripcion": "placeholder",
+            "descripcion": "Este componente electrónico procesa la información que llega al dispositivo y los transforma en imágenes o videos para mostrarla visualmente. Es ideal para trabajar con aplicaciones gráficas ya que permite obtener imágenes más nítidas. Nvidia es el fabricante líder de placas de video; su calidad asegura una experiencia positiva en el desarrollo del motor gráfico de tu computadora. Además, sus procesadores usan tecnología de punta para que puedas disfrutar de un producto veloz y duradero. En el menor tiempo posible Con una velocidad de memoria de 14000 MHz los datos del procesador central se van a traducir en información comprensible en tan solo un abrir y cerrar de ojos; decodificará tantos ciclos por segundo que hará más efectiva la transmisión de datos a otros componentes. Con esta cualidad, el equipo ganará agilidad y eficiencia.",
             "precio":"56400",
-            "imagen": "https://http2.mlstatic.com/D_NQ_NP_632376-MLA74782526949_022024-O.webp",
+            "imagen": "https://static.gigabyte.com/StaticFile/Image/Global/fe343838b3b53d531a5368eb00e2aa41/Product/36150/webp/300",
             "alt":"Nvidia MSI RTX 2060",
             "categorias":["recientes","placasDeVideo"],
             "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
             "favorito":false,
             "estaEnCarrito":false
+        },
+        {
+            "id":"6",
+            "nombre":"Placa de video Nvidia MSI Ventus GeForce RTX 20 Series RTX 2060 SUPER GEFORCE RTX 2060 SUPER VENTUS GP OC OC Edition 8GB",
+            "descripcion": "Este componente electrónico procesa la información que llega al dispositivo y los transforma en imágenes o videos para mostrarla visualmente. Es ideal para trabajar con aplicaciones gráficas ya que permite obtener imágenes más nítidas. Nvidia es el fabricante líder de placas de video; su calidad asegura una experiencia positiva en el desarrollo del motor gráfico de tu computadora. Además, sus procesadores usan tecnología de punta para que puedas disfrutar de un producto veloz y duradero. En el menor tiempo posible Con una velocidad de memoria de 14000 MHz los datos del procesador central se van a traducir en información comprensible en tan solo un abrir y cerrar de ojos; decodificará tantos ciclos por segundo que hará más efectiva la transmisión de datos a otros componentes. Con esta cualidad, el equipo ganará agilidad y eficiencia.",
+            "precio":"120000",
+            "imagen": "https://static.gigabyte.com/StaticFile/Image/Global/25da5355d518eba241dd59ac4c36e20f/Product/15189/webp/300",
+            "alt":"Nvidia MSI RTX 2060",
+            "categorias":["placasDeVideo", "destacado"],
+            "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
+            "favorito":false,
+            "estaEnCarrito":false
+        },
+        {
+            "id":"7",
+            "nombre":"AORUS K9 Optical USB 2.0 AORUS Engine Ultra Durable - 100 Million Keystrokes",
+            "descripcion": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta impedit iusto, eveniet facere officiis exercitationem minima temporibus accusamus provident omnis, est eligendi, adipisci id voluptate dolor! Rem dignissimos dolore reprehenderit.Dolorem eos nemo veritatis molestiae vitae neque facere tempora dicta error accusamus eveniet sapiente qui voluptates, odit blanditiis totam esse perspiciatis ut consequuntur dignissimos tempore. Pariatur corporis explicabo nostrum libero!Omnis earum quisquam perspiciatis ipsam optio ut ipsum facilis maiores fugiat quia accusantium itaque, impedit unde expedita asperiores hic fugit sed exercitationem cupiditate modi id veniam iusto. Veniam, quae esse.Assumenda earum, aliquam optio quibusdam aspernatur dolor impedit vel placeat illum eum, eveniet hic voluptatum nobis quis facere sint itaque odit. Nesciunt totam repellat veniam! Amet optio fugit vitae rerum.Mollitia, natus sequi possimus ipsa nobis dolores voluptatibus.",
+            "precio":"20000",
+            "imagen": "https://static.gigabyte.com/StaticFile/Image/Global/e2442b80f054e0eb7bd35d6af97eee89/Product/18856/webp/300",
+            "alt":"Nvidia MSI RTX 2060",
+            "categorias":["recientes","teclados"],
+            "keywords":["teclado","periferico"],
+            "favorito":false,
+            "estaEnCarrito":false
+        },
+        {
+            "id":"8",
+            "nombre":"KM6300 Optical USB 2.0 AORUS Engine Ultra Durable - 100 Million Keystrokes",
+            "descripcion": "placeholder",
+            "precio":"33000",
+            "imagen": "https://static.gigabyte.com/StaticFile/Image/Global/441b7af552227712a6ef630f00a85480/Product/20812/webp/300",
+            "alt":"Nvidia MSI RTX 2060",
+            "categorias":["recientes","teclados", "destacado"],
+            "keywords":["teclado","periferico"],
+            "favorito":false,
+            "estaEnCarrito":false
+        },
+        {
+            "id":"9",
+            "nombre":"AORUS K7 Optical USB 2.0 AORUS Engine Ultra Durable - 100 Million Keystrokes",
+            "descripcion": "placeholder",
+            "precio":"22000",
+            "imagen": "https://static.gigabyte.com/StaticFile/Image/Global/5db4535c2cb6f167ec90827f73e1e669/Product/18150/webp/300",
+            "alt":"Nvidia MSI RTX 2060",
+            "categorias":["teclados"],
+            "keywords":["teclado","periferico"],
+            "favorito":false,
+            "estaEnCarrito":false
+        },
+        {
+            "id":"10",
+            "nombre":"AORUS K1 Optical USB 2.0 AORUS Engine Ultra Durable - 100 Million Keystrokes",
+            "descripcion": "placeholder",
+            "precio":"16000",
+            "imagen": "https://static.gigabyte.com/StaticFile/Image/Global/091e5cf65b26735dfb7d7a47c3efc798/Product/14500/webp/300",
+            "alt":"Nvidia MSI RTX 2060",
+            "categorias":["teclados", "destacado"],
+            "keywords":["teclado","periferico"],
+            "favorito":false,
+            "estaEnCarrito":false
+        },
+        {
+            "id":"11",
+            "nombre":"AORUS K9 Optical USB 2.0 AORUS Engine Ultra Durable - 100 Million Keystrokes",
+            "descripcion": "placeholder",
+            "precio":"23000",
+            "imagen": "https://static.gigabyte.com/StaticFile/Image/Global/69f09972d31b9f84e07a4cdb6431ac43/Product/16138/webp/300",
+            "alt":"Nvidia MSI RTX 2060",
+            "categorias":["teclados"],
+            "keywords":["teclado","periferico"],
+            "favorito":false,
+            "estaEnCarrito":false
+        },
+        {
+            "id":"12",
+            "nombre":"FORCE K7 Wireless USB 2.0 AORUS Engine Ultra Durable - 100 Million Keystrokes",
+            "descripcion": "placeholder",
+            "precio":"24500",
+            "imagen": "https://static.gigabyte.com/StaticFile/Image/Global/d21039b42999a110282c96972b9409ac/Product/11294/webp/300",
+            "alt":"Nvidia MSI RTX 2060",
+            "categorias":["recientes","teclados"],
+            "keywords":["teclado","periferico"],
+            "favorito":false,
+            "estaEnCarrito":false
         }
     ],
     "categorias":[
-        "destacado", "recientes", "placasDeVideo"
+        {"id":1,"nombre":"destacado"}, {"id":2,"nombre":"recientes"},{"id":3,"nombre":"placasDeVideo"},{"id":4,"nombre":"teclados"}
     ]
+
 }
