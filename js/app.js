@@ -2,8 +2,7 @@ let carrito=[];
 let favoritos=[];
 let recientes = document.querySelector("#recientes");
 let header = document.querySelector("header");
-let footer = document.querySelector("footer")
-
+let footer = document.querySelector("footer");
 
 function mostrarHeader() {
 let carrito = 0
@@ -128,7 +127,7 @@ return;
 
 mostrarHeader();
 
-footer.innerHTML=`
+footer.innerHTML = `
             <div class="row d-flex align-items-center m-lg-3">
                 <div class="col-lg-3 col-md-12 text-center d-flex flex-column align-items-center mt-4">
                     <img id="logo-footer" src="../media/logo.png" alt="logo" />
@@ -225,25 +224,33 @@ footer.innerHTML=`
 `
 
 function paginaProducto(id) {
-  fetch('./json/articulos.json').then((response) => response.json())
-  .then((data) => {
-  let articulos = data.articulos;
-  articulos.forEach(articulo => {
-      if (articulo.id==id) {
-          window.localStorage.setItem("pagina",JSON.stringify({id:articulo.id,imagen:articulo.imagen,nombre:articulo.nombre,precio:articulo.precio,descripcion:articulo.descripcion}))
-          return; 
-      }
-      
-  });
-})
-.catch((error) => console.error("No se pudo conseguir la data:", error))
+  fetch("./json/articulos.json")
+    .then((response) => response.json())
+    .then((data) => {
+      let articulos = data.articulos;
+      articulos.forEach((articulo) => {
+        if (articulo.id == id) {
+          window.localStorage.setItem(
+            "pagina",
+            JSON.stringify({
+              id: articulo.id,
+              imagen: articulo.imagen,
+              nombre: articulo.nombre,
+              precio: articulo.precio,
+              descripcion: articulo.descripcion,
+            })
+          );
+          return;
+        }
+      });
+    })
+    .catch((error) => console.error("No se pudo conseguir la data:", error));
 }
 
 function leerPagina() {
-  let pagina=localStorage.getItem("pagina");
-  return JSON.parse(pagina)
+  let pagina = localStorage.getItem("pagina");
+  return JSON.parse(pagina);
 }
-
 
 function agregarAlCarrito(id){
   if (estaActivo) {

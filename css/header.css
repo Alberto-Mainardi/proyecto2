@@ -95,6 +95,20 @@ nav {
   color: white;
   font-size: 15px;
 }
+.modal-title{
+  color: #44d62c;
+}
+.modal-title:hover {
+  transform: scale(1.1);
+  transition: all 0.4s ease-in-out;
+}
+#botonModalIngresar{
+  background-color:#44d62c ;
+  color: white;
+}
+#botonModalIngresar:hover{
+  background-color: #43d62c9c;
+}
 body {
   display: flex;
   flex-direction: column;
