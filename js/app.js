@@ -600,43 +600,46 @@ function comprarAhoraClick () {
 
 
 function agregarFavoritos(id){
-  fetch('./json/articulos.json').then((response) => response.json())
-          .then((data) => {
-              let articulos = data.articulos;
-              let productos = leerFavoritos();
-              if (productos==null) {
-              articulos.find((articulo)=>{
-                  
-                  if (articulo.id==id) {
-                      if (favoritos.length===0 || favoritos[favoritos.length-1].id!=id) {   
-                          favoritos = [...favoritos,{id:articulo.id,nombre:articulo.nombre,precio:articulo.precio,imagen:articulo.imagen}];
-                          productosEnFavoritos(favoritos)
-                          mostrarHeader()
-                          mostrarProductosFavoritos()
-                          } 
-                      }
-                  })
-              }else{
-                  favoritos=productos;
-                  articulos.find((articulo)=>{
-                  
-                      if (articulo.id==id) {
-                          if (favoritos.some(producto=>producto.id==id)) {   
-                              
-                              } else{
-                                  favoritos = [...favoritos,{id:articulo.id,nombre:articulo.nombre,precio:articulo.precio,imagen:articulo.imagen}];
-                                  console.log(favoritos);
-                                  productosEnFavoritos(favoritos)
-                                  mostrarHeader()
-                                  mostrarProductosFavoritos()
-                              }
-                     
-                          }
-  
-                      })
-              }
-              
+  if (estaActivo) {
+    fetch('./json/articulos.json').then((response) => response.json())
+    .then((data) => {
+        let articulos = data.articulos;
+        let productos = leerFavoritos();
+        if (productos==null) {
+        articulos.find((articulo)=>{
+            
+            if (articulo.id==id) {
+                if (favoritos.length===0 || favoritos[favoritos.length-1].id!=id) {   
+                    favoritos = [...favoritos,{id:articulo.id,nombre:articulo.nombre,precio:articulo.precio,imagen:articulo.imagen}];
+                    productosEnFavoritos(favoritos)
+                    mostrarHeader()
+                    mostrarProductosFavoritos()
+                    } 
+                }
+            })
+        }else{
+            favoritos=productos;
+            articulos.find((articulo)=>{
+            
+                if (articulo.id==id) {
+                    if (favoritos.some(producto=>producto.id==id)) {   
+                        
+                        } else{
+                            favoritos = [...favoritos,{id:articulo.id,nombre:articulo.nombre,precio:articulo.precio,imagen:articulo.imagen}];
+                            console.log(favoritos);
+                            productosEnFavoritos(favoritos)
+                            mostrarHeader()
+                            mostrarProductosFavoritos()
+                        }
+               
+                    }
+
+                })
+        }
+        
 }).catch((error) => console.error("No se pudo conseguir la data:", error))
+}
+
 }
 
 const formBusqueda = document.querySelector("#cajaBusqueda");
