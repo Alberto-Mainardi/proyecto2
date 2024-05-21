@@ -511,8 +511,8 @@ footer {
 
 .slider .producto{
   transition: 0.5s;
-  margin-left: 40px!important;
-  margin-right: 34px!important;
+  margin-left: 55px!important;
+  margin-right: 80px!important;
 
 }
 
@@ -564,8 +564,8 @@ footer {
 
     .slider .producto{
       transition: 0.5s;
-      margin-left: 20px!important;
-      margin-right: 28px!important;
+      margin-left: 10px!important;
+      margin-right: 10px!important;
     
     }
 
@@ -607,7 +607,8 @@ footer {
 
 @media(max-width:711px){
   .slider .producto{
-    margin-left: 22.8px!important;
+    margin-left: 35px!important;
+    margin-right: 18px!important;
   }
 
   .slider .arrow{
@@ -626,6 +627,7 @@ footer {
     margin-top: 7px!important;
   }
   
+  
 }
 
 .productoBusqueda{
@@ -642,4 +644,22 @@ footer {
 #resultadosBusqueda{
   
   padding:2rem 0rem 2rem 1.65rem;
+}
+
+.accordion-button {
+  background-color: black;
+  color: #44d62c;
+ 
+}
+
+.accordion-button:not(.collapsed) {
+  color: rgb(255, 255, 255);
+  background-color: #2d991d;
+  
+}
+
+.accordion-body {
+  background-color: black;
+  color: #44d62c;
+ 
 }

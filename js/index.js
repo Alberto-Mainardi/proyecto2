@@ -46,8 +46,8 @@ function mostrarContenido() {
         categoriaDisplay = categoria.nombre.replace(/([A-Z])/g, ' $1').trim();
         categoriaDisplay = categoriaDisplay[0].toUpperCase() + categoriaDisplay.substring(1);
         contenido.innerHTML += `
-        <div class="container-fluid d-flex justify-content-center row">
-      <section class="productosSection col-10 m-4 p-1 p-md-3 p-lg-4" >
+        <div class="container-fluid d-flex justify-content-center justify-content-xxl-end row">
+      <section class="productosSection col-12 m-4 p-1 p-md-3 p-lg-4" >
         <h3 class="secondary-color">${categoriaDisplay}</h3>
         <div id="productos-${categoria.id}" class="d-flex slider productos-${categoria.id} ms-lg-3">   
             <div class="arrow">
