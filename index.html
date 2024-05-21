@@ -41,9 +41,53 @@
       </button>
     </div>
 
+    <form id="formularioRegistro" class="form">
+      <div class="mb-3">
+        <label for="emailRegistro" class="form-label">Correo</label>
+        <input type="email" class="form-control" id="emailRegistro" aria-describedby="emailHelp" required>
+      </div>
+      <div id="emailExiste" class="mb-3"></div>
+      <div class="mb-3">
+        <label for="usernameRegistro" class="form-label">Nombre de Usuario</label>
+        <input type="text" class="form-control" id="usernameRegistro" required>
+      </div>
+      <div class="mb-3">
+        <label for="passwordRegistro" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="passwordRegistro" required>
+      </div>
+<div class="modal-footer">
+<button type="submit" class="btn btn-primary">Registrarme</button>
+</div>
+</form>
 
-    <div id="contenido"></div>
 
+
+<form id="formularioLogin" class="form">
+  <div class="mb-3">
+    <label for="usernameLogin" class="form-label secondary-color">Correo Electrónico o Nombre de Usuario</label>
+    <input type="text" class="form-control" id="usernameLogin" required>
+  </div>
+  <div id="usuarioIncorrecto" class="mb-3"></div>
+  <div class="mb-3">
+    <label for="passwordLogin" class="form-label">Contraseña</label>
+    <input type="password" class="form-control" id="passwordLogin" required>
+  </div>
+  <div id="contraseñaIncorrecta" class="mb-3"></div>
+<div class="modal-footer">
+<input type="checkbox" name="recordarme" id="recordarme">
+<button type="submit" class="btn btn-primary">Registrarme</button>
+</div>
+</form>
+
+
+    <div id="contenido">      
+      
+
+      
+     
+
+    </div>
+        
 
     
 
@@ -159,6 +203,8 @@
   <script src="./js/carrito.js"></script>
   <script src="./js/app.js"></script>
   <script src="./js/index.js"></script>
+  <script src="./js/admin.js"></script>
+  <script src="./js/sesion.js"></script>
 </body>
 
 </html>

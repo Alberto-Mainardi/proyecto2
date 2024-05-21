@@ -11,6 +11,7 @@ function productosEnCarrito(data) {
 function leerProductos() {
     let productos=localStorage.getItem("productos");
     return JSON.parse(productos)
+    
 }
 
 function mostrarProductos() {

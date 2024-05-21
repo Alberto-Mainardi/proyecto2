@@ -15,6 +15,9 @@
 .text-justify {
   text-align: justify;
 }
+.secondary-color {
+  color: var(--secondary-color);
+}
 
 #botonEliminar{
     color: var(--secondary-color);
@@ -82,10 +85,6 @@ body{
   border: 3px solid var(--secondary-color);
   z-index: calc(inherit - 1);
   
-}
-
-.secondary-color {
-  color: var(--secondary-color);
 }
 #logoMenu {
   height: 70px;

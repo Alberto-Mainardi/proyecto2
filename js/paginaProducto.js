@@ -33,7 +33,7 @@ let pagina = document.querySelector(`#pagina`);
                             <p class="fs-6 m-3 my-3 px-2 pt-2">Precio de envio $8000</p>
 
                             <div class="align-items-center d-flex flex-column mx-3 px-2 ">
-                                <button type="button" class="btn btn-success p-3 mt-3 text-center w-100 botonCompra" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <button type="button" class="btn btn-success p-3 mt-3 text-center w-100 botonCompra" onclick="comprarAhoraClick()">
                                     Comprar ahora
                                 </button>
                                 <button type="button" class="btn btn-secondary p-3 mt-2 text-center w-100 botonAgregar" onclick="agregarAlCarrito(${articulo.id})" >

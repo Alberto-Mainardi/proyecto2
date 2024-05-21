@@ -1,22 +1,46 @@
+let articulos = [];
+let categorias = [];
+
 let homeSlider = document.querySelector("#homeSlider");
 let contenido = document.querySelector("#contenido");
+
+
 fetch('../json/articulos.json').then((response) => response.json())
 .then((data) => {
-    let articulos = data.articulos;
-    let categorias = data.categorias;
+    let articulosJson = data.articulos;
+    let categoriasJson = data.categorias;
+    articulosJson.forEach(articulo => {
+        articulos.push(articulo);
+    })
+    categoriasJson.forEach(categoria => {
+        categorias.push(categoria);
+    })
+    mostrarContenido()
+    })
+
+.catch((error) => console.error("No se pudo conseguir la data:", error))
+
+function mostrarContenido() {
+    
     articulos.filter(articulo => {
 
         if (articulo.categorias.includes("destacado")) {
             
             homeSlider.innerHTML += `
-            <div class="carousel-item h-100">
-            <div class="imgContainer d-flex justify-content-center align-items-center h-100">
-            <img src="${articulo.imagen}" class="d-block" alt="${articulo.alt}">
+            <a class="text-decoration-none text-white" href="./paginaProducto.html">
+
+            <div class="carousel-item h-100" onclick="paginaProducto(${articulo.id})">
+                
+                    <div class="imgContainer d-flex justify-content-center align-items-center h-100">
+                        <img src="${articulo.imagen}" class="d-block" alt="${articulo.alt}">
+                    </div>
+                
             </div>
-          </div>
+            </a>
             `;
             }
         })
+    
     categorias.filter(categoria => {
         
         categoriaDisplay = categoria.replace(/([A-Z])/g, ' $1').trim();
@@ -50,8 +74,7 @@ fetch('../json/articulos.json').then((response) => response.json())
                 `;
             }
         })
-
-
+    
+    
     })
-    })
-.catch((error) => console.error("No se pudo conseguir la data:", error))
+}

@@ -1,8 +1,11 @@
-let carrito=[]
-let favoritos=[]
+let carrito=[];
+let favoritos=[];
 let recientes = document.querySelector("#recientes");
 let header = document.querySelector("header");
 let footer = document.querySelector("footer")
+
+
+
 
 
 function mostrarHeader() {
@@ -519,31 +522,6 @@ footer.innerHTML=`
             </p>
 `
 
-
-fetch('./json/articulos.json').then((response) => response.json())
-.then((data) => {
-    let articulos = data.articulos;
-    articulos.forEach(articulo => {
-        recientes.innerHTML += `
-        <article id="${articulo.id}" style="max-width: 400px; background-color: white; border-radius: 1rem" class="p-3 m-2 border border-2 col-lg-2">
-        <div class="d-flex align-items-center justify-content-center" style="min-height: 200px;">
-        <img class="w-75 h-100" src="${articulo.imagen}" alt="${articulo.alt} style="object-fit: cover;">
-        </div>
-        <h4 class="text-justify" style="text-overflow: ellipsis; white-space:nowrap; overflow: hidden;">${articulo.nombre}</h4>
-        <div class="d-flex justify-content-between my-4">
-            <h3>$${articulo.precio}</h3>
-            <button class="btn btn-primary" onclick="agregarAlCarrito(${articulo.id})">Comprar</button>
-            <svg xmlns="http://www.w3.org/2000/svg" onclick="agregarFavoritos(${articulo.id})" class="favBoton" height="28px" viewBox="0 -960 960 960" width="28px" fill="black"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
-        </div>
-        <p class="text-justify"><strong>Descripción</strong> <br>
-        ${articulo.descripcion}
-        </p>
-    </article> 
-        `;
-    });
-})
-.catch((error) => console.error("No se pudo conseguir la data:", error))
-
 function paginaProducto(id) {
   fetch('./json/articulos.json').then((response) => response.json())
   .then((data) => {
@@ -566,45 +544,60 @@ function leerPagina() {
 
 
 function agregarAlCarrito(id){
-  fetch('./json/articulos.json').then((response) => response.json())
-          .then((data) => {
-              let articulos = data.articulos;
-              let productos = leerProductos();
-              if (productos==null) {
-              articulos.find((articulo)=>{
-                  
-                  if (articulo.id==id) {
-                      if (carrito.length===0) {   
-                          carrito = [...carrito,{id:articulo.id,nombre:articulo.nombre,precio:articulo.precio,imagen:articulo.imagen}];
-                          console.log(carrito);
-                          productosEnCarrito(carrito)
-                          mostrarHeader();
-                          mostrarProductos();
-                          } 
-                      }
-                  })
-              }else{
-                  carrito=productos;
-                  articulos.find((articulo)=>{
-                  
-                      if (articulo.id==id) {
-                          if (carrito.some(producto=>producto.id==id)) {   
-                              
-                              } else{
-                                  carrito = [...carrito,{id:articulo.id,nombre:articulo.nombre,precio:articulo.precio,imagen:articulo.imagen}];
-                                  console.log(carrito);
-                                  productosEnCarrito(carrito)
-                                  mostrarHeader()
-                                  mostrarProductos()
-                              }
-                     
-                          }
-  
-                      })
-              }
-              
+  if (estaActivo) {
+    fetch('./json/articulos.json').then((response) => response.json())
+    .then((data) => {
+        let articulos = data.articulos;
+        let productos = leerProductos();
+        if (productos==null) {
+        articulos.find((articulo)=>{
+            
+            if (articulo.id==id) {
+                if (carrito.length===0) {   
+                    carrito = [...carrito,{id:articulo.id,nombre:articulo.nombre,precio:articulo.precio,imagen:articulo.imagen}];
+                    console.log(carrito);
+                    productosEnCarrito(carrito)
+                    mostrarHeader();
+                    mostrarProductos();
+                    } 
+                }
+            })
+        }else{
+            carrito=productos;
+            articulos.find((articulo)=>{
+            
+                if (articulo.id==id) {
+                    if (carrito.some(producto=>producto.id==id)) {   
+                        
+                        } else{
+                            carrito = [...carrito,{id:articulo.id,nombre:articulo.nombre,precio:articulo.precio,imagen:articulo.imagen}];
+                            console.log(carrito);
+                            productosEnCarrito(carrito)
+                            mostrarHeader()
+                            mostrarProductos()
+                        }
+               
+                    }
+
+                })
+        }
+        
 }).catch((error) => console.error("No se pudo conseguir la data:", error))
+  } else {
+    console.log("Por favor, inicia sesión.");
+  }
+
 }
+
+function comprarAhoraClick () { 
+  if (estaActivo) {
+    
+    console.log("Procediendo...");
+  } else {
+    console.log("Por favor, inicia sesión");
+  }
+}
+
 
 function agregarFavoritos(id){
   fetch('./json/articulos.json').then((response) => response.json())
