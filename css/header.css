@@ -102,11 +102,13 @@ nav {
   transform: scale(1.1);
   transition: all 0.4s ease-in-out;
 }
-#botonModalIngresar{
+#botonModalIngresar,
+#botonModalRegistro{
   background-color:#44d62c ;
   color: white;
 }
-#botonModalIngresar:hover{
+#botonModalIngresar:hover,
+#botonModalRegistro:hover{
   background-color: #43d62c9c;
 }
 body {

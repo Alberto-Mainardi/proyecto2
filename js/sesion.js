@@ -8,6 +8,27 @@ if (JSON.parse(localStorage.getItem("usuario")) != null) {
 // Registro
 
 let users= leerUsuarios() || [];
+function actualizarParametros() {
+formRegistro = document.querySelector("#formularioRegistro");
+inputEmailRegistro = document.querySelector("input[id=emailRegistro]");
+inputUsernameRegistro = document.querySelector("input[id=usernameRegistro]")
+emailYaExistente = document.querySelector("#emailExiste");
+usuarioYaExistente = document.querySelector("#usuarioExiste");
+inputEmailRegistro.addEventListener("focusout", validarEmail);
+formRegistro.addEventListener("submit", function (e) {
+    e.preventDefault();
+    let email = inputEmailRegistro.value;
+    let username = inputUsernameRegistro.value
+    let password = document.querySelector("input[id=passwordRegistro]").value;
+    users=[...users, ({id:Date.now(), email, username, password})];
+    inputEmailRegistro.value= ``;
+    document.querySelector("input[id=passwordRegistro]").value = ``;
+    inputUsernameRegistro.value = ``;
+    crearUsuarios(users);
+    iniciarSesion(users[users.length - 1]);
+    validarEmail();
+})
+}
 let formRegistro = document.querySelector("#formularioRegistro");
 let inputEmailRegistro = document.querySelector("input[id=emailRegistro]");
 let inputUsernameRegistro = document.querySelector("input[id=usernameRegistro]")
