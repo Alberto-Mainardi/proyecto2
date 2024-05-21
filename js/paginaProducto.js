@@ -1,11 +1,9 @@
 window.onload=function () {
     let articulo = leerPagina();
-    
     agregarTextoPagina(articulo) 
     
 }
 
-mostrarHeader()
 
 function agregarTextoPagina(articulo) {
 let pagina = document.querySelector(`#pagina`);
@@ -33,7 +31,7 @@ let pagina = document.querySelector(`#pagina`);
                             <p class="fs-6 m-3 my-3 px-2 pt-2">Precio de envio $8000</p>
 
                             <div class="align-items-center d-flex flex-column mx-3 px-2 ">
-                                <button type="button" class="btn btn-success p-3 mt-3 text-center w-100 botonCompra" onclick="comprarAhoraClick()">
+                                <button type="button" id="botonCompra" class="btn btn-success p-3 mt-3 text-center w-100 botonCompra" onclick="comprarAhoraClick()">
                                     Comprar ahora
                                 </button>
                                 <button type="button" class="btn btn-secondary p-3 mt-2 text-center w-100 botonAgregar" onclick="agregarAlCarrito(${articulo.id})" >
@@ -47,7 +45,7 @@ let pagina = document.querySelector(`#pagina`);
         </section>
         
             <!-- Modal1 -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="ventanaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                 <div class="modal-content productosSectionModal secondary-color">
                     <div class="modal-header border-dark">
@@ -106,3 +104,10 @@ let pagina = document.querySelector(`#pagina`);
             `
 
 }
+
+
+(function(){
+    $("#botonCompra").click(function(){
+      $("#ventanaModal").modal("show");
+    });
+});

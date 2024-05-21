@@ -5,9 +5,6 @@ let header = document.querySelector("header");
 let footer = document.querySelector("footer")
 
 
-
-
-
 function mostrarHeader() {
 
 let cantidadEnCarrito=leerProductos();
@@ -72,7 +69,7 @@ if (cantidadEnCarrito===null && cantidadEnFavoritos===null) {
           <li class="nav-item mx-2 text-decoration-none list-unstyled order-first">
             <form id="cajaBusqueda">
               <input id="entradaBusqueda" type="text" class="form-control" placeholder="Buscar" />
-                <button type="submit" id="logobusqueda" class="border-0 bg-opacity-0">
+                <button type="submit" id="logobusqueda" class="border-0 mt-1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-search" viewBox="0 0 16 16">
                   <path
@@ -174,7 +171,7 @@ if (cantidadEnCarrito===null && cantidadEnFavoritos===null) {
           <li class="nav-item mx-2 text-decoration-none list-unstyled order-first">
             <form id="cajaBusqueda">
               <input id="entradaBusqueda" type="text" class="form-control" placeholder="Buscar" />
-                <button type="submit" id="logobusqueda" class="border-0 bg-opacity-0">
+                <button type="submit" id="logobusqueda" class="border-0 mt-1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-search" viewBox="0 0 16 16">
                   <path
@@ -276,7 +273,7 @@ if (cantidadEnCarrito===null && cantidadEnFavoritos===null) {
           <li class="nav-item mx-2 text-decoration-none list-unstyled order-first">
             <form id="cajaBusqueda">
               <input id="entradaBusqueda" type="text" class="form-control" placeholder="Buscar" />
-                <button type="submit" id="logobusqueda" class="border-0 bg-opacity-0">
+                <button type="submit" id="logobusqueda" class="border-0 mt-1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-search" viewBox="0 0 16 16">
                   <path
@@ -378,7 +375,7 @@ if (cantidadEnCarrito===null && cantidadEnFavoritos===null) {
           <li class="nav-item mx-2 text-decoration-none list-unstyled order-first">
             <form id="cajaBusqueda">
               <input id="entradaBusqueda" type="text" class="form-control" placeholder="Buscar" />
-                <button type="submit" id="logobusqueda" class="border-0 bg-opacity-0">
+                <button type="submit" id="logobusqueda" class="border-0 mt-1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-search" viewBox="0 0 16 16">
                   <path
@@ -421,7 +418,7 @@ if (cantidadEnCarrito===null && cantidadEnFavoritos===null) {
   </nav>
   `;
 }
-
+return;
 }
 
 mostrarHeader();
@@ -591,10 +588,11 @@ function agregarAlCarrito(id){
 
 function comprarAhoraClick () { 
   if (estaActivo) {
-    
     console.log("Procediendo...");
+    return
   } else {
     console.log("Por favor, inicia sesión");
+    
   }
 }
 
@@ -639,10 +637,56 @@ function agregarFavoritos(id){
 }).catch((error) => console.error("No se pudo conseguir la data:", error))
 }
 
-const formBusqueda = document.querySelector("#cajaBusqueda");
+let formBusqueda = document.querySelector("#cajaBusqueda");
+console.log(formBusqueda);
 formBusqueda.addEventListener("submit", function (e) {
     e.preventDefault();
     let busqueda = formBusqueda.elements['entradaBusqueda'].value.toLowerCase();
     localStorage.setItem("busqueda",busqueda);
-    window.location.href="../pages/busqueda.html"
+    window.location.href="../busqueda.html"
 })
+
+
+function favBoton(id) {
+  let corazonFav = document.querySelector(`.favBoton${id} .corazonActivo${id}`);
+  let botonFav = document.querySelectorAll(`.favBoton${id}`);
+  console.log(corazonFav);
+  if (corazonFav!=null || corazonFav!=undefined) {
+    botonFav.forEach(fav=>{
+      
+      fav.innerHTML= 
+
+      `
+      <svg xmlns="http://www.w3.org/2000/svg" onclick="agregarFavoritos(${id});favBoton(${id})" height="28px" viewBox="0 -960 960 960" width="28px" fill="#44d62c"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
+      `
+ 
+    })
+    
+    let productos = leerFavoritos();
+  
+    let nuevosProductos= productos.filter((producto) => {
+            if (producto.id != id) {
+            
+                return producto;
+    
+            }
+        
+    })
+    productosEnFavoritos(nuevosProductos);
+    mostrarHeader();
+    mostrarProductosFavoritos();
+
+    
+  }else{
+    botonFav.forEach(fav=>{
+      fav.innerHTML= 
+      `
+      <svg xmlns="http://www.w3.org/2000/svg" class="corazonActivo${id} z-3" onclick="favBoton(${id})" height="28px" viewBox="0 0 24 24" width="28px" fill="#44d62c"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      `
+     
+    })
+
+  }
+  
+ 
+}

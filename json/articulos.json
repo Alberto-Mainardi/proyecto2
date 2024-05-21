@@ -26,7 +26,7 @@
         },
         {
             "id":"3",
-            "nombre":"Placa",
+            "nombre":"Placa de video Nvidia MSI Ventus GeForce RTX 20 Series RTX 2060 SUPER GEFORCE RTX 2060 SUPER VENTUS GP OC OC Edition 8GB",
             "descripcion": "placeholder",
             "precio":"56400",
             "imagen": "https://asset.msi.com/resize/image/global/product/product_0_20160309172456_56dfebe853e8e.png62405b38c58fe0f07fcef2367d8a9ba1/400.png",
@@ -59,9 +59,22 @@
             "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
             "favorito":false,
             "estaEnCarrito":false
+        },
+        {
+            "id":"6",
+            "nombre":"Placa de video Nvidia MSI Ventus GeForce RTX 20 Series RTX 2060 SUPER GEFORCE RTX 2060 SUPER VENTUS GP OC OC Edition 8GB",
+            "descripcion": "placeholder",
+            "precio":"120000",
+            "imagen": "https://gamerspit.com.ar/wp-content/uploads/2021/11/placa-de-video-msi-geforce-rtx-3090-ventus-3x-24g-450x450.png",
+            "alt":"Nvidia MSI RTX 2060",
+            "categorias":["recientes","placasDeVideo", "destacado"],
+            "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
+            "favorito":false,
+            "estaEnCarrito":false
         }
     ],
     "categorias":[
-        "destacado", "recientes", "placasDeVideo"
+        {"id":1,"nombre":"destacado"}, {"id":2,"nombre":"recientes"},{"id":3,"nombre":"placasDeVideo"}
     ]
+
 }

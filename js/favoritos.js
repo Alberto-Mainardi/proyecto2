@@ -35,8 +35,8 @@ function mostrarProductosFavoritos() {
         productos.forEach(producto => {
             productoFavorito.innerHTML+=`
                 <div class="text-white row align-items-center px-3">
-                    <img width="200px" src="${producto.imagen}" alt="" class="img-fluid col-2 d-none d-sm-inline-block">
-                    <div class="col-10">
+                    <img width="200px" src="${producto.imagen}" alt="" class="img-fluid col-sm-0 col-2 d-none d-sm-inline-block">
+                    <div class="col-12 col-sm-10">
                     <h4 class="mb-3">${producto.nombre}</h4>
                     <h5 class="mb-0">$${producto.precio}</h5>
                     <p class="fs-6">en 6 cuotas de $${producto.precio/6}</p>
