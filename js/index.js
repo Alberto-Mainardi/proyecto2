@@ -1,27 +1,14 @@
-let articulos = [];
-let categorias = [];
 
 let homeSlider = document.querySelector("#homeSlider");
 let contenido = document.querySelector("#contenido");
 let counter = 0
 
-fetch('../json/articulos.json').then((response) => response.json())
-.then((data) => {
-    let articulosJson = data.articulos;
-    let categoriasJson = data.categorias;
-    articulosJson.forEach(articulo => {
-        articulos.push(articulo);
-    })
-    categoriasJson.forEach(categoria => {
-        categorias.push(categoria);
-    })
-    mostrarContenido()
-    })
 
-.catch((error) => console.error("No se pudo conseguir la data:", error))
-
-function mostrarContenido() {
-    
+window.onload = function () {
+    let articulos = leerProductosAdmin();
+    let categorias = leerCategoriasAdmin();
+    console.log(articulos);
+    console.log(categorias);
     articulos.filter(articulo => {
 
         if (articulo.categorias.includes("destacado")) {
@@ -49,7 +36,7 @@ function mostrarContenido() {
         <div class="container-fluid d-flex justify-content-center justify-content-xxl-end row">
       <section class="productosSection col-12 m-4 p-1 p-md-3 p-lg-4" >
         <h3 class="secondary-color">${categoriaDisplay}</h3>
-        <div id="productos-${categoria.id}" class="d-flex slider productos-${categoria.id} ms-lg-3">   
+        <div id="productos-${categoria.id}" style="min-height: 300px;" class="d-flex slider productos-${categoria.id} ms-lg-3">   
             <div class="arrow">
             <button class="left m-0" onclick="left(${categoria.id})"><</button>
             <button class="right m-0" onclick="right(${categoria.id})">></button>
@@ -106,14 +93,14 @@ function right(categoria) {
     let products = document.querySelectorAll(`.productos-${categoria} .producto`)
     console.log(slider.clientWidth);
     if (slider.clientWidth>=580 && slider.clientWidth<=905) {
-        if (counter == products.length/ 2 - 1) {
+        if (counter == products.length/ 2 - 1 || counter == (products.length + 1) / 2 - 1) {
             counter= 0
         }else{
             counter++
         }
         scroll(products,categoria)
     }else if (slider.clientWidth>=906) {
-        if (counter == products.length/ 3 - 1) {
+        if (counter == products.length/ 3 - 1 || counter == (products.length + 2) / 3 - 1 || counter == (products.length + 1) / 3 - 1) {
             counter= 0
         }else{
             counter++

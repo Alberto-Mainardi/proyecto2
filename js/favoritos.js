@@ -39,7 +39,7 @@ function mostrarProductosFavoritos() {
                     <div class="col-12 col-sm-10">
                     <h4 class="mb-3">${producto.nombre}</h4>
                     <h5 class="mb-0">$${producto.precio}</h5>
-                    <p class="fs-6">en 6 cuotas de $${producto.precio/6}</p>
+                    <p class="fs-6">en 6 cuotas de $${(producto.precio/6).toFixed(2)}</p>
                     <button class="btn p-0 border-0" id="botonEliminar" onclick="eliminarProductoFavorito(${producto.id})">Eliminar</button>
                     </div>
                     <div id="precioProducto${producto.id}" class="col-2">

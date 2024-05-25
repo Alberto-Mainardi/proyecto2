@@ -4,12 +4,12 @@ let envio = 0;
 
 function productosEnCarrito(data) {
     console.log(data);
-        window.localStorage.setItem("productos",JSON.stringify(data))
+        window.localStorage.setItem("carrito",JSON.stringify(data))
         return; 
 }
 
 function leerProductos() {
-    let productos=localStorage.getItem("productos");
+    let productos=localStorage.getItem("carrito");
     return JSON.parse(productos)
     
 }

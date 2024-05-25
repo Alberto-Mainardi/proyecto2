@@ -24,7 +24,7 @@ let pagina = document.querySelector(`#pagina`);
                             <h4 class="m-3 p-2">${articulo.nombre}</h3>
                             <hr>
                             <h1 class="m-3 p-2 mb-0">$ ${articulo.precio}</h2>
-                            <p class="fs-5 m-0 mx-3 px-2">en 6 cuotas de $${articulo.precio/6}</p>
+                            <p class="fs-5 m-0 mx-3 px-2">en 6 cuotas de $${(articulo.precio/6).toFixed(2)}</p>
                             <p id="verMetodosPago" class="fs-6 mx-3 px-2 text-primary" data-bs-toggle="modal" data-bs-target="#exampleModalMetodos">Ver medios de pago</p>
 
 

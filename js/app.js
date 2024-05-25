@@ -3,6 +3,7 @@ let favoritos=[];
 let recientes = document.querySelector("#recientes");
 let header = document.querySelector("header");
 let footer = document.querySelector("footer");
+let contenidoModalSesion = document.querySelector("#contenidoModalSesion");
 
 
 function mostrarModalRegistro() {
@@ -60,41 +61,40 @@ function mostrarModalLogin() {
   `;
 }
 
+
+// contenidoModalSesion.innerHTML = `
+// <form id="formularioLogin" class="d-flex flex-column form">
+//   <label class="text-white pb-2 form-label" for="usernameLogin"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#44d62c" class="bi bi-person-fill" viewBox="0 0 16 16">
+//     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+//   </svg>Correo Electrónico o Nombre de Usuario</label>
+//   <input class="border-success form-control" type="text" id="usernameLogin" required>
+//   <div id="usuarioIncorrecto" class="mb-3"></div>
+
+//   <label class="text-white pb-2 pt-2 form-label" for="passwordLogin"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#44d62c" class="bi bi-key-fill" viewBox="0 0 16 16">
+//     <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+//   </svg>Contraseña</label>
+//   <input class="border-success form-control" type="password" id="passwordLogin">
+//   <div id="contraseñaIncorrecta" class="mb-3"></div>
+
+
+//   <div class="checkbox pb-2 pt-2 d-flex justify-content-between">
+//     <label class="pb-2 pt-2 text-white"><input type="checkbox" name="recordarme" id="recordarme" value="" checked>  Recordar Usuario</label>
+//     <a class="text-decoration-none d-flex align-items-center pe-1 text-white" href="./recuperarCuenta.html">Recuperar Contraseña</a>
+//   </div>
+//   <button id="botonModalIngresar" type="submit" class="btn btn-block"><span class="glyphicon glyphicon-off"></span>Iniciar Sesión</button>
+//   </form>
+//   <div class="d-flex justify-content-center" >
+//       <p class="text-white pt-3">Todavía no tienes una cuenta?<a href="#" onclick="mostrarModalRegistro()">Registrarse </a></p>
+//   </div>
+
+// `;
+
+
 function mostrarHeader() {
 let carrito = 0
 let favoritos = 0
 let cantidadEnCarrito=leerProductos();
 let cantidadEnFavoritos=leerFavoritos();
-let contenidoModalSesion = document.querySelector("#contenidoModalSesion");
-
-  contenidoModalSesion.innerHTML = `
-        <form id="formularioLogin" class="d-flex flex-column form">
-          <label class="text-white pb-2 form-label" for="usernameLogin"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#44d62c" class="bi bi-person-fill" viewBox="0 0 16 16">
-            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-          </svg>Correo Electrónico o Nombre de Usuario</label>
-          <input class="border-success form-control" type="text" id="usernameLogin" required>
-          <div id="usuarioIncorrecto" class="mb-3"></div>
-  
-          <label class="text-white pb-2 pt-2 form-label" for="passwordLogin"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#44d62c" class="bi bi-key-fill" viewBox="0 0 16 16">
-            <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
-          </svg>Contraseña</label>
-          <input class="border-success form-control" type="password" id="passwordLogin">
-          <div id="contraseñaIncorrecta" class="mb-3"></div>
-  
-  
-          <div class="checkbox pb-2 pt-2 d-flex justify-content-between">
-            <label class="pb-2 pt-2 text-white"><input type="checkbox" name="recordarme" id="recordarme" value="" checked>  Recordar Usuario</label>
-            <a class="text-decoration-none d-flex align-items-center pe-1 text-white" href="./recuperarCuenta.html">Recuperar Contraseña</a>
-          </div>
-          <button id="botonModalIngresar" type="submit" class="btn btn-block"><span class="glyphicon glyphicon-off"></span>Iniciar Sesión</button>
-          </form>
-          <div class="d-flex justify-content-center" >
-              <p class="text-white pt-3">Todavía no tienes una cuenta?<a href="#" onclick="mostrarModalRegistro()">Registrarse </a></p>
-          </div>
-      
-  `;
-
-
 
 
 if(cantidadEnCarrito!=null && cantidadEnFavoritos!=null){
@@ -178,7 +178,7 @@ header.innerHTML=`
         </ul>
         <div class="d-flex justify-content-around p-4">
           <div class="d-flex justify-content-center align-items-center gap-3 pe-3">
-            <a id="botonIngresar" href="#exampleModal" class="px-3 py-1 rounded-1 text-decoration-none d-flex" data-bs-toggle="modal"><svg
+            <a id="botonIngresar" onclick="mostrarModalLogin()" href="#exampleModal" class="px-3 py-1 rounded-1 text-decoration-none d-flex" data-bs-toggle="modal"><svg
                 xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                 class="bi bi-person-fill" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
@@ -440,7 +440,7 @@ function agregarFavoritos(id){
 }
 
 let formBusqueda = document.querySelector("#cajaBusqueda");
-console.log(formBusqueda);
+
 formBusqueda.addEventListener("submit", function (e) {
     e.preventDefault();
     let busqueda = formBusqueda.elements['entradaBusqueda'].value.toLowerCase();

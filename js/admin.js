@@ -1,3 +1,9 @@
+let articulos = [];
+let categorias = [];
+let productosAdmin = document.querySelector("#productosAdmin");
+let categoriasAdmin = document.querySelector("#categoriasAdmin")
+let mainAdmin = document.querySelector(".mainAdmin")
+
 function leerUsuarios() {
     let usuarios = JSON.parse(localStorage.getItem("usuarios"));
     return usuarios;
@@ -35,6 +41,7 @@ function mostrarUsuarios() {
     let usuarios = leerUsuarios();
     console.log(usuarios);
 }
+
 mostrarUsuarios();
 function formModificarUsuario(id) {
     let usuarios = leerUsuarios();
@@ -52,3 +59,46 @@ function procesarForm(id) {
     console.log(email, password, username, formId);
     modificarUsuarios(formId, {email, username, password})
 }
+
+
+fetch('../json/articulos.json').then((response) => response.json())
+.then((data) => {
+   let categoriasJson =data.categorias; 
+   let articulosJson = data.articulos;
+   let productos = leerProductosAdmin();
+   let categoriasLS = leerCategoriasAdmin();
+   
+   if (categoriasLS==null || categoriasLS.length==0) {
+    categoriasJson.forEach(categoria => {
+        categorias.push(categoria);
+    })
+    
+    categoriasEnAdmin(categorias);
+    
+    }else{
+    
+        
+    }
+
+    if (productos==null || productos.length==0) {
+       
+        articulosJson.forEach(articulo => {
+            articulos.push(articulo);
+        })
+        console.log(articulos);
+        productosEnAdmin(articulos);
+        mostrarProductosAdmin();
+        mostrarCategoriasAdmin();
+    }else{
+        mostrarProductosAdmin();
+        mostrarCategoriasAdmin()
+    }
+   
+  
+
+    })
+
+.catch((error) => console.error("No se pudo conseguir la data:", error))
+
+
+
