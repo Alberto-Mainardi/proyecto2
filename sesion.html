@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+    <header></header>
+
+<div id="mensajeSesionExitosa">
+
+</div>
+
+<div id="modalFotoPerfil" class="ocultarModalFotoPerfil">
+    <div class="modalBackground"></div>
+    <div id="modalFotoPerfilContenido" class="container-md bg-dark col col-md-12 col-lg-6 rounded-3">
+        <div class="w-100">
+            <h3 class="text-white mb-4">Añadir Foto de Perfil</h3>
+            <form id="formFotoPerfil">
+                <label for="fotoPerfil" class="d-block text-white">Inserte la URL de la foto que desea usar de perfil:</label>
+                <input class="w-100 rounded p-1" type="text" id="fotoPerfil" placeholder="URL de la imagen" required>
+                <hr class="border border-1">
+                <div class="text-end">
+                    <button onclick="mostrarModalFotoPerfil()" class="btn btn-danger mx-3">Cancelar</button>
+                    <button onclick="mostrarModalFotoPerfil()" class="btn botonCompra" type="submit">Aceptar</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+
+    <main>
+        <div id="contenidoPaginaSesion" class="container bg-black p-5 contenidoLoginPaginaSesion">
+        </div>
+
+
+        
+    </main>
+
+
+
+
+    <footer></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    <script src="./js/admin.js"></script>
+    <script src="./js/sesion.js"></script>
+    <script src="./js/carrito.js"></script>
+    <script src="./js/favoritos.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/pagSesion.js"></script>
+   <!-- Cambiar el header de la página -->
+    <script>
+        header.innerHTML = ``;
+        footer.innerHTML = ``;
+    </script>
+</body>
+</html>

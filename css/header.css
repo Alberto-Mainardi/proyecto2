@@ -22,7 +22,7 @@
   height: 70px;
 }
 #textoLogo {
-  color: #44d62c;
+  color: var(--secondary-color);
 }
 nav {
   background-color: rgb(29, 28, 28);
@@ -31,19 +31,18 @@ nav {
   color: aliceblue;
 }
 .nav-link:hover {
-  color: #44d62c;
+  color: var(--secondary-color);
   transform: scale(1.2);
   transition: all 0.4s ease-in-out;
 }
-#botonIngresar {
+#botonSesion {
   color: white;
 }
-#botonIngresar:hover {
-  transform: scale(1.1);
-  transition: all 0.4s ease-in-out;
+#botonSesion:hover {
+  background: hsl(from var(--secondary-color) h s calc(l / 1.5));
 }
 #botonMenu {
-  border-color: #44d62c;
+  border-color: var(--secondary-color);
   background-color: aliceblue;
 }
 #entradaBusqueda {
@@ -58,7 +57,7 @@ nav {
   cursor: pointer;
 }
 #logoAyuda {
-  color: #44d62c;
+  color: var(--secondary-color);
 }
 #logoAyuda:hover {
   transform: scale(1.2);
@@ -69,11 +68,11 @@ nav {
   max-width: 300px;
 }
 #entradaBusqueda:focus {
-  border-color: #44d62c;
+  border-color: var(--secondary-color);
   box-shadow: 0 0 0 0.25rem rgba(43, 255, 0, 0.25);
 }
 #cuenta-carrito {
-  background-color: #44d62c;
+  background-color: var(--secondary-color);
   border-radius: 100%;
   display: inline-block;
   width: 20px;
@@ -82,11 +81,11 @@ nav {
   text-align: center;
   color: white;
 }
-#botonIngresar {
-  background-color: #44d62c;
+#botonSesion {
+  background-color: var(--secondary-color);
 }
 #contador-favoritos {
-  background-color: #44d62c;
+  background-color: var(--secondary-color);
   border-radius: 100%;
   padding: 0px 3px;
   line-height: 20px;
@@ -96,7 +95,7 @@ nav {
   font-size: 15px;
 }
 .modal-title{
-  color: #44d62c;
+  color: var(--secondary-color);
 }
 .modal-title:hover {
   transform: scale(1.1);
@@ -104,7 +103,7 @@ nav {
 }
 #botonModalIngresar,
 #botonModalRegistro{
-  background-color:#44d62c ;
+  background-color:var(--secondary-color) ;
   color: white;
 }
 #botonModalIngresar:hover,
@@ -125,7 +124,7 @@ iframe {
 }
 .entradaContacto {
   border-radius: 5px;
-  border-color: #44d62c;
+  border-color: var(--secondary-color);
 }
 .entradaContacto:focus {
   box-shadow: 0 0 0 0.25rem rgba(43, 255, 0, 0.25);
@@ -143,10 +142,10 @@ iframe {
   overflow: hidden;
 }
 #enlaceError {
-  background-color: #44d62c;
+  background-color: var(--secondary-color);
 }
 #botonFormularioContacto {
-  background-color: #44d62c;
+  background-color: var(--secondary-color);
   color: white;
 }
 footer {
@@ -234,7 +233,7 @@ footer {
     flex-direction: column;
   }
   #offcanvasNavbarLabel {
-    color: #44d62c;
+    color: var(--secondary-color);
   }
   #contenedorMapa {
     height: 500px;

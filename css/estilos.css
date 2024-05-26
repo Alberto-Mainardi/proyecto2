@@ -681,3 +681,141 @@ footer {
   color: #44d62c;
  
 }
+
+#contenidoPaginaSesion {
+  position: relative;
+  border-radius: 1rem;
+}
+.contenidoLoginPaginaSesion {
+  max-width: 36rem;
+}
+.contenidoRegistroPaginaSesion {
+  max-width: 60rem;
+}
+#contenidoPaginaSesion::before {
+  content: '';
+  background-image: linear-gradient(45deg, var(--secondary-color), black, var(--secondary-color));
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index:-1;
+  margin: -2px;
+  border-radius: 1rem;
+}
+
+.contenedorMostrarRequisitosPassword {
+  position: relative;
+  
+}
+.mostrarRequisitosPassword {
+  position: absolute;
+  left: -17rem;
+  top: -6rem;
+  border-radius: 1rem;
+  border: 1px solid var(--secondary-color);
+  background: black;
+  width: 16rem;
+  padding: 0.75rem;
+  box-shadow: 0px 0px 14px black;
+}
+.mostrarRequisitosPassword::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid var(--secondary-color);
+}
+@media screen and (531px <= width < 1428px) {
+  .mostrarRequisitosPassword {
+    left: 12rem;
+    top: -14rem;
+  }
+  .mostrarRequisitosPassword::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    bottom: -15px;
+    right: 75%;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    
+    border-top: 15px solid var(--secondary-color);
+  }
+}
+@media screen and (width < 531px) {
+  .mostrarRequisitosPassword {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: none;
+    border: none;
+    padding: none;
+    width: 100%;
+  }
+  .mostrarRequisitosPassword::after{
+    content: '';
+    border: 0px;
+  }
+}
+.requisitoPassword {
+  color: red;
+}
+.requisitoPasswordCumplido {
+  color: #44d62c;
+}
+
+.sesionExitosoPrincipal {
+  font-size: 5rem
+}
+.sesionExitosoSecundario {
+  font-size: 2rem;
+}
+.selectMenu {
+  display: block;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 175px;
+  cursor: pointer;
+}
+.fotoPerfil {
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  height: 100%;
+  object-fit: cover;
+}
+#botonCambiarFotoPerfil {
+  opacity: 0;
+  position: absolute;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(30, 30, 30, 0.70);
+}
+#botonCambiarFotoPerfil:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.modalBackground {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: hsla(0, 0%, 0%,0.7);
+  z-index: 1000;
+}
+.ocultarModalFotoPerfil{
+  display: none;
+}
+#modalFotoPerfilContenido{
+  position: fixed;
+  padding: 2rem;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 1001;
+}

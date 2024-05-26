@@ -3,99 +3,137 @@ let favoritos=[];
 let recientes = document.querySelector("#recientes");
 let header = document.querySelector("header");
 let footer = document.querySelector("footer");
-let contenidoModalSesion = document.querySelector("#contenidoModalSesion");
+let contenidoPaginaSesion = document.querySelector("#contenidoPaginaSesion");
 
 
-function mostrarModalRegistro() {
-  contenidoModalSesion.innerHTML = `
-              <form id="formularioRegistro" class="d-flex flex-column form">
 
-                <label for="emailRegistro" class="form-label text-white pb-2 pt-2">Correo Electrónico</label>
-                <input type="email" class="form-control" id="emailRegistro" aria-describedby="emailHelp" required>
+function mostrarPaginaRegistro() {
+  contenidoPaginaSesion.classList.add("contenidoRegistroPaginaSesion")
+  contenidoPaginaSesion.classList.remove("contenidoLoginPaginaSesion")
+  contenidoPaginaSesion.innerHTML = `
+              <form id="formularioRegistro" class="d-flex form row">
+            <div class="col-sm-12 col-md-7 pe-4" style="border-right:1px solid gray">
+                <label for="emailRegistro" class="form-label text-white  pt-2">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#44d62c"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
+                Correo Electrónico</label>
+                <input type="email" class="form-control" id="emailRegistro" aria-describedby="emailHelp" placeholder="Ingresa tu dirección de correo" required>
                 <div id="emailExiste" class="mb-3"></div>
 
-                <label class="text-white pb-2 form-label" for="usernameRegistro"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#44d62c" class="bi bi-person-fill" viewBox="0 0 16 16">
+                <label class="text-white  form-label" for="usernameRegistro"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#44d62c" class="bi bi-person-fill" viewBox="0 0 16 16">
                   <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                </svg>Nombre de Usuario</label>
-                <input class="border-success form-control" type="text" id="usernameRegistro" required>
+                </svg> Nombre de Usuario</label>
+                <input class="border-success form-control" type="text" id="usernameRegistro" placeholder="Elige un nombre de usuario" required>
+                <div id="usuarioExiste" class="mb-3"></div>
         
-                <label class="text-white pb-2 pt-2 form-label" for="passwordRegistro"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#44d62c" class="bi bi-key-fill" viewBox="0 0 16 16">
+                <label class="text-white form-label" for="passwordRegistro"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#44d62c" class="bi bi-key-fill" viewBox="0 0 16 16">
                   <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
-                </svg>Contraseña</label>
-                <input class="border-success form-control" type="password" id="passwordRegistro">
+                </svg> Contraseña
+                <div class="contenedorMostrarRequisitosPassword">
+                <div class="mostrarRequisitosPassword d-none">
+                <p>La contraseña debe:</p>
+                <ul>
+                  <li class="requisitoPassword" id="requisitoPasswordLength">incluir 6 carácteres</li>
+                  <li class="requisitoPassword" id="requisitoPasswordMayusculasMinusculas">incluír mayúsculas y minúsculas</li>
+                  <li class="requisitoPassword" id="requisitoPasswordNumero">incluir 1 número</li>
+                  <li class="requisitoPassword" id="requisitoPasswordCaracterEspecial">incluir 1 carácter especial: .@$!%*#?&><^-_</li>
+                </ul>
+                </div>  
+                </div>
+                </label>
+                <input class="border-success form-control mb-3" type="password" id="passwordRegistro" required>
 
-                <button id="botonModalRegistro" type="submit" class="btn btn-block"><span class="glyphicon glyphicon-off"></span>Registrarme</button>
-                <div class="d-flex justify-content-center" >
-                    <p class="text-white pt-3">¿Ya tienes una cuenta? <a href="#" onclick="mostrarModalLogin()">Iniciar Sesión</a></p>
+                <label class="text-white form-label" for="confirmarPasswordRegistro"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#44d62c" class="bi bi-key-fill" viewBox="0 0 16 16">
+                  <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                </svg> Confirmar Contraseña</label>
+                <input class="border-success form-control" type="password" id="confirmarPasswordRegistro" required>
+                <div id="confirmarPasswordRegistroMensaje" class="mb-3"></div>
+
+                <label class="text-white form-label d-block" for="tipoDeCuentaRegistro">
+                ¿Eres comprador o vendedor?
+                </label>
+                <div class="customSelectMenu">
+                <select id="tipoDeCuentaRegistro" name="tipoDeCuentaRegistro" class="selectMenu">
+                <option class="selectOption" value="comprador">Comprador</option>
+                <option class="selectOption" value="vendedor">Vendedor</option>
+              </select>
+                </div>
+                </div>
+
+                <div id="vistaPreviaRegistro" class="col-sm-12 col-md-5 text-center">
+                <h3 class="secondary-color">Vista Previa</h3>
+                <div class="d-flex mt-4">
+                    <div class="m-3 w-50" style="position:relative;">
+                        <div id="botonCambiarFotoPerfil" onclick="mostrarModalFotoPerfil()" class="w-100">
+                            <div class="d-flex text-center align-items-center h-100">
+                                <div>
+                                    <svg class="w-100" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white"><path d="M440-440ZM120-120q-33 0-56.5-23.5T40-200v-480q0-33 23.5-56.5T120-760h126l74-80h240v80H355l-73 80H120v480h640v-360h80v360q0 33-23.5 56.5T760-120H120Zm640-560v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80ZM440-260q75 0 127.5-52.5T620-440q0-75-52.5-127.5T440-620q-75 0-127.5 52.5T260-440q0 75 52.5 127.5T440-260Zm0-80q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Z"/></svg>
+                                    <p class="w-100 text-white">Añadir foto de perfil</p>
+                                </div>
+                  
+                            </div>
+                        </div>
+                        <div id="previewFotoPerfil" class="h-100">
+                          <img src="https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/3da39-no-user-image-icon-27.png?fit=500%2C500&ssl=1" alt="fotoDePerfil" class="fotoPerfil w-100">
+                        </div>
+                    </div>
+                <div class="m-3 w-50 text-start">
+                    <h4 class="text-white pt-4">(Usuario)</h4>
+                    <h5 class="text-white fs-6">Tipo de Cuenta</h5>
+                </div>
+            </div>
+            <div class="text-start mt-3 bg-dark p-2 rounded rounded-3">
+            <p class="text-white m-1">Correo electrónico: <span>(Correo)</span></p>
+            <p class="text-white m-1">Nombre de usuario: <span>(Usuario)</span></p>
+            <p class="text-white m-1">Tipo de usuario: <span>(Tipo de usuario)</span></p>
+            </div>
+                </div>
+
+
+                <button id="botonModalRegistro" type="submit" class="btn btn-block mt-4"><span class="glyphicon glyphicon-off"></span>Registrarme</button>
+                <div class="d-flex justify-content-center">
+                    <p class="text-white pt-3">¿Ya tienes una cuenta? <a href="#" onclick="mostrarPaginaLogin()">Iniciar Sesión</a></p>
                 </div>
               </form>
   `;
   actualizarParametros();
 }
+function mostrarPaginaLogin() {
+  contenidoPaginaSesion.classList.remove("contenidoRegistroPaginaSesion");
+  contenidoPaginaSesion.classList.add("contenidoLoginPaginaSesion");
 
-function mostrarModalLogin() {
-  contenidoModalSesion.innerHTML = `
+  contenidoPaginaSesion.innerHTML = `
   <form id="formularioLogin" class="d-flex flex-column form">
   <label class="text-white pb-2 form-label" for="usernameLogin"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#44d62c" class="bi bi-person-fill" viewBox="0 0 16 16">
     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-  </svg>Correo Electrónico o Nombre de Usuario</label>
+  </svg> Correo Electrónico o Nombre de Usuario</label>
   <input class="border-success form-control" type="text" id="usernameLogin" required>
   <div id="usuarioIncorrecto" class="mb-3"></div>
 
   <label class="text-white pb-2 pt-2 form-label" for="passwordLogin"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#44d62c" class="bi bi-key-fill" viewBox="0 0 16 16">
     <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
-  </svg>Contraseña</label>
+  </svg> Contraseña</label>
   <input class="border-success form-control" type="password" id="passwordLogin">
   <div id="contraseñaIncorrecta" class="mb-3"></div>
 
 
   <div class="checkbox pb-2 pt-2 d-flex justify-content-between">
-    <label class="pb-2 pt-2 text-white"><input type="checkbox" name="recordarme" id="recordarme" value="" checked>  Recordar Usuario</label>
+    <label class="pb-2 pt-2 text-white"><input type="checkbox" name="recordarme" id="recordarme" value="">  Recordar Usuario</label>
     <a class="text-decoration-none d-flex align-items-center pe-1 text-white" href="./recuperarCuenta.html">Recuperar Contraseña</a>
   </div>
   <button id="botonModalIngresar" type="submit" class="btn btn-block"><span class="glyphicon glyphicon-off"></span>Iniciar Sesión</button>
   </form>
   <div class="d-flex justify-content-center" >
-      <p class="text-white pt-3">Todavía no tienes una cuenta?<a href="#" onclick="mostrarModalRegistro()">Registrarse </a></p>
+      <p class="text-white pt-3">Todavía no tienes una cuenta?<a href="#" onclick="mostrarPaginaRegistro()">Registrarse </a></p>
   </div>
   `;
+  actualizarParametros();
 }
-
-
-// contenidoModalSesion.innerHTML = `
-// <form id="formularioLogin" class="d-flex flex-column form">
-//   <label class="text-white pb-2 form-label" for="usernameLogin"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#44d62c" class="bi bi-person-fill" viewBox="0 0 16 16">
-//     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-//   </svg>Correo Electrónico o Nombre de Usuario</label>
-//   <input class="border-success form-control" type="text" id="usernameLogin" required>
-//   <div id="usuarioIncorrecto" class="mb-3"></div>
-
-//   <label class="text-white pb-2 pt-2 form-label" for="passwordLogin"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#44d62c" class="bi bi-key-fill" viewBox="0 0 16 16">
-//     <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
-//   </svg>Contraseña</label>
-//   <input class="border-success form-control" type="password" id="passwordLogin">
-//   <div id="contraseñaIncorrecta" class="mb-3"></div>
-
-
-//   <div class="checkbox pb-2 pt-2 d-flex justify-content-between">
-//     <label class="pb-2 pt-2 text-white"><input type="checkbox" name="recordarme" id="recordarme" value="" checked>  Recordar Usuario</label>
-//     <a class="text-decoration-none d-flex align-items-center pe-1 text-white" href="./recuperarCuenta.html">Recuperar Contraseña</a>
-//   </div>
-//   <button id="botonModalIngresar" type="submit" class="btn btn-block"><span class="glyphicon glyphicon-off"></span>Iniciar Sesión</button>
-//   </form>
-//   <div class="d-flex justify-content-center" >
-//       <p class="text-white pt-3">Todavía no tienes una cuenta?<a href="#" onclick="mostrarModalRegistro()">Registrarse </a></p>
-//   </div>
-
-// `;
-
 
 function mostrarHeader() {
 let carrito = 0
 let favoritos = 0
 let cantidadEnCarrito=leerProductos();
 let cantidadEnFavoritos=leerFavoritos();
-
 
 if(cantidadEnCarrito!=null && cantidadEnFavoritos!=null){
     carrito = cantidadEnCarrito.length
@@ -177,8 +215,8 @@ header.innerHTML=`
           </li>
         </ul>
         <div class="d-flex justify-content-around p-4">
-          <div class="d-flex justify-content-center align-items-center gap-3 pe-3">
-            <a id="botonIngresar" onclick="mostrarModalLogin()" href="#exampleModal" class="px-3 py-1 rounded-1 text-decoration-none d-flex" data-bs-toggle="modal"><svg
+          <div id="menuSesion" class="d-flex justify-content-center align-items-center gap-3 pe-3">
+            <a id="botonSesion" onclick="mostrarPaginaLogin()" href="#exampleModal" class="px-3 py-1 rounded-1 text-decoration-none d-flex" data-bs-toggle="modal"><svg
                 xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                 class="bi bi-person-fill" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
@@ -208,11 +246,37 @@ header.innerHTML=`
   </div>
   </nav>
   `;
-
+  mostrarMenuSesionHeader();
 return;
 }
-
 mostrarHeader();
+
+function mostrarMenuSesionHeader() {
+  let menuSesion = document.querySelector("#menuSesion");
+  console.log(estaActivo);
+  if (!estaActivo) {
+    menuSesion.innerHTML = `
+    <a href="../sesion.html" id="botonSesion" class="btn btn-secondary" type="button">
+    <svg
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+      class="bi bi-person-fill" viewBox="0 0 16 16">
+      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+    </svg>
+ Ingresar
+    </a>`; 
+  } else if (!esVendedor) {
+    menuSesion.innerHTML = `
+    <a href="" id="botonSesion" class="btn btn-secondary" type="button">
+    <svg
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+      class="bi bi-person-fill" viewBox="0 0 16 16">
+      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+    </svg>
+ Ya iniciaste sesión pero todavía no hice el menú este xd
+    </a>
+    `
+  }
+}
 
 footer.innerHTML = `
             <div class="row d-flex align-items-center m-lg-3">
