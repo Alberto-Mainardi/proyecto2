@@ -819,3 +819,8 @@ footer {
   translate: -50% -50%;
   z-index: 1001;
 }
+
+.carousel-item img{
+  max-width: 100%;
+  max-height: max-content;
+}

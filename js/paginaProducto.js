@@ -105,9 +105,3 @@ let pagina = document.querySelector(`#pagina`);
 
 }
 
-
-(function(){
-    $("#botonCompra").click(function(){
-      $("#ventanaModal").modal("show");
-    });
-});

@@ -375,10 +375,8 @@ footer.innerHTML = `
 `
 
 function paginaProducto(id) {
-  fetch("./json/articulos.json")
-    .then((response) => response.json())
-    .then((data) => {
-      let articulos = data.articulos;
+ 
+      let articulos = leerProductosAdmin();
       articulos.forEach((articulo) => {
         if (articulo.id == id) {
           window.localStorage.setItem(
@@ -394,9 +392,8 @@ function paginaProducto(id) {
           return;
         }
       });
-    })
-    .catch((error) => console.error("No se pudo conseguir la data:", error));
-}
+    }
+
 
 function leerPagina() {
   let pagina = localStorage.getItem("pagina");
@@ -405,9 +402,7 @@ function leerPagina() {
 
 function agregarAlCarrito(id){
   if (estaActivo) {
-    fetch('./json/articulos.json').then((response) => response.json())
-    .then((data) => {
-        let articulos = data.articulos;
+        let articulos = leerProductosAdmin();
         let productos = leerProductos();
         if (productos==null) {
         articulos.find((articulo)=>{
@@ -442,12 +437,12 @@ function agregarAlCarrito(id){
                 })
         }
         
-}).catch((error) => console.error("No se pudo conseguir la data:", error))
-  } else {
+}
+else {
     console.log("Por favor, inicia sesión.");
   }
-
 }
+
 
 function comprarAhoraClick () { 
   if (estaActivo) {
@@ -462,9 +457,8 @@ function comprarAhoraClick () {
 
 function agregarFavoritos(id){
   if (estaActivo) {
-    fetch('./json/articulos.json').then((response) => response.json())
-    .then((data) => {
-        let articulos = data.articulos;
+    
+        let articulos = leerProductosAdmin();
         let productos = leerFavoritos();
         if (productos==null) {
         articulos.find((articulo)=>{
@@ -474,6 +468,7 @@ function agregarFavoritos(id){
                     favoritos = [...favoritos,{id:articulo.id,nombre:articulo.nombre,precio:articulo.precio,imagen:articulo.imagen}];
                     productosEnFavoritos(favoritos)
                     mostrarHeader()
+                    favBoton(articulo.id)
                     mostrarProductosFavoritos()
                     } 
                 }
@@ -490,6 +485,7 @@ function agregarFavoritos(id){
                             console.log(favoritos);
                             productosEnFavoritos(favoritos)
                             mostrarHeader()
+                            favBoton(articulo.id)
                             mostrarProductosFavoritos()
                         }
                
@@ -498,10 +494,10 @@ function agregarFavoritos(id){
                 })
         }
         
-}).catch((error) => console.error("No se pudo conseguir la data:", error))
+}
 }
 
-}
+
 
 let formBusqueda = document.querySelector("#cajaBusqueda");
 
@@ -523,7 +519,7 @@ function favBoton(id) {
       fav.innerHTML= 
 
       `
-      <svg xmlns="http://www.w3.org/2000/svg" onclick="agregarFavoritos(${id});favBoton(${id})" height="28px" viewBox="0 -960 960 960" width="28px" fill="#44d62c"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" onclick="agregarFavoritos(${id})" height="28px" viewBox="0 -960 960 960" width="28px" fill="#44d62c"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
       `
  
     })

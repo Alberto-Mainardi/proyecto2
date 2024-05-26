@@ -1,29 +1,17 @@
-let articulos = [];
-let categorias = [];
+
 let busqueda = localStorage.getItem("busqueda");
 let resultadosBusqueda = document.querySelector("#resultadosBusqueda");
 console.log(busqueda);
 
-fetch('../json/articulos.json').then((response) => response.json())
-.then((data) => {
-    let articulosJson = data.articulos;
-    let categoriasJson = data.categorias;
-    articulosJson.forEach(articulo => {
-        articulos.push(articulo);
-    })
-    categoriasJson.forEach(categoria => {
-        categorias.push(categoria);
-    })
-    mostrarBusqueda()
-    })
-
-.catch((error) => console.error("No se pudo conseguir la data:", error))
-
 
 function mostrarBusqueda() {
-    articulos.filter(articulo => {
-        if (articulo.keywords.includes(busqueda)) {
     
+    let articulos = leerProductosAdmin();
+    resultadosBusqueda.innerHTML=``
+    console.log(articulos);
+    articulos.filter(articulo => {
+        if (articulo.keywords.includes(busqueda) || articulo.categorias.includes(busqueda)) {
+            
             resultadosBusqueda.innerHTML += `
             <article id="${articulo.id}" onclick="paginaProducto(${articulo.id})" style="width: 85%; max-width: 300px; height:350px;" class="p-0 mx-4 p-sm-4 m-md-2 col-lg-2 productoBusqueda producto">
             <a class="text-decoration-none text-white" href="./paginaProducto.html">
@@ -48,3 +36,4 @@ function mostrarBusqueda() {
 
 }
 
+mostrarBusqueda()

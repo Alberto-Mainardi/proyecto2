@@ -1,4 +1,3 @@
-
 function productosEnAdmin(data) {
     console.log(data);
         window.localStorage.setItem("productos",JSON.stringify(data))
@@ -112,7 +111,7 @@ function agregarProducto() {
     }else{
         articulos=leerProductosAdmin();
         let id = Number(articulos[articulos.length - 1].id) + 1
-        articulos = [...articulos,{id,nombre,precio,descripcion,cantidad,imagen,categorias,palabrasClave}]
+        articulos = [...articulos,{id,nombre,precio,descripcion,cantidad,imagen,categorias,keywords:palabrasClave}]
         console.log(articulos);
         productosEnAdmin(articulos);
         location.reload();
@@ -124,26 +123,28 @@ function formModificarProducto(id) {
     window.scrollTo(0,0); 
 
     let categorias = leerCategoriasAdmin();
-
-    mainAdmin.innerHTML = `
+    let productos = leerProductosAdmin()
+    productos.find((producto)=>{
+        if (producto.id == id) {
+            mainAdmin.innerHTML = `
     <form onsubmit="event.preventDefault();modificarProductos(${id})">
         <label class="text-white pb-2 d-block" for="nombreProducto">Nombre</label>
-        <input class="border-success w-75 mb-2" type="text" id="nombreProducto" required>
+        <input class="border-success w-75 mb-2 p-1" type="text" id="nombreProducto" value="${producto.nombre}" required>
 
         <label class="text-white pb-2 pt-2 d-block" for="descripcionProducto">Descripcion</label>
-        <input class="border-success w-75 mb-2" type="text" id="descripcionProducto" required>
+        <input class="border-success w-75 mb-2 p-1" type="text" id="descripcionProducto" value="${producto.descripcion}" required>
 
         <label class="text-white pb-2 pt-2 d-block" for="precioProducto">Precio</label>
-        <input class="border-success w-25 mb-2" type="number" id="precioProducto" required>
+        <input class="border-success w-25 mb-2 p-1" type="number" id="precioProducto" value="${producto.precio}" required>
         
         <label class="text-white pb-2 pt-2 d-block" for="cantidad">Cantidad</label>
-        <input class="border-success mb-2" type="number" id="cantidad" required>
+        <input class="border-success mb-2 p-1" type="number" id="cantidad" value="${producto.cantidad}" required>
         
         <label class="text-white pb-2 pt-2 d-block" for="imagenProducto">Imagen (colocar la url de la imagen que desea mostrar)</label>
-        <input class="border-success w-75 mb-2" type="text" id="imagenProducto" required>
+        <input class="border-success w-75 mb-2 p-1" type="text" id="imagenProducto" value="${producto.imagen}" required>
 
         <label class="text-white pb-2 pt-2 d-block" for="palabrasClave">Palabras Clave (colocar las palabras clave separadas por comas. Por ejemplo: Nvidia,Amd,Raton,etc)</label>
-        <input class="border-success w-75 mb-2" type="text" id="palabrasClave">
+        <input class="border-success w-75 mb-2 p-1" type="text" id="palabrasClave">
 
         <div id="divCategorias" required>
             <label class="text-white pt-2 d-block " for="palabrasClave">Categorias</label>
@@ -156,6 +157,9 @@ function formModificarProducto(id) {
  
     `;
 
+        }
+    })
+    
     let divCategorias = document.querySelector("#divCategorias")
     categorias.forEach(categoria => {
         divCategorias.innerHTML+=`
@@ -193,7 +197,7 @@ function modificarProductos(id) {
             console.log(articulo.id);
             if(articulo.id == id){
                 console.log(id);
-                let obj ={id,nombre, precio, descripcion,cantidad, imagen,categorias,palabrasClave}
+                let obj ={id,nombre, precio, descripcion,cantidad, imagen,categorias,keywords:palabrasClave}
                 console.log(obj);
                 return obj
             } else {
@@ -266,7 +270,3 @@ function eliminarProductoAdmin(id) {
     productosEnAdmin(nuevosProductos);
     location.reload();
 }
-
-
-
-
