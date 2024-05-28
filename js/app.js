@@ -4,15 +4,15 @@ let recientes = document.querySelector("#recientes");
 let header = document.querySelector("header");
 let footer = document.querySelector("footer");
 let contenidoPaginaSesion = document.querySelector("#contenidoPaginaSesion");
-
-
+let usuario = leerUsuario();
 
 function mostrarPaginaRegistro() {
   contenidoPaginaSesion.classList.add("contenidoRegistroPaginaSesion")
   contenidoPaginaSesion.classList.remove("contenidoLoginPaginaSesion")
   contenidoPaginaSesion.innerHTML = `
+              <h1 class="secondary-color text-center">Crear una Cuenta</h1>
               <form id="formularioRegistro" class="d-flex form row">
-            <div class="col-sm-12 col-md-7 pe-4" style="border-right:1px solid gray">
+            <div class="col-sm-12 col-md-7 pe-4 border-end border-secondary" style="--bs-border-opacity: .7;">
                 <label for="emailRegistro" class="form-label text-white  pt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#44d62c"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
                 Correo Electrónico</label>
@@ -62,7 +62,7 @@ function mostrarPaginaRegistro() {
                 <div id="vistaPreviaRegistro" class="col-sm-12 col-md-5 text-center">
                 <h3 class="secondary-color">Vista Previa</h3>
                 <div class="d-flex mt-4">
-                    <div class="m-3 w-50" style="position:relative;">
+                    <div class="m-3 w-50" style="position:relative; max-width:140px;">
                         <div id="botonCambiarFotoPerfil" onclick="mostrarModalFotoPerfil()" class="w-100">
                             <div class="d-flex text-center align-items-center h-100">
                                 <div>
@@ -102,6 +102,7 @@ function mostrarPaginaLogin() {
   contenidoPaginaSesion.classList.add("contenidoLoginPaginaSesion");
 
   contenidoPaginaSesion.innerHTML = `
+  <h1 class="secondary-color text-center">Iniciar Sesión</h1>
   <form id="formularioLogin" class="d-flex flex-column form">
   <label class="text-white pb-2 form-label" for="usernameLogin"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#44d62c" class="bi bi-person-fill" viewBox="0 0 16 16">
     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
@@ -165,7 +166,7 @@ header.innerHTML=`
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
           aria-label="Close"></button>
       </div>
-      <div id="fueraDeArea" class="offcanvas-body p-4">
+      <div id="fueraDeArea" class="offcanvas-body">
         <ul class="navbar-nav fs-5 align-items-center justify-content-around flex-grow-1">
           <li class="nav-item mx-2">
             <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
@@ -266,16 +267,23 @@ function mostrarMenuSesionHeader() {
     </a>`; 
   } else if (!esVendedor) {
     menuSesion.innerHTML = `
-    <a href="" id="botonSesion" class="btn btn-secondary" type="button">
-    <svg
-      xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-      class="bi bi-person-fill" viewBox="0 0 16 16">
-      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-    </svg>
- Ya iniciaste sesión pero todavía no hice el menú este xd
-    </a>
+  <div class="dropdown">
+    <img src="${usuario.fotoPerfil}" alt="foto de perfil" class="fotoPerfil botonFotoPerfil" style="max-width:90px; min-height:90px; translate:-10px;" data-bs-toggle="dropdown" aria-expanded="false" tabindex="0">
+  <ul id="dropdownPerfil" class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <hr class="border border-1 m-1">
+    <li><a class="dropdown-item" style="color:rgb(255, 40, 40); font-weight:500;" href="#" onclick="mostrarModalCerrarSesion()">Cerrar Sesión</a></li>
+  </ul>
+</div>
     `
   }
+}
+
+
+function mostrarModalCerrarSesion() {
+  let modalCerrarSesion = document.querySelector("#modalCerrarSesion");
+  modalCerrarSesion.classList.toggle("ocultarModalCerrarSesion");
 }
 
 footer.innerHTML = `

@@ -17,7 +17,28 @@
   <header>
   </header>
 
+  <div id="modalCerrarSesion" class="ocultarModalCerrarSesion">
+    <div class="modalBackground"></div>
+    <div id="modalCerrarSesionContenido" class="container-md bg-dark col col-md-8 col-lg-5 rounded-3">
+        <div class="w-100">
+            <h3 class="text-white mb-4">Cerrar Sesión</h3>
+                <p class="d-block text-white">¿Estás seguro que deseas cerrar sesión?</p>
+                <hr class="border border-1">
+                <div class="text-end">
+                    <button type="button" onclick="mostrarModalCerrarSesion()" class="btn btn-secondary mx-3">Cancelar</button>
+                    <button type="button" onclick="cerrarSesion()" class="btn btn-danger mx-3">Aceptar</button>
+                </div>
+                
+        </div>
+    </div>
+</div>
+
+
+
   <main>
+
+
+
 
     <div id="carouselExampleAutoplaying" class="carousel slide bg-black" data-bs-ride="carousel">
       <div id="homeSlider" class="carousel-inner" style="height: 80vh;">

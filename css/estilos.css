@@ -299,7 +299,7 @@ footer {
     margin-bottom: 20px;
   }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1023px) {
   .barraLateral {
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
@@ -329,7 +329,10 @@ footer {
     margin-right: 20px;
   }
 }
-@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+@media only screen and (min-width: 1024px) and (width <= 1280px) {
+  .barraLateral{
+    max-height: 160px;
+  }
   #contenedorFlexibleNavbar {
     display: flex;
     flex-direction: column;
@@ -704,7 +707,12 @@ footer {
   margin: -2px;
   border-radius: 1rem;
 }
-
+@media screen and (width < 768px) {
+  #formularioRegistro .border-end{
+    border: none!important;
+    padding-bottom: 3rem;
+  }
+}
 .contenedorMostrarRequisitosPassword {
   position: relative;
   
@@ -719,6 +727,7 @@ footer {
   width: 16rem;
   padding: 0.75rem;
   box-shadow: 0px 0px 14px black;
+  z-index: 10;
 }
 .mostrarRequisitosPassword::after {
   content: '';
@@ -783,11 +792,19 @@ footer {
   width: 175px;
   cursor: pointer;
 }
+.fotoPerfilContainer{
+  position: relative;
+  width: 90px;
+  height: 46px;
+}
 .fotoPerfil {
   border-radius: 50%;
   aspect-ratio: 1/1;
   height: 100%;
   object-fit: cover;
+  max-width: 140px;
+  min-width: 90px;
+  cursor: pointer;
 }
 #botonCambiarFotoPerfil {
   opacity: 0;
@@ -795,6 +812,8 @@ footer {
   height: 100%;
   border-radius: 50%;
   background: rgba(30, 30, 30, 0.70);
+  max-width: 140px;
+  min-width: 90px
 }
 #botonCambiarFotoPerfil:hover{
   opacity: 1;
@@ -806,7 +825,7 @@ footer {
   height: 100vh;
   width: 100vw;
   background: hsla(0, 0%, 0%,0.7);
-  z-index: 1000;
+  z-index: 10000;
 }
 .ocultarModalFotoPerfil{
   display: none;
@@ -817,10 +836,56 @@ footer {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  z-index: 1001;
+  z-index: 10001;
 }
 
 .carousel-item img{
   max-width: 100%;
   max-height: max-content;
+}
+
+.botonFotoPerfil:hover,
+.botonFotoPerfil:focus{
+  outline: 3px solid white;
+}
+
+
+#dropdownPerfil{
+  position: absolute;
+  left: -125%;
+  top: calc(100% + 20px);
+  background-color: rgb(24, 25, 23);
+  border: 2px solid;
+  border-image: linear-gradient(45deg, var(--secondary-color), black, var(--secondary-color)) 1;
+}
+#dropdownPerfil:after{
+  content: '';
+  position: absolute;
+  top: -15px;
+  right: 0%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid var(--secondary-color);
+}
+
+
+
+#dropdownPerfil .dropdown-item{
+  color: white;
+}
+
+#dropdownPerfil .dropdown-item:hover{
+  background: rgb(63, 63, 63);
+}
+
+.ocultarModalCerrarSesion{
+  display: none;
+}
+#modalCerrarSesionContenido{
+  position: fixed;
+  padding: 2rem;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 10001;
 }

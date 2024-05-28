@@ -51,7 +51,15 @@ function actualizarParametros() {
                 let username = inputUsernameRegistro.value
                 let password = document.querySelector("input[id=passwordRegistro]").value;
                 let tipoDeCuenta = document.querySelector("#tipoDeCuentaRegistro").value;
-                users=[...users, ({id:Date.now(), email, username, password, tipoDeCuenta})];
+                let rutaFotoPerfil;
+                if (JSON.parse(localStorage.getItem("rutaFotoPerfil")) != null) {
+                    rutaFotoPerfil = JSON.parse(localStorage.getItem("rutaFotoPerfil"));
+                } else {
+                    rutaFotoPerfil = "https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/3da39-no-user-image-icon-27.png?fit=500%2C500&ssl=1"
+                }
+
+
+                users=[...users, ({id:Date.now(), email, username, password, tipoDeCuenta, fotoPerfil:rutaFotoPerfil})];
                 console.log(users);
                 inputEmailRegistro.value= ``;
                 document.querySelector("input[id=passwordRegistro]").value = ``;
@@ -59,6 +67,7 @@ function actualizarParametros() {
                 inputConfirmarPasswordRegistro.value = ``;
                 crearUsuarios(users);
                 iniciarSesion(users[users.length - 1], "Cuenta Creada Exitosamente");
+                localStorage.removeItem("rutaFotoPerfil");
             } else if (!emailValido) {
                 inputEmailRegistro.focus();
             } else if (!usernameValido) {
@@ -338,4 +347,21 @@ function iniciarSesion(user, mensaje) {
     }, 1000)
 
 }
-console.log(estaActivo);
+
+function cerrarSesion() {
+    sessionStorage.removeItem("usuario");
+    localStorage.removeItem("usuario");
+    let mensajeSesiónCerrada = document.querySelector("#modalCerrarSesionContenido");
+    mensajeSesiónCerrada.innerHTML = `
+        <h3 class="text-white text-center">Sesión Cerrada Exitosamente</h3>
+    `;
+    setTimeout(() => {
+        location.reload();
+    },1000)
+    
+}
+
+function leerUsuario() {
+    let usuario = JSON.parse(sessionStorage.getItem("usuario"))
+    return usuario
+}
