@@ -1,17 +1,20 @@
 
 let busqueda = localStorage.getItem("busqueda");
 let resultadosBusqueda = document.querySelector("#resultadosBusqueda");
+
 console.log(busqueda);
 
 
 function mostrarBusqueda() {
     
     let articulos = leerProductosAdmin();
+    console.log(resultadosBusqueda);
     resultadosBusqueda.innerHTML=``
+
     console.log(articulos);
     articulos.filter(articulo => {
         if (articulo.keywords.includes(busqueda) || articulo.categorias.includes(busqueda)) {
-            
+    
             resultadosBusqueda.innerHTML += `
             <article id="${articulo.id}" onclick="paginaProducto(${articulo.id})" style="width: 85%; max-width: 300px; height:350px;" class="p-0 mx-4 p-sm-4 m-md-2 col-lg-2 productoBusqueda producto">
             <a class="text-decoration-none text-white" href="./paginaProducto.html">
@@ -31,8 +34,20 @@ function mostrarBusqueda() {
                 `;
             
         }
+                   
     })
 
+let productoBusqueda = document.querySelector(".productoBusqueda");
+console.log(productoBusqueda);
+if (productoBusqueda==null) {
+    resultadosBusqueda.innerHTML=`
+    <div class="d-flex justify-content-center flex-column align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" height="250px" viewBox="0 -960 960 960" width="250px" fill="#75FB4C"><path d="M480-417q-67 0-121.5 37.5T278-280h404q-25-63-80-100t-122-37Zm-183-72 50-45 45 45 31-36-45-45 45-45-31-36-45 45-50-45-31 36 45 45-45 45 31 36Zm272 0 44-45 51 45 31-36-45-45 45-45-31-36-51 45-44-45-31 36 44 45-44 45 31 36ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 340q142 0 241-99t99-241q0-142-99-241t-241-99q-142 0-241 99t-99 241q0 142 99 241t241 99Z"/></svg>
+        <h3 class="m-3 mb-5" style="color:#75FB4C">No se han encontrado resultados para tu búsqueda</h3>
+    </div>   
+
+    `
+}
 
 }
 

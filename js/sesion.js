@@ -1,7 +1,5 @@
 // Registro
 let estaActivo;
-let esAdmin;
-let esVendedor;
 let mensajeSesionExitosa = document.querySelector("#mensajeSesionExitosa");
 if (JSON.parse(sessionStorage.getItem("usuario")) != null) {
     estaActivo = true
@@ -124,6 +122,7 @@ formLogin.addEventListener("submit", function (e) {
 })
     }
 }
+
 function mostrarModalFotoPerfil() {
     let modalFotoPerfil = document.querySelector("#modalFotoPerfil");
     modalFotoPerfil.classList.toggle("ocultarModalFotoPerfil");
@@ -316,7 +315,7 @@ function iniciarSesion(user, mensaje) {
     estaActivo = true;
     contenidoPaginaSesion.innerHTML = ``;
     mensajeSesionExitosa.innerHTML = `
-    <div class="bg-dark d-flex align-items-center justify-content-center" style="position:absolute; top:0; height: 100vh; width: 100vw; z-index: 1000;">
+    <div class="bg-dark d-flex align-items-center justify-content-center" style="position:absolute; margin-top:150px ; top:0; height: 100vh; width: 98.7vw; z-index: 1000;">
     <div class="text-center">
         <h2 class="sesionExitosoPrincipal secondary-color" style="width: 100%;">${mensaje}</h2>
         <p class="sesionExitosoSecundario text-secondary" style="width: 100%;">Te vamos a redireccionar a la página principal en <br>
@@ -332,7 +331,7 @@ function iniciarSesion(user, mensaje) {
         console.log(contadorRedireccionar);
         if (contadorRedireccionar.value > 0) {
             mensajeSesionExitosa.innerHTML = `
-            <div class="bg-dark d-flex align-items-center justify-content-center" style="position:absolute; top:0; height: 100vh; width: 100vw; z-index: 1000;">
+            <div class="bg-dark d-flex align-items-center justify-content-center" style="position:absolute;margin-top:150px ; top:0; height: 100vh; width: 98.7vw; z-index: 1000;">
             <div class="text-center">
                 <h2 class="sesionExitosoPrincipal secondary-color" style="width: 100%;">${mensaje}</h2>
                 <p class="sesionExitosoSecundario text-secondary" style="width: 100%;">Te vamos a redireccionar a la página principal en <br>
@@ -345,7 +344,6 @@ function iniciarSesion(user, mensaje) {
             window.location.href = "../index.html"
         }
     }, 1000)
-
 }
 
 function cerrarSesion() {
@@ -356,7 +354,7 @@ function cerrarSesion() {
         <h3 class="text-white text-center">Sesión Cerrada Exitosamente</h3>
     `;
     setTimeout(() => {
-        location.reload();
+        window.location.href="./index.html";
     },1000)
     
 }
@@ -365,3 +363,37 @@ function leerUsuario() {
     let usuario = JSON.parse(sessionStorage.getItem("usuario"))
     return usuario
 }
+
+function agregarInfoPerfil() {
+    let perfilUsuario=document.querySelector("#perfilUsuario")
+    let usuario = leerUsuario();
+    if (usuario!=null || usuario.length!=0) {
+        console.log(usuario);
+    perfilUsuario.innerHTML=`
+    <div  class="col-sm-11 col-xl-4 text-center h-50 productosSection">
+      <div class="d-flex mt-4 ms-4">
+            <div class="m-3 w-50" style="position:relative; max-width:140px;">
+                <div class="h-100">
+                    <img
+                    src="${usuario.fotoPerfil}"
+                    alt="fotoDePerfil" class="rounded-circle w-100">
+                </div>
+            </div>
+        <div class="m-3 w-50 text-start align-content-center">
+          <h4 class="text-white">${usuario.username}</h4>
+          
+        </div>
+    </div>
+      <div class="text-start mt-3 bg-dark p-2 px-3 w-100 rounded rounded-3 rounded-bottom-4">
+        <p class="text-white m-4">Correo electrónico: <span>${usuario.email}</span></p>
+        <p class="text-white m-4">Nombre de usuario: <span>${usuario.username}</span></p>
+        <p class="text-white m-4">Tipo de usuario: <span>${usuario.tipoDeCuenta}</span></p>
+      </div>
+    </div>
+
+`
+    }
+    
+
+}
+agregarInfoPerfil()

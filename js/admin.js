@@ -8,6 +8,7 @@ function leerUsuarios() {
     let usuarios = JSON.parse(localStorage.getItem("usuarios"));
     return usuarios;
 }
+
 function crearUsuarios(data) {
     localStorage.setItem("usuarios",JSON.stringify(data));
     mostrarUsuarios();
@@ -35,6 +36,7 @@ function eliminarUsuario(id) {
     })
     console.log(nuevosUsuarios);
     crearUsuarios(nuevosUsuarios);
+    location.reload();
 }
 
 function mostrarUsuarios() {
@@ -65,40 +67,85 @@ fetch('../json/articulos.json').then((response) => response.json())
 .then((data) => {
    let categoriasJson =data.categorias; 
    let articulosJson = data.articulos;
+   let usuariosJson = data.usuarios;
    let productos = leerProductosAdmin();
    let categoriasLS = leerCategoriasAdmin();
+   let usuariosLS = leerUsuarios();
+   let usuario = leerUsuario();
    
-   if (categoriasLS==null || categoriasLS.length==0) {
+    if (usuariosLS==null) {
+        usuariosJson.forEach(usuario => {
+            users.push(usuario);
+        })
+        
+        crearUsuarios(users);
+    }
+
+   if (categoriasLS==null) {
     categoriasJson.forEach(categoria => {
         categorias.push(categoria);
+       
     })
     
     categoriasEnAdmin(categorias);
     
-    }else{
-    
-        
     }
 
-    if (productos==null || productos.length==0) {
+    if (productos==null) {
        
         articulosJson.forEach(articulo => {
             articulos.push(articulo);
         })
         console.log(articulos);
         productosEnAdmin(articulos);
-        mostrarProductosAdmin();
-        mostrarCategoriasAdmin();
+        if (usuario.tipoDeCuenta=="vendedor") {
+            console.log(usuario.tipoDeCuenta);
+            formAgregarProductos();
+        }else if(usuario.tipoDeCuenta=="admin"){
+            mostrarProductosAdmin();
+            mostrarCategoriasAdmin();
+            mostrarUsuariosAdmin();
+        }
+        
     }else{
-        mostrarProductosAdmin();
-        mostrarCategoriasAdmin()
+        if (usuario.tipoDeCuenta=="vendedor") {
+            console.log(usuario.tipoDeCuenta);
+            formAgregarProductos();
+        }else if(usuario.tipoDeCuenta=="admin"){
+            mostrarProductosAdmin();
+            mostrarCategoriasAdmin();
+            mostrarUsuariosAdmin();
+
+        }
+
+       
     }
-   
-  
+    
 
     })
 
 .catch((error) => console.error("No se pudo conseguir la data:", error))
 
+function mostrarUsuariosAdmin(){
+    let usuarios = leerUsuarios();
+    console.log(usuarios);
+    usuarios.forEach(usuario => {
+            if (usuario.tipoDeCuenta!="admin") {
+                usuariosAdmin.innerHTML += `
+            
+                <tr class="border border-2 border-white">
+                    <td class="border border-2 border-white p-3">${usuario.id}</td>
+                    <td class="border border-2 border-white p-3">${usuario.username}</td>
+                    <td class="border border-2 border-white p-3">${usuario.email}</td>
+                    <td class="border border-2 border-white p-3">${usuario.tipoDeCuenta}</td>
+                    <td class="border border-2 border-white p-3"><button class="btn botonCompra" onclick="eliminarUsuario(${usuario.id})">Eliminar</button></td>
+                
 
+                </tr>
+                    `;
+            }      
+            
+        })
+   return;
+}
 

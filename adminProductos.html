@@ -14,12 +14,28 @@
 </head>
 <body class="bg-body-secondary">
   <header>
-    
   </header>
+  <div id="modalCerrarSesion" class="ocultarModalCerrarSesion">
+    <div class="modalBackground"></div>
+    <div id="modalCerrarSesionContenido" class="container-md bg-dark col col-md-8 col-lg-5 rounded-3">
+        <div class="w-100">
+            <h3 class="text-white mb-4">Cerrar Sesión</h3>
+                <p class="d-block text-white">¿Estás seguro que deseas cerrar sesión?</p>
+                <hr class="border border-1">
+                <div class="text-end">
+                    <button type="button" onclick="mostrarModalCerrarSesion()" class="btn btn-secondary mx-3">Cancelar</button>
+                    <button type="button" onclick="cerrarSesion()" class="btn btn-danger mx-3">Aceptar</button>
+                </div>
+                
+          </div>
+      </div>
+  </div>
+
+  
 
   <main class="container mainAdmin">
         <section id="productosAdmin" class="row">
-          <h1 class="text-white">Productos</h1>
+          <h1 class="text-white">Gestion de productos</h1>
         </section>
         <button onclick="formAgregarProductos()" class="btn botonCompra my-5">
            Agregar nuevo producto
@@ -27,12 +43,13 @@
         
         </button> 
         <section class="my-5">
-          <h1 class="text-white">Categorias</h1>
+          <h1 class="text-white">Gestion de categorias</h1>
           <table class="fs-5 p-3 text-white my-5">
             <thead>
                 <tr class="border border-2 border-white">
                     <th class="border border-2 border-white p-3">ID</th>
                     <th class="border border-2 border-white p-3">Nombre</th>
+                    <th> </th>
                 </tr>
             </thead>
             <tbody id="categoriasAdmin">
@@ -43,7 +60,24 @@
         <button onclick="formAgregarCategorias()" class="btn botonCompra">
           Agregar nueva categoria</button>
         </section>
-        
+
+        <section class="my-5">
+          <h1 class="text-white">Gestion de Usuarios</h1>
+          <table class="fs-5 p-3 text-white my-5">
+            <thead>
+                <tr class="border border-2 border-white">
+                    <th class="border border-2 border-white p-3">ID</th>
+                    <th class="border border-2 border-white p-3">Nombre de usuario</th>
+                    <th class="border border-2 border-white p-3">Email</th>
+                    <th class="border border-2 border-white p-3">Tipo de cuenta</th>
+                </tr>
+            </thead>
+            <tbody id="usuariosAdmin">
+  
+            </tbody>
+  
+        </table>
+
   </main>
   <footer class="container-fluid mt-5">
 
@@ -52,6 +86,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
     <script src="../js/admin.js"></script>
+    <script src="./js/sesion.js"></script>
     <script src="./js/productos.js"></script>
     <script src="../js/carrito.js"></script>
     <script src="../js/favoritos.js"></script>

@@ -329,7 +329,7 @@ footer {
     margin-right: 20px;
   }
 }
-@media only screen and (min-width: 1024px) and (width <= 1280px) {
+@media only screen and (min-width: 1023px) and (width <= 1280px) {
   .barraLateral{
     max-height: 160px;
   }
@@ -495,7 +495,7 @@ footer {
 
     .columnaPaginaSticky{
         position: sticky;
-        top: 8.7rem;
+        top: 8.9rem;
     }
 }
 
@@ -820,6 +820,17 @@ footer {
   cursor: pointer;
 }
 
+#botonPreviewImagen {
+  opacity: 0;
+  position: absolute;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.70);
+}
+#botonPreviewImagen:hover{
+  opacity: 1;
+  
+}
+
 .modalBackground {
   position: fixed;
   height: 100vh;
@@ -868,6 +879,26 @@ footer {
   border-bottom: 15px solid var(--secondary-color);
 }
 
+@media (width < 992px) {
+  #dropdownPerfil{
+    position: absolute;
+    left: 23%;
+    top: calc(100% + 20px);
+    background-color: rgb(24, 25, 23);
+    border: 2px solid;
+    border-image: linear-gradient(45deg, var(--secondary-color), black, var(--secondary-color)) 1;
+  }
+  #dropdownPerfil:after{
+    content: '';
+    position: absolute;
+    top: -15px;
+    right: 82%;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid var(--secondary-color);
+  }
+}
+
 
 
 #dropdownPerfil .dropdown-item{
@@ -888,4 +919,14 @@ footer {
   left: 50%;
   translate: -50% -50%;
   z-index: 10001;
+}
+
+#botonVolver{
+  color: #44d62c;
+  fill: #44d62c;
+}
+
+#botonVolver:hover{
+  color: #144f0b;
+  fill: #144f0b;
 }

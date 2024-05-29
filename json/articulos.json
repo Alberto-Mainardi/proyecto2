@@ -7,11 +7,9 @@
             "precio":"56400",
             "imagen": "https://asset.msi.com/resize/image/global/product/product_1_20190104112154_5c2ed15220159.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
             "alt":"Nvidia MSI RTX 2060",
-            "categorias":["placasDeVideo", "destacado"],
+            "categorias":["placasDeVideo"],
             "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
-            "cantidad":"20",
-            "favorito":false,
-            "estaEnCarrito":false
+            "cantidad":"20"
         },
         {
             "id":"2",
@@ -22,9 +20,7 @@
             "alt":"Nvidia MSI RTX 2060",
             "categorias":["placasDeVideo", "destacado"],
             "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
-            "cantidad":"15",
-            "favorito":false,
-            "estaEnCarrito":false
+            "cantidad":"15"
         },
         {
             "id":"3",
@@ -35,9 +31,7 @@
             "alt":"Nvidia MSI RTX 2060",
             "categorias":["placasDeVideo"],
             "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
-            "cantidad":"10",
-            "favorito":false,
-            "estaEnCarrito":false
+            "cantidad":"10"
         },
         {
             "id":"4",
@@ -48,9 +42,7 @@
             "alt":"Nvidia MSI RTX 2060",
             "categorias":["placasDeVideo", "destacado"],
             "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
-            "cantidad":"15",
-            "favorito":false,
-            "estaEnCarrito":false
+            "cantidad":"15"
         },
         {
             "id":"5",
@@ -61,9 +53,7 @@
             "alt":"Nvidia MSI RTX 2060",
             "categorias":["placasDeVideo"],
             "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
-            "cantidad":"15",
-            "favorito":false,
-            "estaEnCarrito":false
+            "cantidad":"15"
         },
         {
             "id":"6",
@@ -74,9 +64,7 @@
             "alt":"Nvidia MSI RTX 2060",
             "categorias":["placasDeVideo", "destacado"],
             "keywords":["placa de video", "tarjeta de video", "nvidia", "geforce", "rtx", "2060"],
-            "cantidad":"20",
-            "favorito":false,
-            "estaEnCarrito":false
+            "cantidad":"20"
         },
         {
             "id":"7",
@@ -87,9 +75,7 @@
             "alt":"Nvidia MSI RTX 2060",
             "categorias":["teclados"],
             "keywords":["teclado","periferico"],
-            "cantidad":"15",
-            "favorito":false,
-            "estaEnCarrito":false
+            "cantidad":"15"
         },
         {
             "id":"8",
@@ -100,9 +86,7 @@
             "alt":"Nvidia MSI RTX 2060",
             "categorias":["teclados", "destacado"],
             "keywords":["teclado","periferico"],
-            "cantidad":"15",
-            "favorito":false,
-            "estaEnCarrito":false
+            "cantidad":"15"
         },
         {
             "id":"9",
@@ -113,9 +97,7 @@
             "alt":"Nvidia MSI RTX 2060",
             "categorias":["teclados"],
             "keywords":["teclado","periferico"],
-            "cantidad":"15",
-            "favorito":false,
-            "estaEnCarrito":false
+            "cantidad":"15"
         },
         {
             "id":"10",
@@ -124,11 +106,9 @@
             "precio":"16000",
             "imagen": "https://static.gigabyte.com/StaticFile/Image/Global/091e5cf65b26735dfb7d7a47c3efc798/Product/14500/webp/300",
             "alt":"Nvidia MSI RTX 2060",
-            "categorias":["teclados", "destacado"],
+            "categorias":["teclados"],
             "keywords":["teclado","periferico"],
-            "cantidad":"15",
-            "favorito":false,
-            "estaEnCarrito":false
+            "cantidad":"15"
         },
         {
             "id":"11",
@@ -139,9 +119,7 @@
             "alt":"Nvidia MSI RTX 2060",
             "categorias":["teclados"],
             "keywords":["teclado","periferico"],
-            "cantidad":"15",
-            "favorito":false,
-            "estaEnCarrito":false
+            "cantidad":"15"
         },
         {
             "id":"12",
@@ -152,13 +130,15 @@
             "alt":"Nvidia MSI RTX 2060",
             "categorias":["teclados"],
             "keywords":["teclado","periferico"],
-            "cantidad":"15",
-            "favorito":false,
-            "estaEnCarrito":false
+            "cantidad":"15"
         }
     ],
     "categorias":[
         {"id":1,"nombre":"destacado"},{"id":2,"nombre":"placasDeVideo"},{"id":3,"nombre":"teclados"}
+    ],
+    "usuarios":[
+        {"id":1,"email":"admin@1","username":"admin","password":"admin","tipoDeCuenta":"admin","fotoPerfil":"https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/3da39-no-user-image-icon-27.png?fit=500%2C500&ssl=1"},
+        {"id":2,"email":"comprador@1","username":"comprador1","password":"comprador.1","tipoDeCuenta":"comprador","fotoPerfil":"https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/3da39-no-user-image-icon-27.png?fit=500%2C500&ssl=1"}
     ]
 
 }

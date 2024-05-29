@@ -28,7 +28,9 @@ let pagina = document.querySelector(`#pagina`);
                             <p id="verMetodosPago" class="fs-6 mx-3 px-2 text-primary" data-bs-toggle="modal" data-bs-target="#exampleModalMetodos">Ver medios de pago</p>
 
 
-                            <p class="fs-6 m-3 my-3 px-2 pt-2">Precio de envio $8000</p>
+                            <p class="fs-6 m-3 my-3 px-2 pt-2 mb-0">Precio de envio $8000</p>
+
+                            <p class="fs-6 mx-3 px-2 mb-2">${articulo.cantidad} disponibles</p>
 
                             <div class="align-items-center d-flex flex-column mx-3 px-2 ">
                                 <button type="button" id="botonCompra" class="btn btn-success p-3 mt-3 text-center w-100 botonCompra" onclick="comprarAhoraClick()">

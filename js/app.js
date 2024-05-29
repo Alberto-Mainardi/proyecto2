@@ -172,7 +172,7 @@ header.innerHTML=`
             <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Destacados</a>
+            <a class="nav-link" href="../pages/error404.html">Destacados</a>
           </li>
           <li class="nav-item mx-2">
             <a class="nav-link" href="../favoritos.html">Favoritos <span id="contador-favoritos">${favoritos}</span></a>
@@ -217,11 +217,7 @@ header.innerHTML=`
         </ul>
         <div class="d-flex justify-content-around p-4">
           <div id="menuSesion" class="d-flex justify-content-center align-items-center gap-3 pe-3">
-            <a id="botonSesion" onclick="mostrarPaginaLogin()" href="#exampleModal" class="px-3 py-1 rounded-1 text-decoration-none d-flex" data-bs-toggle="modal"><svg
-                xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                class="bi bi-person-fill" viewBox="0 0 16 16">
-                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-              </svg>Ingresar</a>
+            
           </div>
           <div class="d-flex justify-content-center align-items-center pe-3">
             <a href="../carrito.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
@@ -254,7 +250,8 @@ mostrarHeader();
 
 function mostrarMenuSesionHeader() {
   let menuSesion = document.querySelector("#menuSesion");
-  console.log(estaActivo);
+  let usuario = leerUsuario()
+
   if (!estaActivo) {
     menuSesion.innerHTML = `
     <a href="../sesion.html" id="botonSesion" class="btn btn-secondary" type="button">
@@ -265,13 +262,40 @@ function mostrarMenuSesionHeader() {
     </svg>
  Ingresar
     </a>`; 
-  } else if (!esVendedor) {
+  } else if (usuario.tipoDeCuenta=="vendedor") {
+    
     menuSesion.innerHTML = `
   <div class="dropdown">
     <img src="${usuario.fotoPerfil}" alt="foto de perfil" class="fotoPerfil botonFotoPerfil" style="max-width:90px; min-height:90px; translate:-10px;" data-bs-toggle="dropdown" aria-expanded="false" tabindex="0">
   <ul id="dropdownPerfil" class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="../miPerfil.html">Mi Perfil</a></li>
+    <li><a class="dropdown-item" href="./adminProductos.html">Publicar producto</a></li>
+    <hr class="border border-1 m-1">
+    <li><a class="dropdown-item" style="color:rgb(255, 40, 40); font-weight:500;" href="#" onclick="mostrarModalCerrarSesion()">Cerrar Sesión</a></li>
+  </ul>
+</div>
+    `
+  } else if (usuario.tipoDeCuenta=="admin") {
+    
+    menuSesion.innerHTML = `
+  <div class="dropdown">
+    <img src="${usuario.fotoPerfil}" alt="foto de perfil" class="fotoPerfil botonFotoPerfil" style="max-width:90px; min-height:90px; translate:-10px;" data-bs-toggle="dropdown" aria-expanded="false" tabindex="0">
+  <ul id="dropdownPerfil" class="dropdown-menu">
+    <li><a class="dropdown-item" href="../miPerfil.html">Mi Perfil</a></li>
+    <li><a class="dropdown-item" href="../adminProductos.html">Pantalla de admin</a></li>
+
+    <hr class="border border-1 m-1">
+    <li><a class="dropdown-item" style="color:rgb(255, 40, 40); font-weight:500;" href="#" onclick="mostrarModalCerrarSesion()">Cerrar Sesión</a></li>
+  </ul>
+</div>
+    `
+  }else if (usuario.tipoDeCuenta=="comprador") {
+    
+    menuSesion.innerHTML = `
+  <div class="dropdown">
+    <img src="${usuario.fotoPerfil}" alt="foto de perfil" class="fotoPerfil botonFotoPerfil" style="max-width:90px; min-height:90px; translate:-10px;" data-bs-toggle="dropdown" aria-expanded="false" tabindex="0">
+  <ul id="dropdownPerfil" class="dropdown-menu">
+    <li><a class="dropdown-item" href="../miPerfil.html">Mi Perfil</a></li>
     <hr class="border border-1 m-1">
     <li><a class="dropdown-item" style="color:rgb(255, 40, 40); font-weight:500;" href="#" onclick="mostrarModalCerrarSesion()">Cerrar Sesión</a></li>
   </ul>
@@ -395,6 +419,7 @@ function paginaProducto(id) {
               nombre: articulo.nombre,
               precio: articulo.precio,
               descripcion: articulo.descripcion,
+              cantidad: articulo.cantidad
             })
           );
           return;
@@ -447,7 +472,7 @@ function agregarAlCarrito(id){
         
 }
 else {
-    console.log("Por favor, inicia sesión.");
+    alert("Por favor, inicia sesión.");
   }
 }
 
@@ -457,7 +482,7 @@ function comprarAhoraClick () {
     console.log("Procediendo...");
     return
   } else {
-    console.log("Por favor, inicia sesión");
+    alert("Por favor, inicia sesión");
     
   }
 }
@@ -502,6 +527,8 @@ function agregarFavoritos(id){
                 })
         }
         
+}else{
+  alert("Por favor, inicia sesión");
 }
 }
 

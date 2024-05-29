@@ -10,7 +10,22 @@
 </head>
 <body>
     <header></header>
-
+    <div id="modalCerrarSesion" class="ocultarModalCerrarSesion">
+        <div class="modalBackground"></div>
+        <div id="modalCerrarSesionContenido" class="container-md bg-dark col col-md-8 col-lg-5 rounded-3">
+            <div class="w-100">
+                <h3 class="text-white mb-4">Cerrar Sesión</h3>
+                    <p class="d-block text-white">¿Estás seguro que deseas cerrar sesión?</p>
+                    <hr class="border border-1">
+                    <div class="text-end">
+                        <button type="button" onclick="mostrarModalCerrarSesion()" class="btn btn-secondary mx-3">Cancelar</button>
+                        <button type="button" onclick="cerrarSesion()" class="btn btn-danger mx-3">Aceptar</button>
+                    </div>
+                    
+            </div>
+        </div>
+    </div>
+    
 <div id="mensajeSesionExitosa">
 
 </div>
@@ -46,12 +61,13 @@
 
 
 
-    <footer></footer>
+    <footer class="mt-5"></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
     <script src="./js/admin.js"></script>
+    <script src="./js/productos.js"></script>
     <script src="./js/sesion.js"></script>
     <script src="./js/carrito.js"></script>
     <script src="./js/favoritos.js"></script>
@@ -59,8 +75,8 @@
     <script src="./js/pagSesion.js"></script>
    <!-- Cambiar el header de la página -->
     <script>
-        header.innerHTML = ``;
-        footer.innerHTML = ``;
+        // header.innerHTML = ``;
+        // footer.innerHTML = ``;
     </script>
 </body>
 </html>
