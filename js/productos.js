@@ -106,7 +106,7 @@ function formAgregarProductos() {
     categorias.forEach(categoria => {
         divCategorias.innerHTML+=`
         <input class="border-success" type="checkbox" id="categoria${categoria.id}" name="categoria" value="${categoria.nombre}">
-        <label class="text-white pb-2 pt-2" for="categoria${categoria.id}">${categoria.nombre}</label>
+        <label class="text-white pb-2 pt-2 me-3" for="categoria${categoria.id}">${categoria.nombre}</label>
         `
     });
 }
@@ -201,7 +201,7 @@ function formModificarProducto(id) {
 
 
         <label class="text-white pb-2 pt-2 d-block" for="palabrasClave">Palabras Clave (colocar las palabras clave separadas por comas. Por ejemplo: Nvidia,Amd,Raton,etc)</label>
-        <input class="border-success w-75 mb-2 p-1" type="text" id="palabrasClave">
+        <input class="border-success w-75 mb-2 p-1" type="text" id="palabrasClave" value="${producto.keywords.toString()}">
 
         <div id="divCategorias" required>
             <label class="text-white pt-2 d-block " for="palabrasClave">Categorias</label>
@@ -223,10 +223,18 @@ function formModificarProducto(id) {
 
     let divCategorias = document.querySelector("#divCategorias")
     categorias.forEach(categoria => {
-        divCategorias.innerHTML+=`
-        <input class="border-success" type="checkbox" id="categoria${categoria.id}" name="categoria" value="${categoria.nombre}">
-        <label class="text-white pb-2 pt-2" for="categoria${categoria.id}">${categoria.nombre}</label>
-        `
+        if (id==categoria.id) {
+            divCategorias.innerHTML+=`
+            <input class="border-success" type="checkbox" id="categoria${categoria.id}" name="categoria" value="${categoria.nombre}" checked>
+            <label class="text-white pb-2 pt-2 me-3" for="categoria${categoria.id}">${categoria.nombre}</label>
+            `
+        }else{
+            divCategorias.innerHTML+=`
+            <input class="border-success" type="checkbox" id="categoria${categoria.id}" name="categoria" value="${categoria.nombre}">
+            <label class="text-white pb-2 pt-2 me-3" for="categoria${categoria.id}">${categoria.nombre}</label>
+            `
+        }
+        
     });
 }
 
@@ -281,9 +289,9 @@ function mostrarCategoriasAdmin(){
             categoriasAdmin.innerHTML += `
            
             <tr class="border border-2 border-white">
-                <td class="border border-2 border-white p-3">${categoria.id}</td>
-                <td class="border border-2 border-white p-3">${categoria.nombre}</td>
-                <td class="border border-2 border-white p-3"><button class="btn botonCompra" onclick="eliminarCategoria(${categoria.id})">Eliminar</button></td>
+                <td class="border border-2 border-white p-2 p-md-3"">${categoria.id}</td>
+                <td class="border border-2 border-white p-2 p-md-3"">${categoria.nombre}</td>
+                <td class="border border-2 border-white p-2 p-md-3""><button class="btn botonCompra" onclick="eliminarCategoria(${categoria.id})">Eliminar</button></td>
                
 
             </tr>

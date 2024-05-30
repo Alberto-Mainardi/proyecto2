@@ -149,7 +149,7 @@ if(cantidadEnCarrito!=null && cantidadEnFavoritos!=null){
 header.innerHTML=`
   <nav class="navbar navbar-expand-lg fixed-top">
   <div id="contenedorFlexibleNavbar" class="container d-flex">
-    <a id="textoLogo" class="navbar-brand fs-3" href="#">
+    <a id="textoLogo" class="navbar-brand fs-3" href="../index.html">
       <img id="logoMenu" src="../img/logo.png" alt="logo" />
       Tecnobyte
     </a>
@@ -478,11 +478,22 @@ else {
 
 
 function comprarAhoraClick () { 
+let botonCompraAhora = document.querySelector("#botonCompraAhora")
+console.log(botonCompraAhora);
   if (estaActivo) {
-    console.log("Procediendo...");
+    botonCompraAhora.innerHTML=`
+    <button type="button" id="botonCompra" class="btn btn-success p-3 mt-3 text-center w-100 botonCompra" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+      Comprar ahora
+    </button>
+    `
     return
   } else {
-    alert("Por favor, inicia sesión");
+    botonCompraAhora.innerHTML=`
+    <button type="button" id="botonCompra" class="btn btn-success p-3 mt-3 text-center w-100 botonCompra" onclick="alert('Por favor Inicia Sesion')">
+      Comprar ahora
+    </button>
+    `
+    
     
   }
 }

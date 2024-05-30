@@ -1,5 +1,5 @@
 // Registro
-let estaActivo;
+let estaActivo=false;
 let mensajeSesionExitosa = document.querySelector("#mensajeSesionExitosa");
 if (JSON.parse(sessionStorage.getItem("usuario")) != null) {
     estaActivo = true

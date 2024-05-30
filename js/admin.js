@@ -133,12 +133,12 @@ function mostrarUsuariosAdmin(){
             if (usuario.tipoDeCuenta!="admin") {
                 usuariosAdmin.innerHTML += `
             
-                <tr class="border border-2 border-white">
-                    <td class="border border-2 border-white p-3">${usuario.id}</td>
-                    <td class="border border-2 border-white p-3">${usuario.username}</td>
-                    <td class="border border-2 border-white p-3">${usuario.email}</td>
-                    <td class="border border-2 border-white p-3">${usuario.tipoDeCuenta}</td>
-                    <td class="border border-2 border-white p-3"><button class="btn botonCompra" onclick="eliminarUsuario(${usuario.id})">Eliminar</button></td>
+                <tr class="border border-2 border-white ">
+                    <td class="border border-2 border-white p-0 p-md-3">${usuario.id}</td>
+                    <td class="border border-2 border-white p-0 p-md-3">${usuario.username}</td>
+                    <td class="border border-2 border-white p-0 p-md-3">${usuario.email}</td>
+                    <td class="border border-2 border-white p-0 p-md-3">${usuario.tipoDeCuenta}</td>
+                    <td class="border border-2 border-white p-0 p-md-3 d-none d-md-table-cell"><button class="btn botonCompra" onclick="eliminarUsuario(${usuario.id})">Eliminar</button></td>
                 
 
                 </tr>
