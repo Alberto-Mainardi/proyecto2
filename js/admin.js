@@ -73,7 +73,7 @@ fetch('../json/articulos.json').then((response) => response.json())
    let usuariosLS = leerUsuarios();
    let usuario = leerUsuario();
    
-    if (usuariosLS==null) {
+    if (usuariosLS==null || usuariosLS.length==0) {
         usuariosJson.forEach(usuario => {
             users.push(usuario);
         })
