@@ -316,10 +316,10 @@ function iniciarSesion(user, mensaje) {
     document.body.style.overflow = "hidden";
     contenidoPaginaSesion.innerHTML = ``;
     mensajeSesionExitosa.innerHTML = `
-    <div class="bg-dark d-flex align-items-center justify-content-center" style="position:absolute; margin-top:0px ; top:0; height: 100vh; width: 100vw; z-index: 10005;">
+    <div class="bg-dark d-flex align-items-center justify-content-center" style="position:fixed; margin-top:0px ; top:0; height: 100vh; width: 100vw; z-index: 10005;">
     <div class="text-center">
-        <h2 class="sesionExitosoPrincipal secondary-color" style="width: 100%;">${mensaje}</h2>
-        <p class="sesionExitosoSecundario text-secondary" style="width: 100%;">Te vamos a redireccionar a la página principal en <br>
+        <h2 class="sesionExitosoPrincipal secondary-color" style="width: 100vw;">${mensaje}</h2>
+        <p class="sesionExitosoSecundario text-secondary" style="width: 100vw;">Te vamos a redireccionar a la página principal en <br>
         <span id="contadorRedireccionar">3</span>
         </p>
     </div>        
@@ -332,10 +332,10 @@ function iniciarSesion(user, mensaje) {
         console.log(contadorRedireccionar);
         if (contadorRedireccionar.value > 0) {
             mensajeSesionExitosa.innerHTML = `
-            <div class="bg-dark d-flex align-items-center justify-content-center" style="position:absolute;margin-top:0px ; top:0; height: 100vh; width: 100vw; z-index: 10005;">
+            <div class="bg-dark d-flex align-items-center justify-content-center" style="position:fixed; margin-top:0px ; top:0; height: 100vh; width: 100vw; z-index: 10005;">
             <div class="text-center">
-                <h2 class="sesionExitosoPrincipal secondary-color" style="width: 100%;">${mensaje}</h2>
-                <p class="sesionExitosoSecundario text-secondary" style="width: 100%;">Te vamos a redireccionar a la página principal en <br>
+                <h2 class="sesionExitosoPrincipal secondary-color" style="width: 100vw;">${mensaje}</h2>
+                <p class="sesionExitosoSecundario text-secondary" style="width: 100vw;">Te vamos a redireccionar a la página principal en <br>
                 <span id="contadorRedireccionar">${contadorRedireccionar.value}</span>
                 </p>
             </div>        

@@ -879,11 +879,11 @@ footer {
   border-bottom: 15px solid var(--secondary-color);
 }
 
-@media (width < 992px) {
+@media screen and (width < 992px) {
   #dropdownPerfil{
     position: absolute;
     left: 23%;
-    top: calc(100% + 20px);
+    top: calc(-100% - 60px);
     background-color: rgb(24, 25, 23);
     border: 2px solid;
     border-image: linear-gradient(45deg, var(--secondary-color), black, var(--secondary-color)) 1;
@@ -891,14 +891,14 @@ footer {
   #dropdownPerfil:after{
     content: '';
     position: absolute;
-    top: -15px;
+    top: 100%;
     right: 82%;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 15px solid var(--secondary-color);
+    border-bottom: none;
+    border-top: 15px solid var(--secondary-color);
   }
 }
-
 
 
 #dropdownPerfil .dropdown-item{
