@@ -5,6 +5,7 @@ Desarrollado por:
 -Mainardi José Alberto
 -Rodriguez Jairo Joel
 
+Enlace web: https://lighthearted-starship-70e44b.netlify.app
 
 El proyecto se trata de un eCommerce de venta de hardware para computadora. 
 En la pagina se puede agregar, eliminar y modificar productos a traves de un usuario administrador. Tambien podemos crear nuevos usuarios los cuales pueden ser vendedores o compradores, 
